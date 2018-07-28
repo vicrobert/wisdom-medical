@@ -1,0 +1,5 @@
+server.port=8080
+spring.application.name=wm-infosys-web
+spring.cloud.zookeeper.discovery.register=false
+spring.cloud.zookeeper.discovery.root=/wm
+spring.cloud.zookeeper.connect-string=192.168.33.230:2181

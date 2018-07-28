@@ -1,0 +1,63 @@
+body {
+    font-family: 'microsoft yahei';
+}
+.medical-menu {
+    font-size: 16px;
+}
+.medical-menu a {
+    color: #333;
+}
+.medical-menu .panel-heading {
+    border-color: #f0ad4e;
+}
+.medical-menu .list-group-item {
+    color: #999;
+}
+.medical-menu .active {
+    border: none;
+    background: none;
+    color: #f0ad4e;
+}
+
+.medical-page {
+    margin: auto 8px;
+}
+.medical-page .pagination > li > a, .medical-page .pagination > li > span {
+    color: #999;
+}
+.medical-page .pagination > li > a:hover, .medical-page .pagination > li > span:hover, .medical-page .pagination > li > a:focus, .medical-page .pagination > li > span:focus {
+    color: #df8a13;
+}
+.medical-page .pagination > .active > a, .medical-page .pagination > .active > span, .medical-page .pagination > .active > a:hover, .medical-page .pagination > .active > span:hover, .medical-page .pagination > .active > a:focus, .medical-page .pagination > .active > span:focus {
+    color: #ffffff;
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+.medical-filter {
+    font-size: smaller;
+}
+.medical-filter .list-group-item {
+    border-top: 1px dashed #ddd;
+}
+
+.medical-filter .label {
+    margin: auto 10px;
+    font-weight: normal;
+    color: #333;
+    cursor: pointer;
+}
+
+.medical-filter .label-danger{
+    color: #fff;
+    background-color:  #f0ad4e;
+}
+
+.list-group-item>.badge{
+    float: none;
+    min-width: 25px;
+    margin-right: 10px;
+}
+
+.list-group-item .board-hot,.table .board-hot{
+    background-color:#f0ad4e;
+}

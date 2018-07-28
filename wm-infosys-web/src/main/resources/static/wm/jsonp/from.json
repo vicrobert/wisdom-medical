@@ -1,0 +1,1 @@
+{"status":{"code":"200","message":"数据获取成功"},"data":{"type":null,"xaxis":["国产","进口","其他"],"date":[{"name":"其他","value":40},{"name":"国产","value":50},{"name":"进口","value":10}]}}

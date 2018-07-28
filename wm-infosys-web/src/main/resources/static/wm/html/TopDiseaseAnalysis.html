@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/showLoading.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../plug/bootstrap-3.3.7-dist/css/bootstrap.css">
+   <!-- <link rel="stylesheet" href="sentiment/scripts/lib/fontawesome-4.3.0/css/font-awesome.min.css">-->
+   <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/css.css">
+
+   <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/showLoading.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../plug/bootstrap-3.3.7-dist/css/bootstrap.css">
+   <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/css.css">
+   <style>
+    @media (max-width:1920px) and (min-width:1441px){
+        #c{
+            height:170px;
+            width:350px    
+        }
+        #b{
+            height:170px;
+            width:350px
+        }
+        #map_a{
+            height:170px;
+            width:100%;
+        }
+        #map{
+            height: 455px;
+            width:100%;            
+        }
+    }
+
+    
+    @media (max-width:1440px){
+        #c{
+            height:139.5px;
+            width:262.5px    
+        }
+        #b{
+            height:139.5px;
+            width:262.5px
+        }
+        #map_a{
+            height:139.5px;
+            width:100%;
+        }
+        #map{
+            height: 375px;
+            width:100%;            
+        }
+    }
+
+       .con-top-r {
+        top: -3px;
+        right: -1px;
+        overflow: visible
+    }
+    .con-top-l {
+        left: -1px;
+        top: -3px;
+        overflow: visible;
+    }
+    .con-bottom-r {
+        bottom: 1px;
+        right: -1px;
+        overflow: visible
+    }
+    .con-bottom-l {
+        left: -1px;
+        bottom: 1px;
+        overflow: visible;
+    }
+       .pull-right select{
+        background: #09346a;
+        border: 1px solid #0e5283;
+        padding: 4px;
+        color: #00a6fb;
+        font-size: 16px;
+        outline: none;
+       }
+
+    
+   </style>
+    <title>热门疾病发现</title>
+</head>
+<body>
+<div class="main_right">
+    <div class="analysisofhotdiseases_main">
+        <div class="analysisofhotdiseases_main_t"> 
+        <!--热门疾病分析 -->
+            <div class="interactivetrend">
+                <div class="content-title">
+                    <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                    <div class="title-center">热门疾病分析</div>
+                    <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="interactivetrend_bj">
+                    <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                    <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                    <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                    <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                    <span class="pull-right" style="position:absolute;top:20px;right:30px;z-index:99">
+                            <select id="year" onchange="changeMonth();selectChange();" style="height:18px; border:0px solid #ccc; padding:0 2px; font-size:12px;">
+                            </select>
+                            <select id="month" onchange="selectChange();" style="height:18px; border:0px solid #ccc; padding:0 2px; font-size:12px;display:none;">
+                            </select>
+                    </span>
+                    <div class="interactivetrend_con">
+                        <div class="doctorrecommends_content">
+                        <div class="doctorrecommendschart">
+                            <div id="a" style="height:220px;width:100%;"></div>
+                        </div>
+                        <div class="bottomexplain">
+                            <p>提示：点击所选时间点互动量，可查看所选时间点热门疾病TOP15（右图联动）</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--热门疾病分析 结束--> 
+        <!--热门疾病Top15  -->
+            <div class="hotdiseasefifteen">
+                <div class="content-title">
+                    <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                    <div class="title-center">热门疾病Top15</div>
+                    <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="hotdiseasefifteen_bj">
+                    <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                    <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                    <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                    <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                    <div class="hotdiseasefifteen_con">
+                        <div class="doctorrecommends_content">
+                            <div class="doctorrecommendschart">
+                                <div id="a_a" style="height:215px;width:100%;"></div>
+                            </div>
+                            <div class="bottomexplain">
+                                <p>热门疾病TOP15</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        <!--热门疾病Top15  结束--> 
+        </div>
+        <div class="analysisofhotdiseases_main_b"> 
+        <!--	全国疾病互动分析  -->
+            <div class="nationaldisease">
+                <div class="content-title">
+                    <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                    <div class="title-center">全国疾病互动分析</div>
+                    <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="nationaldisease_bj">
+                    <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                    <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                    <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                    <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                    <div class="nationaldisease_con">
+                        <div class="doctorrecommends_content">
+                            <div class="doctorrecommendschart">
+                                <div id="map"></div>
+                            </div>
+                            <div class="bottomexplain">
+                                <p>互动量（提问数+回答数）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--	全国疾病互动分析  结束-->
+            <div class="analysisofhotdiseases_main_b_r"> 
+                <!--热门疾病Top25   -->
+                <div class="hotdiseasetwentyfive">
+                    <div class="content-title">
+                        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                        <div class="title-center">热门疾病Top25</div>
+                        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="hotdiseasetwentyfive_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="hotdiseasetwentyfive_con">
+                        <div class="doctorrecommends_content">
+                            <div class="doctorrecommendschart">
+                                <div id="map_a"></div>
+                            </div>
+                            <div class="bottomexplain">
+                            <p>所选 地区/城市 热门疾病Top25</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!--热门疾病Top25   结束-->
+                <div class="hotdiseasetwentyfive_b"> 
+                <!--热门疾病TOP10  -->
+                    <div class="hotdiseaseten">
+                        <div class="content-title">
+                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                            <div class="title-center">热门疾病TOP10</div>
+                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="hotdiseaseten_bj">
+                            <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                            <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                            <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                            <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                            <div class="hotdiseaseten_con">
+                                <div class="doctorrecommends_content">
+                                    <div class="doctorrecommendschart">
+                                            <div id="c"></div>
+                                    </div>
+                                    <div class="bottomexplain">
+                                        <p>数据总览</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--热门疾病TOP10  结束--> 
+                <!--热门科室TOP10   -->
+                    <div class="hotsectionten">
+                        <div class="content-title">
+                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                            <div class="title-center">热门科室TOP10 </div>
+                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="hotsectionten_bj">
+                            <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                            <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                            <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                            <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                            <div class="hotsectionten_con">
+                                <div class="doctorrecommends_content">
+                                <div class="doctorrecommendschart">
+                                        <div id="b"></div>
+                                </div>
+                                <div class="bottomexplain">
+                                    <p>数据总览</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--热门科室TOP10   结束--> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script src="../plug/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/echarts.js"></script>
+<script src="../js/hotIllnessFind.js"></script>
+</html>

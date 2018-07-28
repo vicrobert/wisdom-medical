@@ -1,0 +1,17 @@
+jpa.properties.hibernate.hbm2ddl.auto=none
+database.url=${driverType}:{dbType}://${host}:${port}/${db}?${parameters}
+database.username=
+database.password=
+database.driver-class-name=com.mysql.jdbc.Driver
+
+server.port=8081
+application.name=WebCrawlerService
+zookeeper.connect-string=${host}:${port}
+zookeeper.discovery.instance-host=${host}
+zookeeper.discovery.instance-port=8081
+zookeeper.discovery.root=/wm
+zookeeper.enable=true
+
+
+
+ 

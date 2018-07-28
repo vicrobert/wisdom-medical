@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行业科室布局</title>
+    <link rel="stylesheet"      media="(max-width:1920px) and (min-width:1441px)"   href="../css/baseSet.css">
+    <link type="text/css"     media="(max-width:1920px) and (min-width:1441px)"   rel="stylesheet" href="../css/dialog.css"/>
+    <link type="text/css"    media="(max-width:1920px) and (min-width:1441px)"   rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet"    media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/tree.css">
+    <link rel="stylesheet"   media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet"   media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/jquery-ui.css">
+    <link rel="stylesheet"   media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/showLoading.css">
+    <link rel="stylesheet"   media="(max-width:1920px) and (min-width:1441px)"  href="../css/public.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"   href="../css/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet"   media="(max-width:1920px) and (min-width:1441px)"  href="../css/RationalAnalysis.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"   href="../css/x-base.css">
+
+    <link rel="stylesheet"      media="(max-width:1440px)"   href="../css2/baseSet.css">
+    <link type="text/css"     media="(max-width:1440px)"   rel="stylesheet" href="../css2/dialog.css"/>
+    <link type="text/css"    media="(max-width:1440px)"   rel="stylesheet" href="../css2/icon.css">
+    <link rel="stylesheet"    media="(max-width:1440px)"  type="text/css" href="../css2/tree.css">
+    <link rel="stylesheet"   media="(max-width:1440px)"  type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet"   media="(max-width:1440px)"  type="text/css" href="../css2/jquery-ui.css">
+    <link rel="stylesheet"   media="(max-width:1440px)"  type="text/css" href="../css2/showLoading.css">
+    <link rel="stylesheet"   media="(max-width:1440px)"  href="../css2/public.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"   href="../css2/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet"   media="(max-width:1440px)"  href="../css2/RationalAnalysis.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"   href="../css2/x-base.css">
+    <style>
+    @media (max-width:1920px) and (min-width:1441px){
+        .htl{
+            height:355px;
+            width:1580px;
+            position:relative;
+        }
+        .hc{
+            width:1580px;
+        }
+        .x-b-l{
+            bottom: 11px
+        }
+        .x-b-r{
+            bottom: 11pxGBK
+        }
+    }
+    @media (max-width:1440px){
+        .htl{
+            height:266.25px;
+            width:1185px;
+            position:relative;
+        }
+        .hc{
+            width:1185px;            
+        }
+    }
+    
+    </style>
+</head>
+<body>
+<div class="main_frame">
+    <ul class="main_frame_top">
+        <li  url="html/HospitalConstructionDecisionSupport.html">展示本院建设情况</li>
+        <li class="active" url="html/RationalAnalysis.html">合理化分析</li>
+        <li url="html/IndustryOverallAnalysis.html">行业整体分析</li>
+    </ul>
+    <ul class="main_frame_analysis_tab main_frame_top_two  x-clear">
+        <li class="x-tab active" url="html/RationalAnalysis.html" >行业科室布局</li>
+        <li class="x-tab" url="html/DepartmentRationalizationAnalysis.html">科室合理化分析</li>
+    </ul>
+    <div>
+        <div class="col-12">
+            <div class="ifm-main">
+                <div class="ifm-query">
+                    <div class="ifm-query-item">
+                        <div class="ifm-query-con">
+                            <input id="searchHos" type="text" value="" placeholder="请输入医院名称" size="42"></div>
+                    </div>
+                    <div class="ifm-query-item ifm-query-btn x-btn ">
+                        <button id="searchBtn" class="x-search"> <i class=""></i>
+                            查询
+                        </button>
+                    </div>
+                    <div class="pklist x-btn">
+                        <button id="matchBtn" class=" x-pick">开始对比</button>
+                        <ul id="pklist"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 htl">
+            <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+            <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+            <div class="con-bottom-l x-b-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+            <div class="con-bottom-r x-b-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+            <div id="hospital_table_list"></div>
+        </div>
+        <!-- 
+        <div class="turnpage">
+            <div class="turnpage-l">
+                <span class="turnpage-text">共</span>
+                <span class="turnpage-l-number">10</span>
+                <span class="turnpage-text">页</span>
+                <span class="turnpage-text">第</span>
+                <span>
+                    <form>
+                        <select name="s1" class="selectpage">
+                            <option value="010" selected="selected">1</option>
+                            <option value="029">2</option>
+                            <option value="028">3</option>
+                        </select>
+                    </form>
+                </span>
+                <span class="turnpage-text">页</span>
+            </div>
+            <div class="turnpage-r">
+                <span class="turnpage-button">首页</span>
+                <span class="turnpage-button">上一页</span>
+                <span class="turnpage-num1">1</span>
+                <span class="turnpage-num">2</span>
+                <span class="turnpage-num">3</span>
+                <span class="turnpage-num">4</span>
+                <span class="turnpage-button">下一页</span>
+                <span class="turnpage-button">尾页</span>
+            </div>
+        </div>
+         -->
+        <div class="col-12 hc">
+            <div class="ifm-box">
+                <div class="pub_head">
+                    <div class="pub_head_l"><img src="../images/title_left.png" border="0" class="img" /></div>
+                    <div class="pub_head_c">医院科室布局图</div>
+                    <div class="pub_head_r"><img src="../images/title_right.png" border="0" class="img" /></div>
+                </div>
+                <div class="content-con">
+                    <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                    <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                    <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                    <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                    <div class="ifm-box-content" id="hospital_chart">
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- <ul class="main_frame_top_two">
+        <li class="active">行业科室布局</li>
+        <li>科室合理化分析</li>
+    </ul> -->
+</div>
+
+
+</body>
+</html>
+<script src="../js/echarts.js"></script>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/layer.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../js/d3.min.js"></script>
+<script type="text/javascript" src="../js/RationalAnalysis.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+

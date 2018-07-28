@@ -1,0 +1,554 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>信息采集监视-医生信息</title>
+<link href="../css/stye.css" rel="stylesheet" type="text/css">
+<link href="../css/collection.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../Swiper-4.0.7/dist/css/swiper.min.css">
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../js/time.js"></script>
+<link rel="stylesheet" href="../Swiper-4.0.7/dist/js/swiper.min.js">
+<style>
+  .Informationlist_tab ul li{
+    color: #6698ca;
+    display: block;
+    border-left: 1px solid #0874b4;
+  }
+  .Informationlist_tab ul .tabnav_current{
+    color: #1bedff;
+    background: #09346a
+  }
+  .Informationlist_tab ul li:nth-child(1){
+    border-left: 0
+  }
+  .Informationlist_tab ul li:nth-child(3){
+    padding-right: 3px
+  }
+  .Informationlisttitle{
+    display: flex;
+    background-color: rgba(6,61,123,0.5);
+  }
+  .Informationlist_list{
+    display: flex
+  }
+  .Informationlisttitle h3{
+    width: auto;
+    background-color: transparent
+  }
+  .Informationlist_list ul{
+    height: 610px;
+    overflow: hidden;
+  }
+  .swiper-wrapper{
+   transition-timing-function:  linear  ;
+  }
+  .swiper-container{
+    height: auto;
+  }
+  .ntice{
+    margin-top: 8px;
+  }
+  .ntice label{
+    margin-left: 10px
+  }
+  .systemmessage_content ul{
+    overflow: hidden;
+    height: 135px;
+  }
+  .mui-switch {
+  width: 36px;
+  height: 16px;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  user-select: none;
+  top:4px;
+  left: 5px;
+  outline: none; }
+  .mui-switch:before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); }
+  .mui-switch:checked {
+    border-color: #064281;
+    box-shadow: #064281 0 0 0 16px inset;
+    background-color: #064281; }
+    .mui-switch:checked:before {
+      left: 21px; }
+  .mui-switch.mui-switch-animbg {
+    transition: background-color ease 0.4s; }
+    .mui-switch.mui-switch-animbg:before {
+      transition: left 0.3s; }
+    .mui-switch.mui-switch-animbg:checked {
+      box-shadow: #dfdfdf 0 0 0 0 inset;
+      background-color: #064281;
+      transition: border-color 0.4s, background-color ease 0.4s; }
+      .mui-switch.mui-switch-animbg:checked:before {
+        transition: left 0.3s; }
+  .mui-switch.mui-switch-anim {
+    transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
+    .mui-switch.mui-switch-anim:before {
+      transition: left 0.3s; }
+    .mui-switch.mui-switch-anim:checked {
+      box-shadow: #064281 0 0 0 16px inset;
+      background-color: #064281;
+      transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
+      .mui-switch.mui-switch-anim:checked:before {
+        transition: left 0.3s; }
+</style>
+</head>
+
+<body>
+<div class="box-top"> 
+  <!--logo-->
+  <div class="logo"><a href="#"><img src="../images/logo.png" border="0" /></a></div>
+  <!--end logo--> 
+  <!--功能按钮区-->
+  <div class="tab">
+    <ul>
+      <li><a href="collectionofwebsites.html">采集配置管理</a></li>
+      <li class="tab_current"><a href="doctorinformation.html">信息采集监视</a></li>
+      <li><a href="Informationintegratedquery.html">信息综合查询</a></li>
+      <li><a href="../index.html">医疗大数据信息平台</a></li>
+      <li><a href="usermanagement.html">系统设置管理</a></li>
+      <div class="clear"></div>
+    </ul>
+  </div>
+  <!--end 功能按钮区--> 
+  <!--time-->
+  <div class="time"><span>2017年12月10日</span><span>星期五</span><span>12:00:00</span></div>
+  <div class="clear"></div>
+  <!--end time--> 
+</div>
+<div class="collectiontop">
+  <div class="collectiontop_left">
+    <div class="collectionsurvey">
+      <div class="content-title">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">采集概况</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-con">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table">
+          <div class="collectionsurvey_content">
+            <ul id="sampletotalnum">
+              <!--
+              <li class="doctorcollection">医生采集数：<span>320222</span></li>
+              <li class="drugcollectionnumber">药品采集数：<span>127008</span></li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="monitoringindex">
+      <div class="content-title1">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">空气质量监控指数</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-con1">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table1">
+          <div class="monitoringindex_content">
+            <div class="monitoringindex_top">
+              <div class="monitoringindex_top_left">良</div>
+              <div class="monitoringindex_top_right">
+                <p>星期一</p>
+                <p>2017年12月20日</p>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="monitoringindex_bottom">
+              <ul id="websitestatus">
+                <!-- 
+                <li> <span>良</span>
+                  <p>药监局</p>
+                </li>
+                <li> <span>良</span>
+                  <p>好大夫</p>
+                </li>
+                <li> <span>良</span>
+                  <p>39健康</p>
+                </li>
+                <li> <span>良</span>
+                  <p>就医160</p>
+                </li>
+                <li> <span>良</span>
+                  <p>寻医问药</p>
+                </li>
+                <li> <span>良</span>
+                  <p>一号店</p>
+                </li>
+                -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="systemmessage">
+      <div class="content-title1">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">系统消息</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-con1">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table1">
+          <div class="systemmessage_content">
+            <ul id="sysmessagelist">
+              <!-- 
+              <li class="error-msg">[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li class="warn-msg">[警告]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li class="error-msg">[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li class="warn-msg">[警告]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li class="error-msg">[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              -->
+            </ul>
+            <div class="ntice">
+              <label>警告<input class="mui-switch mui-switch-anim warn-switch" type="checkbox" checked></label>
+              <label>错误<input class="mui-switch mui-switch-anim error-switch" type="checkbox" checked></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="collectiontop_right">
+    <div class="Informationlist">
+      <div class="Informationlist_tab">
+        <ul id="tab">
+          <li class="tabnav_current">医生信息</li>
+          <li>药品信息</li>
+          <li>互动信息</li>
+        </ul>
+      </div>
+      <div class="content-con4">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table4">
+          <div class="Informationlist_tabbottom">
+            <div class="Informationlisttitle" id="infoTitle">
+              <h3>医生信息</h3>
+              <h3 style="display: none">药品信息</h3>
+              <h3 style="display: none">互动信息</h3>
+            </div>
+            <div class="Informationlist_list" id="infoList">
+              <ul>
+                <div class="swiper-container" id="swiper0">
+                    <div class="swiper-wrapper" id="doctorinfolist">
+                    <!-- 
+                        <div class="swiper-slide swiper-no-swiping"><li>华栋, 副主任医师  , 安庆市立医院 手外科,  暂无信息,</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>田琦, 副主任医师  , 柘城县人民医院 心血管内科,  暂无信息</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>汤洁心, , 大连市妇产医院 产科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>楼林, 副主任医师  , 浙江省人民医院 神经外科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>龙巨成, 主任药师  , 重庆市第一人民医院 药剂科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>张晓霞, 主任医师  副教授  , 吉林大学白求恩第一医院 妇产科,  妇科肿瘤和内分泌疾病、不孕症的诊治，腔镜手术及围绝经期激素替代治疗 [详细],null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>毛云清, 副主任医师  , 孝昌县人民医院 外科,  小儿腹股沟疝、精索睾丸鞘膜积液等手术,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>谭晓冬, 主任医师  教授  , 中国医科大学附属盛京医院 外科,  胰腺，肝胆疾病，甲状腺疾病，腹腔肿物，胃肠疾病，乳腺疾病及腹部急重症的诊治 [详细],null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>丘和明, 主任医师  教授  , 广州中医药大学第一附属医院 血液科,  治疗各种疑难杂症,重点研究血证、血液病。, 52年（1963年起）</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>邱冬梅, 主治医师  , 达州市中心医院 普通外科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>孟宏, 主任医师  教授  , 惠州市中心人民医院 烧伤整形手足外科,  整形,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>卢春来, 主治医师  , 复旦大学附属中山医院 胸外科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>陈树群, 主任医师  , 普宁市华侨医院 普外科,  普外科、胸腹部肿瘤、电视胸腔镜,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>余锦豪, 副主任医师  副教授  , 上海市第十人民医院 口腔科,  三叉神经痛射频治疗。,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>邹天骥, 住院医师  , 吉林市中心医院 眼科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>朱晓飞, 主治医师  , 望江县医院 外科,  前列腺疾病的腔内微创手术治疗，经皮肾镜、输尿管镜下碎石以及腹腔镜、后腹腔镜下手术 [详细],null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>李震, 主治医师  , 济南军区总医院 肾内科,  暂无信息,null</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>林福瑞, 主任医师  , 厦门大学附属福州第二医院 心胸外科,  食管、贲门、肺癌、严重胸腹伤、先天性与后天性心脏病的手术</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>袁晖, 主任医师  , 广州医科大学附属第三医院 外科门诊,  对普通外科常见疾病如甲状腺、乳腺、肝胆、胃肠等疾病的诊断与治疗。尤其擅长对结直肠肛门疾病如结直肠肿瘤、痔疮、肛瘘、肛裂等疾</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>产难产的手术操作，特别是对剖宫产再孕严重粘连的处理非常熟练。能准确处理手术并发症。在妇科方面，熟练掌握妇科常见病，多发病的诊治，熟练掌握经腹全子宫切除术，经腹次全子宫切除术，异位妊娠的诊断及手术治疗，阴式全子宫切除术，子宫颈锥形切除术。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>李慧, 副主任医师  副教授  , 武汉市第六医院 耳鼻喉科,  治疗耳部疾病，眩晕，耳鸣，分泌性中耳炎等[详细],null</li></div>
+                   -->
+                   </div>
+                </div>
+            </ul>
+            <ul style="width:0">
+                <div class="swiper-container" id="swiper1">
+                    <div class="swiper-wrapper" id="druginfolist">
+                    <!--
+                        <div class="swiper-slide swiper-no-swiping"><li>细胞色素C注射液,化学药品,2ml:15mg,注射剂,辽宁天医生物制药股份有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>麝香关节止痛膏,中药,10×6.5cm;10×7cm,橡胶膏剂,上海卫生材料厂有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>甲硝唑氯化钠注射液,化学药品,250ml:1.25g,注射剂,唐山吉祥药业有限责任公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>羟喜树碱注射液,化学药品,2ml:5mg,注射剂,远大医药黄石飞云制药有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>酮康唑乳膏,化学药品,10g:0.2g,乳膏剂,漳州片仔癀药业股份有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>癫痫平胶囊,中药,每粒装0.3g,胶囊剂,深圳市泰康制药有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>葡萄糖注射液,化学药品,500ml:25g,注射剂,青岛首和金海制药有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>开郁老蔻丸,中药,每丸重9克,丸剂(大蜜丸),河北安国药业集团有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>尼莫地平片,化学药品,30mg,片剂,上海信谊天平药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>杞菊地黄丸,中药,每丸重9g,丸剂(大蜜丸),江苏平光信谊(焦作)中药有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>吡罗昔康片,化学药品,20mg,片剂,新疆银朵兰维药股份有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>拨云眼膏,中药,每支装2g,眼用制剂,楚雄老拨云堂药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>琥乙红霉素颗粒,化学药品,按C37H67NO13计算0.125g(12.5万单位),颗粒剂,上海海虹实业(集团)巢湖今辰药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>吡罗昔康片,化学药品,20mg,片剂,江西济民可信药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>非那雄胺,化学药品,----,原料药,兴安药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>碘[125I]人促卵泡生成激素放射免疫分析药盒,生物制品,50管/盒;100管/盒,放免诊断试剂盒,原子高科股份有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>琥乙红霉素片,化学药品,按C37H67NO13计算0.125g(12.5万单位),片剂,济南恒基制药有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>跌打丸,中药,每丸重3克,丸剂(大蜜丸),内蒙古津新药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>氯霉素注射液,化学药品,1ml:0.125g,注射剂,辽宁修正生物制药有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>浓维磷糖浆,化学药品,复方,糖浆剂,安徽新和成皖南药业有限公司</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>葡萄糖酸锌片,化学药品,35mg,片剂,北京斯利安药业有限公司</li></div>
+                   -->
+                   </div>
+                </div>
+            </ul>
+            <ul style="width:0">
+                <div class="swiper-container" id="swiper2">
+                    <div class="swiper-wrapper" id="interactinfolist">
+                    <!-- 
+                        <div class="swiper-slide swiper-no-swiping"><li>指导意见：您好，腹胀常见于消化不良、慢性胃炎、慢性肠炎等胃肠道病变。生姜是温胃止呕的，健胃消食片是中成药，帮组消化的。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：可能是真菌感染吧,你如果坚持不去医院,自己用药风险会更大意见建议：您先用百多帮外用，一般效果很好，如不能控制，建议来医院就诊。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>病情分析：可能是上火，上述情况首先要注意饮食少吃辛辣油腻甜食等其次保持大便通畅及良好的精神状态口服二丁胶囊双黄连软胶囊等</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，你的情况为月经不调，规律的月经周期为28天，如果提前推迟超过一周就不正常了。多为内分泌紊乱，妇科疾病，精神因素，长期劳累等较大不能导致的。意见建议：建议去医院进行B超和性激素六项的检查明确情况后做针对性的治疗。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>你好，你的情况预科班在春运，一般情况可以月经推迟一星期左右使用早早孕检测的，也可以同房后10天左右就可以到医院验血检查的到是否怀孕的。建议根据自己的情况积极的检查就可以了，然后对症处理比较好，有问题积极的找医生就诊处理。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，这种情况属于痔疮造成的症状，可以适当服用安络血、维生素c一块治疗，建议积极治疗比较好。意见建议：平时注意保持大便通畅，避免辛辣刺激容易上火的食物就可以了，局部应用痔疮栓或痔疮膏效果会更好。希望能够帮到你</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>巧克力在平常深受年轻挚友们的热爱，它不但口感细腻甜美，并且还有很好的一股浓郁的香气。巧克力中含有一种黄酮混合物，此种物质有助于维持心脏健康，加强心液循环，以及避免造成血管阻塞，而血管阻塞可能影响心脏病或中风。吃巧克力，带来的益处</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>谭指导意见：考虑是尖锐湿疣，建议去检查，及时进行包皮手术</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：一直有月经来前胀痛，可能是乳腺增生。乳腺增生病因不明，可能和体内激素水平紊乱有关。典型临床表现是伴随月经周期的乳房胀痛。确诊乳腺增生主要通过乳腺b超和典型临床表现。意见建议：部分乳腺增生病人发病后数月至1～2年后常可自行缓解，多不需治疗。如果疼痛难忍，一般选择中药治疗，可以药店买逍遥丸吃一个月看看。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：上个月二十五号来月经，二十九号同房如果是只有这一次，那其实怀孕的几率不大意见建议：建议可以自己查尿，或如果不放心到医院查血激素，更准确的排除是否怀孕</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>病情分析：你好，跟你所描述的情况不能排除是心理问题，建议到医院先进行妇科检查以排除疾病的可能性，其次可以通过医生的心理引导达到治疗的目的</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>病情分析：你好你现在情况是月经不调。这是一种常见的妇科疾病病因可能是器质性病变或是功能失常。意见建议：建议只是2到3次可以观察暂不处理如经常性及早到医院检查确诊针对治疗长期存在可以导致绝经和生育祝你早日康复</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：两侧乳房一直发育不匀称，与发育不平衡有关，一般问题不大。左侧乳房内好像有一块硬硬的，可能有乳腺增生，建议去看医生明确一下诊断。意见建议：可以服用乳癖消等药物治疗，此外还须注意调整心态。白带可能有一些炎症了，，建议做个白带检查。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，根据你的描述你这种情况应该是急性胃肠炎。意见建议：这种情况你可以去医院检查一下，也可以吃点治疗肠胃炎的药物看看这种症状会不会好转，如果逐渐加重最好去医院检查一下。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>病情分析：您好，出血很可能是用药刺激所造成的，建议最好换药治疗，目前白带的症状是患阴道炎疾病引起的，治疗可以用洁尔阴洗液冲洗阴道，治疗阴道炎很管用，也可以用栓剂，有一种叫妇宁栓，和苦参栓，药店可以买到的，都是中药，还有如果吃药，建议不要吃抗生素，乱吃只会加重妇科病。妇炎康比较管用！</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，请问年纪多大，有无结核接触史？咳嗽否？是否验痰检查？意见建议：建议行验痰检查。有可能是结核。建议到医院就诊，明确诊断</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，人体的两个肾脏维持我们人体很多功能如代谢，循环等原因。但是如果是一个肾脏的话也是可以正常生活工作，但是它的工作压力会加大，日后产生疾病的可能性较一般人大，还要可能就是造成不育等意见建议：建议在日后定期去医院做检查，以免产生气体疾病。希望我的回答能帮助到您</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，鉴于你所说的情况，对于尿不尽一般是考虑尿路感染的可能较大。对于这种情况需要首先保持尿路的清洁干净意见建议：及时去医院行尿常规检查明确有无感染的病菌然后对症用药。注意饮食避免辛辣、刺激的食物</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：子宫内膜钙化灶往往发生于子宫肌瘤透明变性、坏死之后。由于肌瘤的血液循环障碍，钙盐被其组织成分以及其它变性物质所吸收沉积，形成“营养不良性钙化”。意见建议：建议你还是去医院定期检查并积极治疗。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>问题分析：你好，根据你描述的这种情况来看那局部皮肤出现发红也有可能是真出现了一些局部皮肤过敏最好提高一些警惕相应的检查。意见建议：给你的建议就是，你可以适当的注意好个人的皮肤卫生同时也可以适当的到，局部的皮肤科进行一个系统的检查。</li></div>
+                        <div class="swiper-slide swiper-no-swiping"><li>你好，你多是由于感冒着凉造成的上述症状，多伴有发烧症状，建议积极的服用药物进行治疗比较好。可以用三九感冒灵颗粒、克感敏颗粒、清开灵颗粒一块治疗就可以了，期间注意多补充水分，保持大便通畅，必要的时候到医院就诊治疗。</li></div>
+                   -->
+                   </div>
+                </div>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="collectionbottom">
+  <div class="realtimestatistics">
+    <div class="content-con2">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table2">
+        <h3>采集实时统计(每分钟刷新)</h3>
+        <div class="realtimestatistics_content">
+          <div  id="realtimestatistics" style="height:200px;width:'100%'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="datastatistics">
+    <div class="content-con2">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table2">
+        <h3>采集数据统计(每天刷新)</h3>
+        <div class="datastatistics_content">
+          <div id="datastatistics"  style="height:200px;width:'100%'" ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="serverstate">
+    <div class="content-con3">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table3">
+        <h3>采集 </h3>
+        <div class="serverstate_content">
+          <div id="serverstate"  style="height:200px;width:'100%'" ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<!-- commons -->
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../Swiper-4.0.7/dist/js/swiper.min.js"></script>
+<script src="../plug/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/underscore-min.js"></script>
+
+<script src="../js/echarts.js"></script>
+<script src="../js/d3.min.js"></script>
+
+<script src="../js/jquery.com.toolkit.js"></script>
+<script src="../js/jquery.tmpl.min.js"></script>
+<script src="../js/jquery.pagination.js"></script>
+
+<!-- commons -->
+<script src="../js/errorDic.js"></script>
+<script src="../js/ajaxdatacontroller.js"></script>
+<script src="../js/echartsinterface.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/echartsinterface.js"></script>
+<script src="../js/infochart.js"></script>
+<script src="../js/webspidermonitor.js"></script>
+<script>
+  var mySwiper0 = new Swiper ('#swiper0', {
+    direction: 'vertical',
+    slidesPerView: 20,
+    height:600,
+    speed:3000,
+    noSwiping:true,
+    observeParents:true,
+    observer:true,
+    // init: false,
+    autoplay: {
+      delay: 10,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+    },
+    loop:true
+  })    
+  var mySwiper1 = new Swiper ('#swiper1', {
+    direction: 'vertical',
+    slidesPerView: 20,
+    height:600,
+    speed:3000,
+    noSwiping:true,
+    observeParents:true,
+    observer:true,
+    // init: false,
+    autoplay: {
+      delay: 10,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+    },
+    loop:true
+  })    
+  var mySwiper2 = new Swiper ('#swiper2', {
+    direction: 'vertical',
+    slidesPerView: 20,
+    height:600,
+    speed:3000,
+    noSwiping:true,
+    observeParents:true,
+    observer:true,
+    // init: false,
+    autoplay: {
+      delay: 10,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+    },
+    loop:true
+  })   
+  // var msgSwiper = new Swiper ('#msg-swiper', {
+  //   direction: 'vertical',
+  //   slidesPerView: 5,
+  //   height:135,
+  //   speed:3000,
+  //   noSwiping:true,
+  //   observeParents:true,
+  //   observer:true,
+  //   // init: false,
+  //   // autoplay: {
+  //   //   delay: 10,
+  //   //   stopOnLastSlide: false,
+  //   //   disableOnInteraction: true,
+  //   // },
+  //   loop:true
+  // })    
+  var chartHandle = infoChart();
+  chartHandle.showChart();
+
+  var ali = $('#tab li')
+  var atitle = $('#infoTitle h3')
+  var ainfo = $('#infoList ul')
+  ali.on('click',function(){
+    if($(this).hasClass('tabnav_current')){
+      $(this).removeClass('tabnav_current')
+      ainfo.eq($(this).index()).css('width','0')
+      ainfo.eq($(this).index()).css('padding','0')
+      atitle.eq($(this).index()).css('display','none')
+      var w0 = ainfo.eq(0).width()+20
+      var w1 = ainfo.eq(1).width()+20
+      var w2 = ainfo.eq(2).width()+20
+      atitle.eq(0).css('width',w0)
+      atitle.eq(1).css('width',w1)
+      atitle.eq(2).css('width',w2)   
+    }else{
+      $(this).addClass('tabnav_current')
+      ainfo.eq($(this).index()).css('width','100%')
+      ainfo.eq($(this).index()).css('padding','5px 20px')
+      atitle.eq($(this).index()).css('display','block')
+      var w0 = ainfo.eq(0).width()+20
+      var w1 = ainfo.eq(1).width()+20
+      var w2 = ainfo.eq(2).width()+20
+      atitle.eq(0).css('width',w0)
+      atitle.eq(1).css('width',w1)
+      atitle.eq(2).css('width',w2)      
+      // var w = ainfo.eq($(this).index()).width()
+      // atitle.eq($(this).index()).css('width',w+40)
+    }
+  })
+  var warnBtn = $('.warn-switch')
+  var errorBtn = $('.error-switch')
+  var warnMsg = $('.warn-msg')
+  var errorMsg = $('.error-msg')
+  warnBtn.click(function(){
+    var isShow =  warnBtn.prop('checked')
+    if(!isShow){
+      warnMsg.css('display','none')
+    }else{
+      warnMsg.css('display','block')
+    }
+  })
+  errorBtn.click(function(){
+    var isShow =  errorBtn.prop('checked')
+    if(!isShow){
+      errorMsg.css('display','none')
+    }else{
+      errorMsg.css('display','block')
+    }
+  })
+</script>
+</html>

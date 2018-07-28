@@ -1,0 +1,42 @@
+<thead>
+    <tr>
+        <th></th>
+        {{each(i,val) xaxis}}
+            <th>{{= val}}</th>
+        {{/each}}
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th>${type[0]}</th>
+        {{each(i,val) date[0]}}
+            <td>{{= val}}</td>
+        {{/each}}
+    </tr>
+    <tr>
+        <th>${type[1]}</th>
+        {{each(i,val) date[1]}}
+            <td>{{= val}}</td>
+        {{/each}}
+    </tr>
+    <tr>
+        <th>差值</th>
+        {{each(i,val) date[2]}}
+            {{if val.ud == '+'}}
+                <td style="color:#058FCD;">{{= val.num}}</td>
+            {{else val.ud == '-'}}
+                <td style="color:#C00000;">{{= val.num}}</td>
+            {{/if}}
+        {{/each}}
+    </tr>
+    <tr>
+        <th>同比</th>
+        {{each(i,val) date[3]}}
+            {{if val.ud == '+'}}
+                <td style="color:#058FCD;">{{= val.num}}%</td>
+            {{else val.ud == '-'}}
+                <td style="color:#C00000;">{{= val.num}}%</td>
+            {{/if}}
+        {{/each}}
+    </tr>
+</tbody>

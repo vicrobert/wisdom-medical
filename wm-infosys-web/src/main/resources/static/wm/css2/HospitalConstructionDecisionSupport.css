@@ -1,0 +1,143 @@
+html,body{
+    width: 100%;
+    height:100%;
+    overflow: auto;
+}
+.main_frame{
+    width: 100%;
+    height: 100%;
+    padding-left: 28.5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.main_frame_top{
+    width: 512.5px;
+    border: 1px solid #0e5283;
+    overflow: hidden;
+    border-radius: 22.5px;
+    margin-top:19.5px;
+}
+.main_frame_top li {
+    float: left;
+    width: 170px;
+    height: 30px;
+    text-align: center;
+    line-height:30px;
+    font-size: 16px;
+    color: #6594c3;
+    cursor: pointer;
+}
+.main_frame_top li:nth-child(2){
+    border-left: 1px solid #0e5283;
+    border-right: 1px solid #0e5283;
+}
+.main_frame_top li.active{
+    color: #1bedff;
+}
+.main_frame_body_t{
+    width: 100%;
+    height: 330px;
+    margin-top: 15px;
+    overflow:  hidden;
+}
+.main_frame_body_t>li{
+    float: left;
+}
+.main_frame_body_t>li:nth-child(1){
+    width:375px;
+    height:322.5px;
+}
+.main_frame_body_t>li:nth-child(2){
+    width:228px;
+    height:322.5px;
+    margin-left:15px;
+}
+.main_frame_body_t>li:nth-child(3){
+    width:229.5px;
+    height:322.5px;
+    margin-left:15px;
+}
+.main_frame_body_t>li:nth-child(4){
+    width:306px;
+    height:322.5px;
+    margin-left:15px;
+}
+
+.deptCircle{
+   width:375px;
+   height: 285px;
+   background-color:rgba(8,21,56,0.8);
+   position: relative;
+}
+.detailInfo{
+    width:228px;
+    height:285px;
+}
+.hosScoreInfo{
+    width:229.5px;
+    height:285px;
+}
+.hosDetailInfo{
+    width:229.5px;
+    height:285px;
+}
+.selfDeptPositionPercentChart{
+    width:375px;
+    height:285px;
+}
+.selfDeptPositionPercentDetailChart{
+    width:306px;
+    height:285px;
+}
+.selfDeptStructureChart{
+    width:474px;
+    height:285px;
+}
+
+
+.bg_pub{
+    background-color:rgba(8,21,56,0.8) !important;
+    border: 1px solid #0d4675;
+}
+.main_frame_body_b{
+    width: 100%;
+    height: 337.5px;
+    margin-top: 0px;
+}
+.main_frame_body_b>li:nth-child(1){
+    float: left;
+    width:375px;
+    height:322.5px;
+}
+.main_frame_body_b>li:nth-child(2){
+    float: left;
+    width:306px;
+    height:322.5px;
+    margin-left:15px;
+}
+.main_frame_body_b>li:nth-child(3){
+    float: left;
+    width:474px;
+    height:322.5px;
+    margin-left:15px;
+}
+.selectSelfHospital{
+    margin-top:7.5px;
+    width: 225px;
+    height:22.5px;
+    line-height:22.5px;
+    color: #035eb8;
+    padding-left:11.25px;
+    border: 1px solid #0d416e;
+    background-color: transparent;
+    border-radius: 11.25px;
+}
+
+
+/* x style */
+
+.main_frame_top li.active {
+    color: #1bedff;
+    background: #09346a;
+}

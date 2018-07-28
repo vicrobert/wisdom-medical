@@ -1,0 +1,14 @@
+[Unit]
+Description=Internet Medical Service
+After=mysqld.service zk.service
+
+[Service]
+Type=forking
+ExecStart=/usr/local/wisdom_medical/internet_medical_service/bin/internet-medical-service start
+ExecStop=/usr/local/wisdom_medical/internet_medical_service/bin/internet-medical-service stop
+WorkingDirectory=/usr/local/wisdom_medical/internet_medical_service/bin
+PIDFile=/var/run/wisdom_medical/internet-medical-service.pid
+TimeoutSec=120
+
+[Install]
+WantedBy=multi-user.target

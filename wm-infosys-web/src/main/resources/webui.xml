@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for WisdomMedicalApplicationTests.java using only -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="internet-medical-webui"/>
+    <dubbo:registry protocol="zookeeper" address="zookeeper://192.168.33.230:2181"/>
+    <dubbo:reference id="internetMedicalService" interface="com.isoft.wm.infosys.api.InternetMedicalService" />
+    <dubbo:reference id="diseaseService" interface="com.isoft.wm.infosys.api.DiseaseService" />
+</beans>
+ 

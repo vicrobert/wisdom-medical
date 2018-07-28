@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<title>医疗疾病分析-疾病同期对比分析</title>
+</head>
+<body>
+  <div class="main_right">
+    <div class="querycriteria">
+      <div class="querycriteria_left">
+        <p> <span>疾病</span>
+          <input class="diseaseinputbox" type="text" onfocus="this.value=''" value="急性肠炎" >
+        </p>
+        <p> <span>类型</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>门诊</option>
+            <option>住院</option>
+          </select>
+        </p>
+        <p> <span>社区</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>桂溪</option>
+            <option>石羊</option>
+            <option>合作</option>
+            <option>西园</option>
+            <option>中和</option>
+            <option>肖家河</option>
+            <option>芳草</option>
+          </select>
+        </p>
+        <p> <span>年份</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+            <option>2012</option>
+          </select>
+        </p>
+        <p> <span>展示类型</span>
+          <select class="selecthospital">
+            <option selected="selected">月份</option>
+            <option>季度</option>
+          </select>
+        </p>
+      </div>
+      <div class="querycriteria_search">
+        <input class="querycriteria_query" value="搜索" type="button">
+      </div>
+    </div>
+    <!--疾病同期对比分析-->
+    <div class="diseasecontrast">
+      <div class="content-title">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">疾病同期对比分析</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="diseasecontrast_bj">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="diseasecontrast_con">
+          <div class="doctorrecommends_content">
+            <div class="doctorrecommendschart"><img src="../images/diseasecontrast.png"></div>
+            <div class="listinformation">
+              <table align="center" width="100%" cellpadding="0" cellspacing="0">
+                <tr class="table-title">
+                  <th height="38" align="center"></th>
+                  <th align="center">1月</th>
+                  <th align="center">2月</th>
+                  <th align="center">3月</th>
+                  <th align="center">4月</th>
+                  <th align="center">5月</th>
+                  <th align="center">6月</th>
+                  <th align="center">7月</th>
+                  <th align="center">8月</th>
+                  <th align="center">9月</th>
+                  <th align="center">10月</th>
+                  <th align="center">11月</th>
+                  <th align="center">12月</th>
+                </tr>
+                <tr class="table-con" onmouseover="this.className='table-con1'" onmouseout="this.className='table-con'">
+                  <td height="38" align="center" style="color: #6698ca;">2015</td>
+                  <td align="center">113314</td>
+                  <td align="center">102623</td>
+                  <td align="center">109951</td>
+                  <td align="center">107724</td>
+                  <td align="center">112322</td>
+                  <td align="center">3251</td>
+                  <td align="center">112729</td>
+                  <td align="center">112366</td>
+                  <td align="center">111370</td>
+                  <td align="center">65375</td>
+                  <td align="center">0</td>
+                  <td align="center">0</td>
+                </tr>
+                <tr class="table-con" onmouseover="this.className='table-con1'" onmouseout="this.className='table-con'">
+                  <td height="38" align="center" style="color: #6698ca;">2014</td>
+                  <td align="center">111791</td>
+                  <td align="center">101925</td>
+                  <td align="center">112668</td>
+                  <td align="center">110234</td>
+                  <td align="center">113456</td>
+                  <td align="center">110148</td>
+                  <td align="center">114295</td>
+                  <td align="center">113034</td>
+                  <td align="center">109917</td>
+                  <td align="center">113699</td>
+                  <td align="center">109206</td>
+                  <td align="center">111338</td>
+                </tr>
+                <tr id="differentcolors" class="table-con" onmouseover="this.className='table-con1'" onmouseout="this.className='table-con'">
+                  <td height="38" align="center" style="color:#6698ca;">差值</td>
+                  <td class="differentcolor" align="center">1523</td>
+                  <td class="differentcolor" align="center">698</td>
+                  <td align="center">2717</td>
+                  <td align="center">2510</td>
+                  <td align="center">1134</td>
+                  <td align="center">106897</td>
+                  <td align="center">1566</td>
+                  <td align="center">668</td>
+                  <td class="differentcolor" align="center">1453</td>
+                  <td align="center">48324</td>
+                  <td align="center">109206</td>
+                  <td align="center">111338</td>
+                </tr>
+                <tr id="differentcolors" class="table-con" onmouseover="this.className='table-con1'" onmouseout="this.className='table-con'">
+                  <td height="38" align="center" style="color:#6698ca;">同比</td>
+                  <td class="differentcolor" align="center">1.36%</td>
+                  <td class="differentcolor" align="center">0.68%</td>
+                  <td align="center">2.41%</td>
+                  <td align="center">2.28%</td>
+                  <td align="center">1.00%</td>
+                  <td align="center">97.05%</td>
+                  <td align="center">1.37%</td>
+                  <td align="center">0.59%</td>
+                  <td class="differentcolor" align="center">1.32%</td>
+                  <td align="center">42.50%</td>
+                  <td align="center">100.00%</td>
+                  <td align="center">100.00%</td>
+                </tr>
+              </table>
+            </div>
+            <div class="bottomexplain">
+              <p>将疾病就诊量与同时间段、同区域等维度进行对比</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end 疾病同期对比分析--> 
+  </div>
+</body>
+</html>

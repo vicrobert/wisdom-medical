@@ -1,0 +1,30 @@
+.pub_head{
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.pub_head_l{
+    width: 16px;
+    height:38px;
+    float: left;
+    display: inline-block;
+    background:url("../images/title_left.png")no-repeat;
+}
+.pub_head_c{
+    width:130px;
+    height: 28px;
+    margin-top: 5px;
+    float: left;
+    display: inline-block;
+    background-color: #074383;
+    color: #00a6fb;
+    text-align: left;
+    line-height:28px;
+    font-size:16px;
+}
+.pub_head_r{
+    width: 16px;
+    height:38px;
+    float: left;
+    display: inline-block;
+    background:url("../images/title_right.png")no-repeat;
+}

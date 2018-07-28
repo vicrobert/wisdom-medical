@@ -1,0 +1,61 @@
+.panel-header {
+    line-height: 30px;
+    background: none;
+    color: #fff;
+}
+.panel-tool {
+    display: none;
+}
+.panel-title {
+    background: none;
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+    height: inherit;
+    line-height: inherit;
+}
+.panel-header, .panel-body {
+    border: none;
+}
+.datagrid-header, .datagrid-toolbar, .datagrid-pager, .datagrid-footer-inner {
+    background: none;
+    border: none;
+}
+.datagrid-htable, .datagrid-btable, .datagrid-ftable {
+    color: #000000;
+    border-collapse: collapse;
+    border: none;
+}
+.panel-noscroll {
+    margin-top: 10px;
+}
+#right_ifm .panel-noscroll{
+    margin-top: 0;
+    padding-left: 10px;
+}
+.datagrid-header td, .datagrid-body td, .datagrid-footer td {
+    border: none;
+    padding: 10px 0;
+}
+.datagrid-header {
+    margin-bottom: 5px;
+}
+.datagrid-header .datagrid-cell span {
+    font-size: 14px;
+    font-style: italic;
+}
+.datagrid-row {
+    border-bottom: 1px solid #efefef;
+}
+.datagrid .datagrid-pager {
+    border-top: 1px solid #ddd;
+}
+.datagrid-toolbar .l-btn-plain, .datagrid-toolbar .l-btn-plain:hover {
+    border-radius: initial;
+    margin: 0 0 7px 28px;
+    background: #058FCD;
+    border: none;
+    filter: none;
+    color: #FFF;
+    padding: 5px 20px 5px 0;
+}

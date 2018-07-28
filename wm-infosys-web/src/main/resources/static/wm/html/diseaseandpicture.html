@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<title>医疗疾病分析-疾病关联与画像分析</title>
+</head>
+<body>
+
+  <div class="main_right">
+    <div class="querycriteria">
+      <div class="querycriteria_left">
+        <p> <span>疾病</span>
+          <input class="diseaseinputbox" type="text" onfocus="this.value=''" value="急性肠炎" >
+        </p>
+        <p> <span>类型</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>门诊</option>
+            <option>住院</option>
+          </select>
+        </p>
+        <p> <span>时间</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+            <option>2012</option>
+          </select>
+        </p>
+        <p> <span>季节</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>春</option>
+            <option>夏</option>
+            <option>秋</option>
+            <option>冬</option>
+          </select>
+        </p>
+        <p> <span>社区</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>桂溪</option>
+            <option>石羊</option>
+            <option>合作</option>
+            <option>西园</option>
+            <option>中和</option>
+            <option>肖家河</option>
+            <option>芳草</option>
+          </select>
+        </p>
+        <p> <span>性别</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>男</option>
+            <option>女</option>
+          </select>
+        </p>
+        <p> <span>年龄段</span>
+          <select class="selecthospital">
+            <option selected="selected">全部</option>
+            <option>0-16岁</option>
+            <option>17-30岁</option>
+            <option>31-45岁</option>
+            <option>46-60岁</option>
+            <option>60岁以上</option>
+          </select>
+        </p>
+        <p> <span>职业</span>
+          <select class="selecthospital occupation">
+            <option selected="selected">全部</option>
+            <option>军人</option>
+            <option>行政</option>
+            <option>教师</option>
+            <option>工程师</option>
+            <option>设计师</option>
+            <option>架构师</option>
+          </select>
+        </p>
+      </div>
+      <div class="querycriteria_search">
+        <input class="querycriteria_query" value="查询" type="button">
+      </div>
+    </div>
+    <!--疾病关联分析-->
+    <div class="diseaseassociation diseaseandpictureleft">
+      <div class="content-title">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">疾病关联分析</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="diseaseandpicture_bj">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="diseaseandpicture_con">
+          <div class="doctorrecommends_content">
+            <div class="doctorrecommendschart"><img src="../images/diseaseassociation_01.png"></div>
+            <div class="bottomexplain">
+              <p>对疾病发病的时间、季节、性别、年龄、职业关联程度的分析</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end 疾病关联分析--> 
+    <!-- 疾病画像（心脏病）-->
+    <div class="pictureofdisease">
+      <div class="content-title">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">疾病画像（心脏病）</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="diseaseandpicture_bj">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="diseaseandpicture_con">
+          <div class="doctorrecommends_content">
+            <div class="doctorrecommendschart"><img src="../images/pictureofdisease.png"></div>
+            <div class="bottomexplain">
+              <p>综合为疾病进行发病人群、发病季节、发病时间等信息的画像</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!--end  疾病画像（心脏病）--> 
+  </div>
+  <!--end content--> 
+</body>
+</html>

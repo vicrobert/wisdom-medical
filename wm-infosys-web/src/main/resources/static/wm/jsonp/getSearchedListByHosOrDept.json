@@ -1,0 +1,5 @@
+{"total":1104,"rows":[{"id":"1","name":"复旦大学附属肿瘤医院","city":"上海","province":"上海","area":"华东","level":"三甲","score":2,"profiles":"-","address":"中国上海市徐汇区田林宜山路600号","lng":"91.13316","lat":"29.663637","dept_num":26,"doc_num":76},
+{"id":"2","name":"上海交通大学医学院附属瑞金医院","city":"上海","province":"上海","area":"华东","level":"三甲","score":2,"profiles":"-","address":"中国上海市闸北区延长中路301号","lng":"101.81112","lat":"36.62518","dept_num":40,"doc_num":180},
+{"id":"3","name":"上海中医药大学附属曙光医院","city":"上海","province":"上海","area":"华东","level":"三甲","score":2,"profiles":"-","address":"中国上海市杨浦区长海路168号","lng":"101.76914","lat":"36.628517","dept_num":26,"doc_num":126},
+{"id":"4","name":"上海仁爱医院","city":"上海","province":"上海","area":"华东","level":"三甲","score":2,"profiles":"-","address":"中国上海市虹口区海宁路100号","lng":"101.78933","lat":"36.620358","dept_num":29,"doc_num":69},
+{"id":"5","name":"上海长海医院","city":"上海","province":"上海","area":"华东","level":"三甲","score":2,"profiles":"-","address":"中国上海市徐汇区漕溪路133号","lng":"101.79245","lat":"36.606735","dept_num":10,"doc_num":51}]}

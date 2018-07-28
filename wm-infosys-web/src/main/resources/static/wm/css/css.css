@@ -1,0 +1,1214 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{ 
+	width:100%; 
+	height:100%;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td {
+	margin:0;padding:0;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	margin:0;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+body{
+    margin:0;
+    padding:0;
+    width:1920px;
+    height:1080px;
+    overflow: hidden;
+	font-family: '微软雅黑','arial';
+    background:url('../images/bj.png') 0 0 no-repeat;
+}
+input{
+	outline:none;
+	border: 0;
+	vertical-align: middle;
+	cursor:pointer;
+}
+ul li { 
+	list-style: none; 
+}
+a { 
+	text-decoration: none; 
+	transition: all .1s linear 
+}
+img { 
+	border: none;
+}
+.clear { 
+	clear: both;
+}
+
+
+.box{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.box-top{
+    background:url('../images/top_bj.png') 0 0 no-repeat;
+    width:100%;
+    height:76px;
+    position: relative;
+    text-align: center;
+}
+
+/* top */
+.tab{
+    position:absolute;
+    width:500px;
+    height:52px;
+    top:10px;
+    left:22px;
+    overflow: hidden;
+}
+.tab ul li{
+	float: left;
+	width:185px;
+    height:52px;
+	line-height: 52px;
+	text-align: center;
+    font-size: 16px;
+	background:url('../images/internetservices.png') 0 0 no-repeat;
+    overflow:hidden;
+    
+}
+.tab ul li a{
+	color:#6698ca;	
+	display: block;
+}
+.tab ul li a:hover{
+	color:#1bedff;	
+	background:url('../images/regionalmedicalservice.png') 0 0 no-repeat;
+}
+.tab ul li.tab-l a{
+	color:#1bedff;
+    background:url('../images/regionalmedicalservice.png') 0 0 no-repeat;
+}
+.logo{
+    width:381px;
+    height:36px;
+    overflow: hidden;
+    margin:0 auto 0 auto;
+    padding:18px 0 0 0;
+}
+.time{
+    position: absolute;
+    right:20px;
+    height:76px;
+    line-height: 76px;
+    top:0;
+    font-size: 18px;
+    color:#47cdfe;
+    text-align: right;
+}
+.time span{
+	margin: 0 8px;
+}
+/* 左侧导航 */
+.leftnav{
+    width:14%;
+    float:left;
+    height:100%;
+	background-color:rgba(255,255,255,0.02);
+    overflow: hidden;
+}
+.leftnav-con{
+    width:100%;
+    margin-left:22px;
+}
+.leftnav-con ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+.leftnav-con ul li{
+	padding-left: 40px;
+    height:40px;
+	line-height: 40px;
+}
+.leftnav-con ul li a{
+    background:none;
+    font-size: 16px;
+    color:#6698ca;
+    text-align: left;
+}
+.leftnav-con ul li a:hover{
+	color:#1bedff;
+}
+.leftnav-con ul li.select a{
+    color:#1bedff;
+}
+.leftnav-con img{
+	margin-right:8px;
+}
+.title{
+    margin:20px 0 0 0;
+    background:url('../images/Internetmeticaltreatment_bj.png') 0 0 no-repeat;
+    font-size: 18px;
+    color:#1bedff;
+    text-align: left;
+}
+/* 标题样式 */
+.content-title{
+	margin-bottom:8px;
+}
+.title-left{
+    float:left;
+}
+.title-center{
+	background-color:#084482;
+    float:left;
+    font-size: 16px;
+	margin-top: 5px;
+	height:28px;
+    line-height:28px;
+    color:#00a6fb;
+    font-family: '微软雅黑','arial';
+    min-width:100px;
+	padding: 0 12px 0 10px;
+}
+.title-right{
+    float:left;
+}
+/* 四个角标样式 */
+.con-top-l{
+    width:18px;
+    height:18px;
+    position:absolute;
+    left:0;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+.con-top-r{
+    width:18px;
+    height:18px;
+    position:absolute;
+    right:0;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+.con-bottom-l{
+    width:18px;
+    height:18px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+.con-bottom-r{
+    width:18px;
+    height:18px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+/***********右侧公用**************/
+.main_right{
+	width: 83%;
+	float: left;
+	margin:20px 0 0 40px;
+}
+.doctorrecommends,.antisepticdruguse,.drugsource,.drugcategory,.antibioticdrugs
+,.diseaseassociation,.pictureofdisease,.outpatientdoseofdisease,.seasonalepidemic
+,.sexofthedisease,.interactivetrend,.hotdiseasefifteen,.nationaldisease,.analysisofhotdiseases_main_b_r
+,.hotdiseaseten,.hotsectionten{
+	float: left;
+}
+/***********疾病疗效分析**************/
+/**医生推荐背景**/
+.diseaseeffect_t{}
+.diseaseeffect_b{
+	margin-top: 28px;
+}
+.doctorrecommends_bj{
+	width:1074px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.doctorrecommends_con{
+    height:400px;
+    border:1px solid #0d4472;
+}
+.doctorrecommends_content{
+	width: 100%;
+}
+.doctorrecommendschart{
+	width: 98%;
+	padding-top:2%;
+	margin: 0 auto;
+}
+.bottomexplain{
+	position: absolute;
+	bottom:0; 
+	width: 100%;
+	height: 40px;
+	background-color:rgba(0,166,251,0.2);
+}
+.bottomexplain p{
+	font-size: 14px;
+	line-height: 40px;
+	padding-left: 20px;
+	color: #00a6fb;
+}
+/**抗菌药物使用强度背景**/
+.antisepticdruguse{
+	margin-left: 20px;
+}
+.antisepticdruguse_bj{
+	width:480px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.antisepticdruguse_con{
+    height:400px;
+    border:1px solid #0d4472;
+}
+/*****药品来源分布背景*******/
+.drugsource_bj{
+	width:518px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.drugsource_con{
+    height:400px;
+    border:1px solid #0d4472;
+}
+/**药品来源分布、药品类别分布背景**/
+.drugcategorymiddle{
+	margin: 0 19px;
+}
+.drugsource_bj{
+	width:528px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.drugsource_con{
+    height:400px;
+    border:1px solid #0d4472;
+}
+
+/**抗生素药品使用比例背景**/
+.antibioticdrugs{
+}
+.antibioticdrugs_bj{
+	width:480px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.antibioticdrugs_con{
+    height:400px;
+    border:1px solid #0d4472;
+}
+
+/***********疾病关联与画像分析**************/
+/** 疾病关联分析/疾病画像（心脏病）背景**/
+.diseaseandpictureleft{
+	margin-right: 30px;
+}
+.diseaseandpicture_bj{
+	width:780px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.diseaseandpicture_con{
+    height:600px;
+    border:1px solid #0d4472;
+}
+.querycriteria{
+	width: 100%;
+	height: 50px;
+	font-size: 14px;
+	margin-bottom: 20px;
+	background-color:rgba(7,67,131,0.15);
+	border: 1px solid #0d315c;
+}
+.querycriteria_left{
+	float: left;
+	margin: 8px 10px 0 4px;
+	height: 32px;
+	line-height: 32px;
+	border: 1px solid #0d315c;
+	border-radius:5px;
+}
+.querycriteria_search{
+	margin-top: 8px;
+    float: left;
+    border-radius: 5px;
+	padding-left:16px;
+    height: 32px;
+	width: 60px;
+    background: #094483;
+    line-height: 36px;
+}
+.querycriteria_query {
+	display: block;
+    cursor: pointer;
+    height: 32px;
+    outline: none;
+    color: #6698ca;
+	padding-left: 20px;
+    background: url(../images/search.png)left center no-repeat;
+}
+.querycriteria_left p{
+	float: left;
+}
+.querycriteria_left p span{
+	float: left;
+	padding: 0 10px;
+	color: #1765b1;
+	background-color:rgba(9,68,131,0.5);
+}
+.selecthospital{
+	width:84px;
+	float: left;
+	padding-left: 5px;
+    border:none;
+	background-color:transparent;
+    color:#1765b1;
+    line-height: 32px;
+    height:32px;
+    outline: none;
+}
+.occupation{
+	width: 120px;
+}
+.diseaseinputbox{
+	width: 240px;
+	height: 32px;
+	color: #6698ca;
+	padding-left: 3px;
+	background-color: transparent;
+}
+/***********疾病同期对比分析**************/
+/** 疾病同期对比分析**/
+.diseasecontrast{
+	
+}
+.diseasecontrast_bj{
+	width:100%;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.diseasecontrast_con{
+    height:710px;
+    border:1px solid #0d4472;
+}
+
+/* 弹窗右侧表格  */
+.diseasecontrast .listinformation{
+	width:96%;
+	margin: 0 auto;
+	margin-top: 20px;
+	border: 1px solid #0d4472;
+}
+.table-title{
+    background:#0a2f5d;
+    font-size: 14px;
+    color:#00a6fb;
+    font-weight: normal;
+}
+.table-con,.table-con1{
+    background:none;
+    font-size: 14px;
+    color:#1765b1;
+    font-weight: normal;
+}
+.table-con1{
+    background:#0a3261;
+}
+
+.differentcolor{
+	color: #8eb4da;
+}
+#differentcolors{
+	color: #06939f;
+}
+/***********疾病分析与预测**************/
+/** 分类选项**/
+.classificationoptions{
+	width: 99%;
+	border: 1px solid #0d3664;
+	background-color:rgba(9,68,131,0.5);
+}
+.option ul li{
+	height: 36px;
+	line-height: 36px;
+	font-size: 14px;
+	padding-left: 10px;
+	margin: 5px;
+	color: #1765b1;
+	border-bottom: 1px dashed #0d4472;
+}
+.option ul li a{
+	color: #1765b1;
+	padding: 4px 16px;
+}
+.option ul li a:hover{
+	color: #00a6fb;
+	border-radius: 2px;
+	background: #094483;
+}
+.option .option_nav a{
+	color: #00a6fb;
+	border-radius: 4px;
+	background: #094483;
+}
+.option ul li .optiontitle{
+	margin-right: 10px;
+}
+
+.analysisandprediction_main{
+	margin: 15px 15px 0 0;
+}
+/** 疾病门诊量分析**/
+.outpatientdoseofdisease_bj{
+	width:588px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.outpatientdoseofdisease_con{
+    height:300px;
+    border:1px solid #0d4472;
+}
+/** 季节流行疾病预测**/
+.seasonalepidemic{
+	margin: 0 20px;
+}
+.seasonalepidemic_bj{
+	width:548px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.seasonalepidemic_con{
+    height:300px;
+    border:1px solid #0d4472;
+}
+/** 疾病性别分布**/
+.sexofthedisease_bj{
+	width:400px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.sexofthedisease_con{
+    height:300px;
+    border:1px solid #0d4472;
+}
+/***********热门疾病分析**************/
+/**互动趋势分析**/
+.interactivetrend_bj,.hotdiseasefifteen_bj{
+	width:780px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.interactivetrend_con,.hotdiseasefifteen_con{
+    height:280px;
+    border:1px solid #0d4472;
+}
+/**热门疾病Top15 **/
+.hotdiseasefifteen{
+	margin-left: 20px;
+}
+/**全国疾病互动分析 **/
+.analysisofhotdiseases_main_b{
+	margin-top: 20px;
+}
+.nationaldisease_bj{
+	width:780px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.nationaldisease_con{
+    height:530px;
+    border:1px solid #0d4472;
+}
+.analysisofhotdiseases_main_b_r{
+	width: 780px;
+	margin-left: 20px;
+}
+/**热门疾病Top25  **/
+.hotdiseasetwentyfive_bj{
+	width:780px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.hotdiseasetwentyfive_con{
+    height:228px;
+    border:1px solid #0d4472;
+}
+/**热门疾病TOP10   **/
+.hotdiseasetwentyfive_b{
+	margin-top: 22px;
+}
+.hotdiseaseten_bj,.hotsectionten_bj{
+	width:380px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.hotdiseaseten_con,.hotsectionten_con{
+    height:228px;
+    border:1px solid #0d4472;
+}
+.hotsectionten{
+	margin-left: 20px;
+}
+/***********医生互联网行为分析**************/
+/**互联网医疗资源分析**/
+.doctorsInternet_querycriteria{
+	width: 100%;
+    height:42px;
+	padding-top:8px;
+    background-color: rgba(0,166,251,0.2);
+}
+.hospitalinquiries{
+	width: 99%;
+	line-height: 32px;
+	font-size: 14px;
+	color: #00a6fb;
+	float: left;
+}
+.hospitalsearch,.doctorselection,.hospitalinquiries_query{
+	float: left;
+}
+.hospitalinquiries_query{
+	background: #094483;
+	border-radius: 5px; 
+	margin: 0 8px;
+	padding: 0 15px;
+}
+.doctorselection input{
+	margin: 0 5px;
+}
+.hospitalinquiries p{
+	width: 18%;
+	line-height: 32px;
+	color: #1bedff;
+	float: right;	
+}
+.hospitalinquiries span{
+	margin: 0 8px;
+	color: #00a6fb;
+}
+.hospitalinquiries .diseaseinputbox{
+	width: 240px;
+	height: 32px;
+	color: #6698ca;
+	padding-left: 3px;
+	border-radius: 5px;
+	border:1px solid #0d4472;
+	background-color: transparent;
+}
+.internetmedicaltreatment_bj{
+	width:100%;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.internetmedicaltreatment_con{
+    height:100%;
+    border:1px solid #0d4472;
+}
+.Hospitalstructuremap{
+	width: 960px;
+	float: left;
+}
+.doctorintroduction{
+	width:540px;
+	height: 740px;
+	margin:20px;
+	padding: 20px;
+	overflow :auto;
+	background-color:rgba(8,21,56,0.8);
+	border:1px solid #0d4472;
+	float: right;
+}
+.hospitalintroduction{
+	margin-top: 20px;
+}
+.hospitalintroduction h3{
+	font-size:48px;
+	color: #1bedff;
+}
+.hospitalintroduction span{
+	font-size: 30px;
+	color: #00a6fb;
+	margin-left: 10px;
+}
+.hospitalintroduction p{
+	font-size: 14px;
+	color: #1765b1;
+	line-height: 26px;
+}
+.begoodat,.gotothehospital,.doctorpatientinteraction{
+	margin: 20px 0;
+}
+.begoodat h3{
+	font-size: 20px;
+	line-height: 30px;
+	color: #00a6fb;
+}
+.begoodat p{
+	font-size: 14px;
+	line-height: 26px;
+	color: #1765b1;
+}
+.gotothehospital h3{
+	font-size:16px;
+	line-height: 30px;
+	color: #00a6fb;
+}
+.gotothehospital ul li{
+	font-size: 14px;
+	background: url(../images/spot.png) left center no-repeat;
+	padding-left: 15px;
+	line-height: 26px;
+	color: #1765b1;
+}
+.doctorpatientinteraction h3{
+	font-size: 26px;
+	color: #00a6fb;
+}
+.doctorpatientinteraction ul li{
+	height: 50px;
+	margin: 16px 0;
+}
+.headportrait{
+	width:50px;
+	height:50px;
+	border-radius: 100px;
+	float: left;
+	background-color: #093770;
+}
+.headimageright{
+	float: left;
+	color: #1765b1;
+	font-size: 12px;
+	line-height: 20px;
+	margin:6px 0 0 15px;
+}
+.headimageright h4{
+	font-size: 16px;
+	color: #00a6fb;
+}
+
+/*默认滚动条样式*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: 0px 0px 3px #06315d inset;
+    border-radius: 10px;
+    background: #06315d;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #1765b1;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1765b1;
+}
+/*****************弹窗背景********************/
+.popup{
+	width: 99%;
+	height: 96%;
+	margin: 0 auto;
+}
+.popup_bj{
+	width:98%;
+	margin: 0 auto;
+	padding-top: 1%;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.popup_con{
+    height:98%;
+    border:1px solid #0d4472;
+}
+.popup_title{
+	width: 100%;
+	height: 40px;
+	background-color:rgba(7,67,131,0.2);
+	border-bottom: 1px solid #082f63;
+}
+.popup_title h3{
+	float: left;
+	line-height: 40px;
+	font-size: 18px;
+	color: #1bedff;
+	padding-left: 20px;
+}
+.closepic,.closepic1{
+	float: right;
+	margin: 5px 20px 0 0;
+    cursor:pointer;
+    width:29px;
+    height:29px;
+    background: url('../images/close.png') 0 0 no-repeat;
+}
+.closepic1{
+    background: url('../images/backpage1.png') 0 0 no-repeat;
+}
+.hospitalinformation_left{
+	width:1280px;
+	float: left;
+}
+.hospital{
+	padding: 20px 0 20px 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px dashed #082f63 !important;
+}
+.hospital_pic{
+	width: 220px;
+	height: 140px;
+	float: left;
+}
+.hospital_briefintroduction{
+	width: 1010px;
+	float: left;
+	margin-left: 20px;
+}
+.hospital_briefintroduction h3{
+	font-size: 16px;
+	color: #1bedff;
+	line-height: 30px;
+}
+.hospital_briefintroduction h3 span{
+	font-size: 14px;
+	color: #ff7f00;
+	margin-left: 5px;
+}
+.hospital_briefintroduction ul li{
+	font-size: 14px;
+	color: #1765b1;
+	line-height: 24px;
+}
+.hospital_briefintroduction span{
+	margin-left: 5px;
+}
+.hospital_briefintroduction .telephone{
+	color: #6698ca;
+}
+.hospital_briefintroduction .website{
+	color: #1bedff;
+}
+
+/****科室***/
+.department{
+	margin: 20px 0;
+	padding:0 0 20px 20px;
+}
+.department_bj{
+	width:1260px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.department_con{
+    height:640px;
+    border:1px solid #0d4472;
+}
+
+.hospitalinformation_right{
+	width: 530px;
+	float: left;
+	margin-left: 1%;
+}
+/****一周热门医院***/
+.hothospital{
+	margin: 20px 0 0 20px;
+}
+.hothospital_bj{
+	width:510px;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.hothospital_con{
+    height:860px;
+    border:1px solid #0d4472;
+}
+
+.hothospital_list{ 
+	padding: 15px;
+	border-bottom: 1px  dashed #082f63;
+}
+.list_list{
+	margin: 14px 0 0 10px;
+	font-size: 14px;
+	color: #1765b1;
+	line-height: 24px;
+}
+.list_list h4{
+	font-size: 16px;
+	color: #1bedff;
+}
+.list_list h4 span{
+	font-size: 14px;
+	color: #ff7f00;
+	margin-left: 8px;
+}
+.list_list p span{
+	margin: 0 5px;
+	color: #1bedff;
+}
+.list_pic{
+	width: 160px;
+	float: left;
+}
+.list_pic img{
+	width: 160px;
+	height: 100px;
+}
+.list_list{
+	float: left;
+}
+.list_evaluate{
+	float: right;
+	color: #1765b1;
+	font-size: 14px;
+}
+.list_evaluate span{
+	color: #1bedff;
+	line-height: 100px;
+}
+
+
+
+/* 弹窗右侧表格翻页  */
+.turnpage{
+    height:34px;
+    margin:16px 20px 0 20px;
+}
+.turnpage-text{
+    line-height: 34px;
+    color:#00a6fb;
+}
+.turnpage-l-number{
+    line-height: 34px;
+    color:#1bedff;
+    text-align: center;
+}
+.turnpage-l{
+    float:left;
+	width: 20%
+}
+.selectpage{
+    background:#09346a;
+    border:1px solid #0e5283;
+    height:30px;
+    line-height: 30px;
+    padding:0 2px;
+    color:#00a6fb;
+    font-size: 14px;
+    outline: none;
+}
+.turnpage-l span{
+	float: left;
+	font-size: 14px;
+}
+.turnpage-r{
+    float:right;
+	width:31%;
+	font-size: 14px;
+}
+.turnpage-button{
+    border:1px solid #0e5283;
+    height:34px;
+    line-height: 34px;
+    text-align: center;
+    padding:2px 8px;
+    margin:0 1px;
+    color:#00a6fb;
+    
+    cursor:pointer;
+}
+.turnpage-num{
+    border:1px solid #0e5283;
+    height:34px;
+    line-height: 34px;
+    text-align: center;
+    padding:2px 8px;
+    margin:0 1px;
+    color:#00a6fb;
+    cursor:pointer;
+}
+.turnpage-num1{
+    background: #06939f;
+    height:34px;
+    line-height: 34px;
+    border:1px solid #06939f;
+    text-align: center;
+    padding:2px 8px;
+    margin:0 1px;
+    color:#ffffff;
+    cursor:pointer;
+}
+.turnpage-l span{
+    padding:0 10px 0 0;
+}
+.department_list{ 
+	padding: 20px;
+	border-bottom: 1px  dashed #082f63;
+}
+.hothospitalpic{
+	width: 120px;
+	float: left;
+}
+.hothospitalpic img{
+	width: 120px;
+	height: 70px;
+}
+.hothospitallist{
+	margin-left:10px;
+	font-size: 14px;
+	float: left;
+	width: 60%;
+	overflow:hidden; /*超出的部分隐藏起来。*/ 
+	white-space:nowrap;/*不显示的地方用省略号...代替*/
+	text-overflow:ellipsis;/* 支持 IE */
+	color: #1765b1;
+	line-height: 24px;
+}
+.hothospitallist h4{
+	font-size: 16px;
+	color: #1bedff;
+}
+.hothospitallist p{
+	color: #6698ca;
+}
+.hothospitalevaluate{
+	float: right;
+	margin-top: 10px;
+	color: #1765b1;
+	line-height: 26px;
+	width: 60px;
+	font-size: 16px;
+	text-align: center;
+}
+.ranking{
+	width:26px;
+	height:26px;
+	color: #fff;
+	margin-left:14px;
+	background-color:#084482;
+	border-radius: 100%;
+}
+.rankingone{
+	background-color:#d02223;
+}
+.rankingtwo{
+	background-color:#ff6700;
+}
+.rankingthree{
+	background-color:#fc9400;
+}
+/****** 医生信息详情*******/
+.doctordetails_pic{
+	width:148px;
+	float: left;
+}
+.doctordetails_pic img{
+	width:148px;
+	height: 140px;
+}
+.hospital_briefintroduction p{
+	font-size: 14px;
+	color: #6698ca;
+}
+/** 门诊计划**/
+.utpatientplan{
+	width:58%;
+	float: left;
+}
+.utpatientplan_bj{
+	margin: 0 auto;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.utpatientplan_con{
+    height:198px;
+    border:1px solid #0d4472;
+}
+.utpatientplan_con img{
+	width: 23px;
+	height: 22px;
+	vertical-align: middle;
+	margin: 0 3px 0 3px;
+}
+.utpatientplan_con span{
+	color: #1bedff;
+}
+.utpatientplantable{
+	border: 1px solid #082f63;
+	width: 96%;
+	margin: 0 auto;
+}
+.utpatientplantime{
+	margin-top: 20px;
+}
+.utpatientplan .utpatientplantitle{
+	height: 50px;
+	line-height: 50px;
+}
+/** 医生简介**/
+.abriefintroductiontoadoctor{
+	width: 40%;
+	float: left;
+	margin-left: 2%;
+}
+.abriefintroductiontoadoctor_bj{
+	margin: 0 auto;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.abriefintroductiontoadoctor_con{
+    height:198px;
+    border:1px solid #0d4472;
+}
+.abriefintroductiontoadoctor_content{
+	margin: 20px;
+	line-height: 26px;
+	color: #1765b1;
+	font-size: 14px;
+}
+/** 点评**/
+.comment{
+	width: 100%;
+	margin-top: 20px;
+}
+.comment_bj{
+	margin: 0 auto;
+	background-color:rgba(8,21,56,0.8);
+    position:relative;
+}
+.comment_con{
+    height:406px;
+    border:1px solid #0d4472;
+}
+.comment_top{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	background: #091f4a;
+	border-bottom: 1px solid #0b2d57;
+}
+.commentoption a{
+	color: #1765b1;
+	margin: 0 15px;
+}
+.commentoption a:hover{
+	color: #1bedff;
+}
+.commentoption_nav a{
+	color: #1bedff;
+}
+.comment_center{
+	width: 97%;
+	margin: 0 auto;
+	overflow :auto;
+	height: 290px;
+}
+.commentlist_left{
+	width: 5%;
+	float: left;
+}
+.commentlist{
+	margin: 15px 0;
+}
+.commentlist_left p{
+	font-size: 14px;
+	color: #1bedff;
+}
+.commentlist_right{
+	width: 94%;
+	float: left;
+	font-size: 14px;
+	color: #1765b1;
+	line-height: 22px;
+}
+.doctordetailspic{
+	width: 100px;
+	float: left;
+}
+.doctordetailspic img{
+	width: 100px;
+	height: 94px;
+}
+/***********找科室科室信息**************/
+/**科室排班**/
+.departmentscheduling{
+	height:360px;
+    border:1px solid #0d4472;
+}
+.departmentscheduling_l{
+	width:50%;
+	float: left;
+}
+.departmentscheduling_r{
+	width: 48%;
+	float: right;
+	margin-right: 10px;
+}
+.departmentscheduling_l .hothospitallist span{
+	color: #ff7f00;
+	font-size: 14px;
+	margin-left: 4px;
+}
+.departmentscheduling_l .hothospitallist p{
+	color: #1765b1;
+}
+.hothospital_list p .hospitalname{
+	color: #6698ca;
+}
+.doctorstar{
+	color: #1765b1;
+	font-size: 14px;
+	margin-top: 28px;
+	text-align: center;
+	float: right;
+}
+.departmentscheduling_r img{
+	vertical-align: middle;
+}
+.departmenttitle{
+	background-color: transparent;
+	border-bottom:1px solid #0d4472;
+}
+.departmentcon{
+	height: 300px;
+	overflow :auto;
+}
+.departmentlist{
+	border-bottom: 1px dashed #082f63;
+}
+.departmentlist table span{
+	text-align: left;
+}
+.departmenttable{
+	margin-top: 35px;
+}
+.departmentlistnoe{
+	border: 0;
+}
+.departmentschedulingcomment{
+	height: 100px;
+	overflow :auto;
+}
+.departmentschedulingcomment_con{
+	height:240px;
+    border:1px solid #0d4472;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Pages.css">
+    <title>医生详情</title>
+    <style>
+        .back{
+            width: 20px;
+            height:20px;
+            background-color: red;
+            position: absolute;
+            right: 50px;
+            top:20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="large-body">
+<span class="back"></span>
+<input type="hidden" id="doctor_id" name="doctor_id" value="224340"/>
+<div class="wraper">
+    <div class="main">
+        <div class="main-title">
+            <h2>医生信息</h2>
+        </div>
+        <div class="doctor-information">
+            <div class="doctor-box">
+                <div class="doctor-item" id="detailDocInfo">
+                    <!--
+                        <img src="../resources/images/visitor/photo-small.jpg">
+                        <div class="doctor-info">
+                            <div class="doctor-info-name">
+                                <a href="#">金慧敏</a>
+                                <span>[主治医师]</span>
+                                <em class="">☆☆☆☆☆</em>
+                                <div class="doctor-comment-num">
+                                    <a href="#">2525人</a>
+                                    点评
+                                </div>
+                            </div>
+                            <div class="doctor-info-other">
+                                <a href="#">中医药大学附属医院</a>
+                                <span>门诊儿科</span>
+                                <p>擅长儿科呼吸及消化等疾病的诊治</p>
+                            </div>
+                        </div>
+                         -->
+                </div>
+            </div>
+            <div class="doctor-see-time">
+                <div class="box-title">
+                    <h2>门诊计划</h2>
+                </div>
+                <div class="see-time">
+                    <table>
+                        <thead>
+                        <tr id="dateList">
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr id="morning_clinic">
+                            <td>上午</td>
+                            <td><span class="can-see-doctor"></span></td>
+                            <td><span class="can-see-doctor"></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td></td>
+                        </tr>
+                        <tr id="after_clinic">
+                            <td>下午</td>
+                            <td><span class="can-see-doctor"></span></td>
+                            <td><span class="can-see-doctor"></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="doctor-simple-info">
+                <div class="box-title">
+                    <h2>医生简介</h2>
+                </div>
+                <div class="doctor-simple-message" id="doctor_resume">
+                    金慧敏，女，本科，1977年毕业于白求恩医科大学医疗系。曾在江西医学院第一临床学院儿科、常州市三甲医院等地进修学习。从事儿科临床工作30余年，有丰富的临床经验发表省级论文2篇。市级科研成果二项。擅长儿科呼吸及消化等疾病的诊治。
+                </div>
+            </div>
+            <div class="comment-info">
+                <div class="box-title">
+                    <h2>点评</h2>
+                </div>
+                <div class="comment-text">
+                    <ul id="feedback_count">
+                        <li class="comment-active"><a href="#" id="fb_all">全部(0)</a></li>
+                        <li ><a id="fb_good" href="#">好评(0)</a></li>
+                        <li ><a id="fb_soso" href="#">中评(0)</a></li>
+                        <li ><a id="fb_bad" href="#">差评(0)</a></li>
+                    </ul>
+                    <div id="feedback_list">
+                        <div class="comment-text-item">
+                            <img src="../images/user-photo.jpg">
+                            <div class="comment-space">
+                                <div class="comment-info-name">
+                                    <label>就诊医生：</label>
+                                    <a href="#">金慧敏</a>
+                                    <span>就诊原因：</span>
+                                    <span>咳嗽</span>
+                                    <em class="">☆☆☆☆☆</em>
+                                    <p class="text">医生很好</p>
+                                    <p class="comment-time">周**发表于03月25日</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-text-item">
+                            <img src="../images/user-photo.jpg">
+                            <div class="comment-space">
+                                <div class="comment-info-name">
+                                    <label>就诊医生：</label>
+                                    <a href="#">金慧敏</a>
+                                    <span>就诊原因：</span>
+                                    <span>咳嗽</span>
+                                    <em class="">☆☆☆☆☆</em>
+                                    <p class="text">艺术很高明</p>
+                                    <p class="comment-time">周**发表于03月25日</p>
+                                </div>
+                            </div>
+                        </div><div class="comment-text-item">
+                        <img src="../images/user-photo.jpg">
+                        <div class="comment-space">
+                            <div class="comment-info-name">
+                                <label>就诊医生：</label>
+                                <a href="#">金慧敏</a>
+                                <span>就诊原因：</span>
+                                <span>咳嗽</span>
+                                <em class="">☆☆☆☆☆</em>
+                                <p class="text">擅长儿科呼吸及消化等疾病的诊治</p>
+                                <p class="comment-time">周**发表于03月25日</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="fbpager" class="pager"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+   <!-- 版权所有(C)2005 中国电子科技集团公司第三十研究所  <br>
+    备案号：蜀ICP备12003275号-1 地址：中国·四川·成都 高新区创业路6号 邮编：610041<br>
+    联系我们：webmaster@30wish.com  电话： 0086-28-85169901 85193030 传真：0086-28-85184877<br>-->
+</div>
+</body>
+</html>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/jquery.pager.js"></script>
+<script src="../js/doctor.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.back').bind('click',function () {
+            window.history.back(-1);
+        })
+        //$.jqtab("#tabs","#tab-conbox","click");
+    });
+</script>

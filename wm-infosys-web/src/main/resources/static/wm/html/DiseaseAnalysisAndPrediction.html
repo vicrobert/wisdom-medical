@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="icon" href="../../assets/icons/favorite.ico" type="image/x-icon">-->
+    <link rel="stylesheet" href="../plug/bootstrap-3.3.7-dist/css/bootstrap.css">
+   <!-- <link rel="stylesheet" href="../css/font-awesome.min.css">-->
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/dashboard.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)" href="../css/style.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/css.css">
+    <link rel="stylesheet"  media="(max-width:1440px)" href="../css2/dashboard.css">
+    <link rel="stylesheet" media="(max-width:1440px)" href="../css2/style.css">
+    <link rel="stylesheet" media="(max-width:1440px)" href="../css2/css.css">
+    <style>
+      .con-top-r {
+        top: -3px;
+        right: -1px;
+        overflow: visible
+    }
+    .con-top-l {
+        left: -1px;
+        top: -3px;
+        overflow: visible;
+    }
+    .con-bottom-r {
+        bottom: 1px;
+        right: -1px;
+        overflow: visible
+    }
+    .con-bottom-l {
+        left: -1px;
+        bottom: 1px;
+        overflow: visible;
+    }
+      .label{
+        float: left;
+        padding: 8px 16px;
+      }
+      .x-cate{
+        float: left;
+        line-height: 26px;
+        color:#1765b1;
+      }
+      .medical-filter .label-danger {
+          color: #00a6fb!important;
+          background-color: #094483;
+      }
+      .list-group-item {
+          padding: 3px 15px;
+          background-color: transparent;
+          border: 0
+      }
+      .medical-filter .list-group-item {
+          border-top:0;
+      }   
+      .medical-filter .label {
+          margin: auto 10px;
+          font-weight: normal;
+          color: #1765b1;
+          cursor: pointer;
+      }
+      @media (max-width:1920px) and (min-width:1441px){
+        #echartbynum{
+            height:250px;
+            width:100%;
+        }
+        #echartbyseason{
+            height:250px;
+            width:100%;
+        }
+        #sextrait{
+          height:250px;
+          width:100%;
+        }
+        #map{
+            height: 455px;
+            width:100%;            
+        }
+     }
+     @media (max-width:1440px){
+        #echartbynum{
+          height:202px;
+          width:100%;
+        }
+        #echartbyseason{
+          height:202px;
+          width:100%;
+        }
+        #sextrait{
+          height:202px;
+          width:100%;
+        }
+        #map{
+            height: 375px;
+            width:100%;            
+        }
+    }
+
+    </style>
+    
+    <title>成医观察-疾病分析与预测</title>
+</head>
+<body>
+    <div class="main_right"> 
+        <!--分类选择-->
+        <div class="classificationoptions">
+          <div class="option">
+              <ul class="list-group medical-filter" style="margin-bottom:0">
+                  <li class="list-group-item " id="selectType" data-item-length="0"><div class="x-cate">类型</div></li>
+                  <li class="list-group-item " id="community" data-item-length="0"><div class="x-cate">社区</div></li>
+                  <li class="list-group-item " id="year" data-item-length="0"><div class="x-cate">年代</div></li>
+                  <li class="list-group-item " id="month" data-item-length="0"><div class="x-cate">月份</div></li>
+                  <li class="list-group-item" id="disease" data-item-length="0"><div class="x-cate">疾病</div></li>
+                  <!-- <li class="list-group-item">
+                  <span class="label label-danger" data-id="1" data-name="热伤风">热伤风</span>
+                  <select name="selectType" id="selectType">
+                      <option value="disease">疾病</option>
+                      <option value="registration">挂号</option>
+                      <option value="behospitalized">住院</option>
+                  </select>
+              </li>
+              -->
+              </ul>
+          </div>
+        </div>
+        <!--end 分类选择-->
+        <div class="analysisandprediction_main"> 
+          <!--疾病门诊量分析 -->
+          <div class="outpatientdoseofdisease">
+            <div class="content-title">
+              <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+              <div class="title-center">疾病门诊量分析</div>
+              <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+              <div class="clear"></div>
+            </div>
+            <div class="outpatientdoseofdisease_bj">
+              <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+              <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+              <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+              <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+              <div class="outpatientdoseofdisease_con">
+                <div class="doctorrecommends_content">
+                  <div class="doctorrecommendschart">
+                    <div id="echartbynum"></div>
+                  </div>
+                  <div class="bottomexplain">
+                    <p>疾病在所选时间范围内的门诊量趋势</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--疾病门诊量分析 结束--> 
+          <!--季节流行疾病预测  -->
+          <div class="seasonalepidemic">
+            <div class="content-title">
+              <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+              <div class="title-center">季节流行疾病预测</div>
+              <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+              <div class="clear"></div>
+            </div>
+            <div class="seasonalepidemic_bj">
+              <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+              <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+              <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+              <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+              <div class="seasonalepidemic_con">
+                <div class="doctorrecommends_content">
+                  <div class="doctorrecommendschart">
+                    <div id="echartbyseason"></div>
+                  </div>
+                  <div class="bottomexplain">
+                    <p>所选季节（所选时间范围内）高发疾病，预测当季流行疾病</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--季节流行疾病预测 结束--> 
+          <!--疾病性别分布 -->
+          <div class="sexofthedisease">
+            <div class="content-title">
+              <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+              <div class="title-center">疾病性别分布</div>
+              <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+              <div class="clear"></div>
+            </div>
+            <div class="sexofthedisease_bj">
+              <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+              <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+              <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+              <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+              <div class="sexofthedisease_con">
+                <div class="doctorrecommends_content">
+                  <div class="doctorrecommendschart">
+                    <div id="sextrait"></div>
+                  </div>
+                  <div class="bottomexplain">
+                    <p>所选疾病的性别占比</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--疾病性别分布 结束--> 
+        </div>
+        <div class="clear"></div>
+        <div class="analysisandprediction_main"> 
+          <!--疾病年龄分布  -->
+          <div class="outpatientdoseofdisease">
+            <div class="content-title">
+              <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+              <div class="title-center">疾病年龄分布 </div>
+              <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+              <div class="clear"></div>
+            </div>
+            <div class="outpatientdoseofdisease_bj">
+              <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+              <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+              <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+              <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+              <div class="outpatientdoseofdisease_con">
+                <div class="doctorrecommends_content">
+                  <div class="doctorrecommendschart">
+                    <div id="echartbyage" style="height:250px;width:100%;"></div>
+                  </div>
+                  <div class="bottomexplain">
+                    <p>所选疾病在每个年龄段的占比</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--疾病年龄分布 结束--> 
+          <!--疾病区域分布   -->
+          <div class="seasonalepidemic">
+            <div class="content-title">
+              <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+              <div class="title-center">疾病区域分布</div>
+              <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+              <div class="clear"></div>
+            </div>
+            <div class="seasonalepidemic_bj">
+              <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+              <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+              <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+              <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+              <div class="seasonalepidemic_con">
+                <div class="doctorrecommends_content">
+                  <div class="doctorrecommendschart">
+                    <div id="echartbyarea" style="height:250px;width:100%;"></div>
+                  </div>
+                  <div class="bottomexplain">
+                    <p>所选疾病在所选区域的门诊量对比</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--疾病区域分布 结束--> 
+          <!--疾病职业分布  -->
+          <div class="sexofthedisease">
+            <div class="content-title">
+              <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+              <div class="title-center">疾病职业分布</div>
+              <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+              <div class="clear"></div>
+            </div>
+            <div class="sexofthedisease_bj">
+              <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+              <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+              <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+              <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+              <div class="sexofthedisease_con">
+                <div class="doctorrecommends_content">
+                  <div class="doctorrecommendschart">
+                    <div id="professiontrait" style="height:250px;width:100%;"></div>
+                  </div>
+                  <div class="bottomexplain">
+                    <p>所选疾病在不同职业领域的占比</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--疾病职业分布 结束--> 
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 col-sm-5 col-xs-5">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <i class="fa fa-area-chart"></i>
+                    疾病门诊量分析
+                </div>
+                <div class="panel-body">
+                    <div id="echartbynum" style="height:250px;width:100%;"></div>
+                </div>
+                <div class="panel-footer">疾病在所选时间范围内的门诊量趋势</div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <i class="fa fa-align-left"></i>
+                    季节流行疾病预测
+                </div>
+                <div class="panel-body">
+                    <div id="echartbyseason" style="height:250px;width:100%;"></div>
+                </div>
+                <div class="panel-footer">所选季节（所选时间范围内）高发疾病，预测当季流行疾病</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <i class="fa fa-pie-chart"></i>
+                    疾病性别分布
+                </div>
+                <div class="panel-body">
+                    <div id="sextrait" style="height:250px;width:100%;"></div>
+                </div>
+                <div class="panel-footer">所选疾病的性别占比</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-sm-5 col-xs-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-align-left"></i>
+                    疾病年龄分布
+                </div>
+                <div class="panel-body">
+                    <div id="echartbyage" style="height:250px;width:100%;"></div>
+                </div>
+                <div class="panel-footer">所选疾病在每个年龄段的占比</div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-signal"></i>
+                    疾病区域分布
+                </div>
+                <div class="panel-body">
+                    <div id="echartbyarea" style="height:250px;width:100%;"></div>
+                </div>
+                <div class="panel-footer">所选疾病在所选区域的门诊量对比</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <i class="fa fa-circle-o"></i>
+                    疾病职业分布
+                </div>
+                <div class="panel-body">
+                    <div id="professiontrait" style="height:250px;width:100%;"></div>
+                </div>
+                <div class="panel-footer">所选疾病在不同职业领域的占比</div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- plugins -->
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../plug/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/underscore-min.js"></script>
+
+<script src="../js/echarts.js"></script>
+
+<script src="../js/jquery.com.toolkit.js"></script>
+<script src="../js/jquery.tmpl.min.js"></script>
+<script src="../js/jquery.pagination.js"></script>
+
+<!-- commons -->
+<script src="../js/errorDic.js"></script>
+<script src="../js/ajaxdatacontroller.js"></script>
+
+<!-- page's -->
+<script src="../js/forecastdatacontroller.js"></script>
+<script src="../js/echartsinterface.js"></script>
+<script src="../js/forecastchart.js"></script>
+<script src="../js/forecast.js"></script>
+
+</body>
+</html>

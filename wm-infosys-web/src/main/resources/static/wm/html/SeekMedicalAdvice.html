@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/baseSet.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Pages.css">
+    <style>
+        .baclk_history{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="large-body">
+<span id="current_city" style="display:none">成都</span>
+<div class="wraper">
+    <div class="header">
+        <div class="city">
+            <div class="city-list" id="city_list">
+                <h4>热门城市：</h4>
+                <ul class="rm">
+                    <li>
+                        <a href="#">北京</a>
+                    </li>
+                    <li>
+                        <a href="#">重庆</a>
+                    </li>
+                    <li>
+                        <a href="#">成都</a>
+                    </li>
+                    <li>
+                        <a href="#">上海</a>
+                    </li>
+                    <li>
+                        <a href="#">广州</a>
+                    </li>
+                </ul>
+                <h4>请选择省份：</h4>
+                <ul class="sf">
+                    <li>
+                        <a href="#">四川</a>
+                    </li>
+                    <li>
+                        <a href="#">广东</a>
+                    </li>
+                    <li>
+                        <a href="#">北京</a>
+                    </li>
+                    <li>
+                        <a href="#">湖南</a>
+                    </li>
+                    <li>
+                        <a href="#">上海</a>
+                    </li>
+                    <li>
+                        <a href="#">河南</a>
+                    </li>
+                    <li>
+                        <a href="#">湖北</a>
+                    </li>
+                    <li>
+                        <a href="#">海南</a>
+                    </li>
+                    <li>
+                        <a href="#">重庆</a>
+                    </li>
+                </ul>
+                <h4>请选择城市：</h4>
+                <ul class="cs">
+                    <li class="current">
+                        <a href="#">成都</a>
+                    </li>
+                    <li>
+                        <a href="#">德阳</a>
+                    </li>
+                    <li>
+                        <a href="#">凉山</a>
+                    </li>
+                    <li>
+                        <a href="#">绵阳</a>
+                    </li>
+                    <li>
+                        <a href="#">达州</a>
+                    </li>
+                    <li>
+                        <a href="#">攀枝花</a>
+                    </li>
+                    <li>
+                        <a href="#">乐山</a>
+                    </li>
+                    <li>
+                        <a href="#">内江</a>
+                    </li>
+                    <li>
+                        <a href="#">南充</a>
+                    </li>
+                    <li>
+                        <a href="#">宜宾</a>
+                    </li>
+                    <li>
+                        <a href="#">巴中</a>
+                    </li>
+                    <li>
+                        <a href="#">广元</a>
+                    </li>
+                    <li>
+                        <a href="#">广安</a>
+                    </li>
+                    <li>
+                        <a href="#">泸州</a>
+                    </li>
+                    <li>
+                        <a href="#">眉山</a>
+                    </li>
+                    <li>
+                        <a href="#">自贡</a>
+                    </li>
+                    <li>
+                        <a href="#">资阳</a>
+                    </li>
+                    <li>
+                        <a href="#">遂宁</a>
+                    </li>
+                    <li>
+                        <a href="#">雅安</a>
+                    </li>
+                </ul>
+                <a href="#" class="close">x</a>
+            </div>
+        </div>
+        <div class="search">
+            <div class="search-type">
+                <h3>
+                    <span id="search-name">找医院</span> <i class="icon-arrow-down"></i>
+                    <input type="hidden" id="search-type" name="searchtype" value="0"></h3>
+                <ul id="search_type">
+                    <li class="current" id="0">找医院</li>
+                    <li id="1">找科室</li>
+                    <li id="2">找医生</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="tabs">
+            <ul class="tabs-title" id="tabs">
+                <li class="current" id="0">
+                    <a href="#">找医院</a>
+                </li>
+                <li id="1">
+                    <a href="#">找科室</a>
+                </li>
+                <li id="2">
+                    <a href="#">找医生</a>
+                </li>
+            </ul>
+            <div class="search">
+
+                <div class="search-input">
+                    <input id="search_value" type="text" placeholder="可输入医院关键字查询">
+                    <button id="search_btn"> <i class="icon-search"></i>
+                    </button>
+                </div>
+
+            </div>
+            <div class="clear"></div>
+            <ul class="tabs-conbox" id="tab-conbox">
+                <li class="tabs-con">
+                    <div class="filter">
+                        <div class="filter-item">
+                            <div class="filter-value">
+                                <i class="icon-map"></i>
+                                <span class="change-city">成都 [更换]</span>
+                                <span id="hos_filter_zone">
+                                        <a href="#" class="filter-select">
+                                            <span>级别</span> <em>全部</em>
+                                            <i>×</i>
+                                        </a>
+                                    </span>
+
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <div class="filter-keyword"></div>
+                            <div class="filter-value" id="hos_level_list">
+                                <a href="#" class="current">全部</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="operbar">
+                        <div class="operbar-sort" id="hospital_sort_item">
+                            <a href="#" class="current" id="level">医院等级</a>
+                            <a href="#" id="score" >综合评分</a>
+                        </div>
+                        <div class="operbar-page">
+                            共 <em class="fc-orange" id="hos_total">49</em>
+                            条数据
+                            <em id="hos_current">1</em>
+                            /
+                            <em id="hos_pages">5</em>
+                        </div>
+                    </div>
+                    <div class="results">
+                        <div class="hospital-box col-8">
+
+                            <div id="hospital_list"></div>
+                            <div id="hospager" class="pager"></div>
+                        </div>
+                        <div class="hospital-hot col-4">
+                            <div class="box-title">
+                                <h2>一周热门医院</h2>
+                            </div>
+                            <div class="box-content">
+                                <div class="hospital-hot-item">
+                                    <img src="../images/hospital.jpg" alt="医院名称">
+                                    <h4>
+                                        <a href="#">中医药大学附属医院</a>
+                                    </h4>
+                                    <p>
+                                        三级甲等
+                                        <br>地址：成都市一环西三段231号</p>
+                                    <span>
+                                            <em class="dot">1</em>
+                                            <a href="#">92213</a>
+                                        </span>
+                                </div>
+                                <div class="hospital-hot-item">
+                                    <img src="../images/hospital.jpg" alt="医院名称">
+                                    <h4>
+                                        <a href="#">中医药大学附属医院</a>
+                                    </h4>
+                                    <p>
+                                        三级甲等
+                                        <br>地址：成都市一环西三段231号</p>
+                                    <span>
+                                            <em class="dot">2</em>
+                                            <a href="#">56213</a>
+                                        </span>
+                                </div>
+                                <div class="hospital-hot-item">
+                                    <img src="../images/hospital.jpg" alt="医院名称">
+                                    <h4>
+                                        <a href="#">中医药大学附属医院</a>
+                                    </h4>
+                                    <p>
+                                        三级甲等
+                                        <br>地址：成都市一环西三段231号</p>
+                                    <span>
+                                            <em class="dot">3</em>
+                                            <a href="#">3213</a>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                </li>
+                <!--找医院结束-->
+                <li class="tabs-con">
+                    <div class="filter">
+                        <div class="filter-item">
+                            <div class="filter-value">
+                                <i class="icon-map"></i>
+                                <span class="change-city">成都 [更换]</span>
+                                <span id="dept_filter_zone">
+                                            <a href="#" class="filter-select">
+                                                <span>科室</span>
+                                                <em>全部</em>
+                                                <i>×</i>
+                                            </a>
+                                        </span>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <div class="filter-keyword"></div>
+                            <div class="filter-value" id="dept_list">
+                                <a href="#" class="current">全部</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operbar">
+                        <div class="operbar-sort" id="dept_sort_item">
+                            <a href="#" class="current" id="level">医院等级</a>
+                            <a href="#" id="score">综合评分</a>
+                        </div>
+                        <div class="operbar-page">
+                            共
+                            <em class="fc-orange" id="dept_total">49</em>
+                            条数据
+                            <em id="dept_current">1</em>
+                            /
+                            <em id="dept_pages">5</em>
+                        </div>
+                    </div>
+                    <div class="results">
+                        <div class="hospital-box col-8">
+                            <div id="department_list"></div>
+                            <div id="deptpager" class="pager"></div>
+                        </div>
+                        <div class="hospital-hot col-4">
+                            <div class="box-title">
+                                <h2>一周热门科室</h2>
+                            </div>
+                            <div class="box-content">
+                                <div class="hospital-hot-item">
+                                    <img src="../images/hospital.jpg" alt="医院名称">
+                                    <h4>
+                                        <a href="#">内科</a>
+                                    </h4>
+                                    <p>
+                                        成都中山医院二级
+                                        <br>地址：成都文庙前街42号（老南门大桥桥头）</p>
+                                    <span>
+                                                <em class="dot">1</em>
+                                                <a href="#">23168</a>
+                                            </span>
+                                </div>
+                                <div class="hospital-hot-item">
+                                    <img src="../images/hospital.jpg" alt="医院名称">
+                                    <h4>
+                                        <a href="#">妇科</a>
+                                    </h4>
+                                    <p>
+                                        成都中山医院二级
+                                        <br>地址：成都文庙前街42号（老南门大桥桥头）</p>
+                                    <span>
+                                                <em class="dot">2</em>
+                                                <a href="#">14216</a>
+                                            </span>
+                                </div>
+                                <div class="hospital-hot-item">
+                                    <img src="../images/hospital.jpg" alt="医院名称">
+                                    <h4>
+                                        <a href="#">耳鼻喉科</a>
+                                    </h4>
+                                    <p>
+                                        成都中山医院二级
+                                        <br>地址：成都文庙前街42号（老南门大桥桥头）</p>
+                                    <span>
+                                                <em class="dot">3</em>
+                                                <a href="#">1387</a>
+                                            </span>
+                                </div>
+                            </div>
+                        </div>
+                </li>
+                <!--找科室结束-->
+                <li class="tabs-con">
+                    <div class="filter">
+                        <div class="filter-item">
+                            <div class="filter-value">
+                                <i class="icon-map"></i>
+                                <span class="change-city">成都 [更换]</span>
+
+                                <span id="doc_filter_zone">
+                                                <a href="#" class="filter-select">
+                                                    <span>科室</span>
+                                                    <em>全部</em>
+                                                    <i>×</i>
+                                                </a>
+                                            </span>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <div class="filter-keyword"></div>
+                            <div class="filter-value" id="doc_dept_list">
+                                <a href="#" class="current">全部</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operbar">
+                        <div class="operbar-sort" id="doctor_sort_item">
+                            <a href="#" class="current" id="position">职称</a>
+                            <a href="#" id="score">评分</a>
+                        </div>
+                        <div class="operbar-page">
+                            共
+                            <em class="fc-orange" id="doc_total">49</em>
+                            条数据
+                            <em id="doc_current">1</em>
+                            /
+                            <em id="doc_pages">5</em>
+                        </div>
+                    </div>
+                    <div class="results">
+                        <div class="doctor-box col-8">
+                            <div id="doctor_list"></div>
+                            <div id="pager" class="pager"></div>
+                        </div>
+                        <div class="doctor-hot col-4">
+                            <div class="box-title">
+                                <h2>一周热门点评</h2>
+                            </div>
+                            <div id="hotspot_feedback"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/jquery.pager.js"></script>
+<script src="../js/doctorlist.js"></script>
+<script>
+    $(document).ready(function() {
+        $.jqtab("#tabs","#tab-conbox","click");
+    });
+</script>
+
+
+

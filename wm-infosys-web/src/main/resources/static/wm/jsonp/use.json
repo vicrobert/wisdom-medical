@@ -1,0 +1,1 @@
+{"status":{"code":"200","message":"数据获取成功"},"data":{"type":null,"xaxis":["非抗生素","三类抗生素","一类抗生素","二类抗生素"],"date":[{"name":"一类抗生素","value":20},{"name":"三类抗生素","value":50},{"name":"二类抗生素","value":40},{"name":"非抗生素","value":10}]}}

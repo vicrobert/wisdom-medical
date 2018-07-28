@@ -1,0 +1,14 @@
+[Unit]
+Description=Wisdom Medical Disease Analysis And Prediction Service
+After=mysqld.service zk.service
+
+[Service]
+Type=forking
+ExecStart=/usr/local/wisdom_medical/disease_service/bin/disease-service start
+ExecStop=/usr/local/wisdom_medical/disease_service/bin/disease-service stop
+WorkingDirectory=/usr/local/wisdom_medical/disease_service/bin
+PIDFile=/var/run/wisdom_medical/disease-service.pid
+TimeoutSec=120
+
+[Install]
+WantedBy=multi-user.target

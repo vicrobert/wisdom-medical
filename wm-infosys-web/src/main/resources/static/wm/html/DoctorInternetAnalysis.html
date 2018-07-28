@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta charset="UTF-8">
+    <title>互联网医疗资源分析</title>
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)" href="../css/css.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)" href="../css/x-base.css">
+
+    <link rel="stylesheet" media="(max-width:1440px)" href="../css2/css.css">
+    <link rel="stylesheet" media="(max-width:1440px)" href="../css2/x-base.css">
+</head>
+<style>
+    .node circle {
+        cursor: orange;
+        stroke: #3182bd;
+        stroke-width: 0.5px;
+        opacity:0.8;
+        cursor:crosshair;
+    }
+    .node text {
+        font: 12px sans-serif;
+        pointer-events: none;
+        text-anchor: middle;
+        color:#093770!important
+    }
+    line.link {
+        fill: none;
+        stroke: #093770;
+    }
+
+    #a{width:62%;height:92.5%; position:absolute;float:left;}
+    /* .doctor-info{
+        font-family: 'SongTi';
+        max-height: 740px;
+        overflow: auto;
+    } */
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+    .clear{
+        clear: both;
+    }
+
+    /* .doctor-info {
+        color: #5c5c5c;
+        font-size: 14px;
+        line-height: 21px;
+        max-width: 760px;
+        margin: 0 auto;
+    } */
+    /* .doctor-info h1,
+    .doctor-info h2,
+    .doctor-info h3,
+    .doctor-info h4,
+    .doctor-info h5{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        color:#fb8302;
+    } */
+
+    /* .doctor-info ul {
+        list-style: inherit;
+    }
+    .doctor-info ul li {
+        margin-left: 50px;
+    } */
+
+
+    /* .doctor-info h1 {
+        font-size: 50px;
+        margin-top: 42px;
+        margin-bottom: 21px;
+        display: inline-block;
+    } */
+    /* .doctor-info h2 {
+        font-size: 30px;
+        margin-top: 42px;
+        margin-bottom: 21px;
+        display: inline-block;
+    } */
+    /* .doctor-info h3 {
+        font-size: 22px;
+        margin-top: 51px;
+        margin-bottom: 21px;
+    } */
+    /* .doctor-info h4 {
+        font-size: 14px;
+        margin-top: 41px;
+    } */
+    /* .doctor-info p, .doctor-info ul{
+        margin-bottom: 21px;
+    } */
+
+    .doctor-info .hide{
+        display: none;
+    }
+    /* .doctor-info .reply-info li{
+        font-family: arial;
+        list-style: none;
+        margin-left:0;
+    }
+
+    .doctor-info .reply-avatar {
+        margin-right: 10px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background: #ddd;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 45px;
+        line-height: 50px;
+    }
+    .reply-info p{
+        display: inline-block;
+        line-height: 26px;
+    }
+    .reply-info .reply-time{
+        font-size: 10px;
+    } */
+    .headimageright{
+        width:345px;
+    }
+    .doctorpatientinteraction ul li{
+        height: auto;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="../css/d3-tip-styles.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="../css/showLoading.css">
+<body>
+<div class="main_right"> 
+     <!-- 互联网医疗资源分析-->
+        <div class="internetmedicaltreatment">
+            <div class="content-title">
+                <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                <div class="title-center">互联网医疗资源分析</div>
+                <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                <div class="clear"></div>
+            </div>
+            <div class="internetmedicaltreatment_bj">
+                <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                <div class="internetmedicaltreatment_con">
+                    <div class="doctorrecommends_content"> 
+                        <!-- 查询条件-->
+                        <div class="doctorsInternet_querycriteria">
+                        <div class="hospitalinquiries">
+                            <div class="hospitalsearch"> <span>医院：</span>
+                                <input id="search_val" class="diseaseinputbox" type="text" value="" placeholder="请输入医院名称或医生姓名" size="42">
+                            
+                            <!-- <input class="diseaseinputbox" type="text" onfocus="this.value=''" value="北京肿瘤医院" > -->
+                            </div>
+                            <div class="hospitalinquiries_query">
+                                    <button id="searchbtn" class="querycriteria_query" style="border:0"> <i class="icon-search"></i>
+                                        查询
+                                    </button>
+                            </div>
+                            <div class="doctorselection">
+                                <b id="zzysHS"><input type="checkbox" id="zzys" value="主治医师" checked="checked">主治医师</b>
+                                <b id="zrysHS"><input type="checkbox" id="zrys" value="主任医师" checked="checked"/>主任医师</b>
+                            </div>
+                            <p>
+                                <input type="hidden" id="showd3page" value="hospital"/>
+                                <input type="hidden" id="hiddenLastHospital" value=""/>
+                                <span id="hlwxwsjHS">
+                                    <input type="checkbox" id="hlwxwsj" value="互联网行为数据" checked="checked"/>
+                                    互联网行为数据（不勾选可查看全部数据）
+                                </span>
+                            </p>
+                        </div>
+                        </div>
+                        <!-- 医院结构图-->
+                        <div class="Hospitalstructuremap">
+                                <div id="a"></div>
+                        </div>
+                        <!-- 右侧医生介绍-->
+                        <div class="doctorintroduction"> 
+                        <!-- 医生介绍-->
+                            <div class="doctor-info">
+                                    <div id="doctor-info"></div>
+                                    <div class="hide"  id="tmpl-doctor-info">
+                                        <div class="hospitalintroduction">
+                                            <h3>${name}<span>${level}</span></h3>
+                                            <p>${desc}</p>
+                                        </div>
+                                        <div class="begoodat">
+                                                <h3>擅长诊治</h3>
+                                                <p>${goodAt}</p>
+                                        </div>
+                                        <div class="gotothehospital">
+                                            <h3>前往就诊</h3>
+                                            <ul>
+                                                <li>${address}</li>
+                                                <li>${hospitalName}（${level}）</li>
+                                                <li>${departmentName}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="doctorpatientinteraction">
+                                            <h3>医患互动</h3>
+                                            <ul class="reply-info" id="reply-info"></ul>
+                                            <div class="hide" id="tmpl-reply-info">
+                                                <li class="x-clear">
+                                                    <span class="headportrait"></span> <span class="headimageright">
+                                                            <h4>${comment}</h4>
+                                                            <p>${date}</p>
+                                                    </span>
+                                                </li>
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- 互联网医疗资源分析 结束--> 
+</div>
+
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/d3.v3.min.js"></script>
+<script type="text/javascript" src="../js/d3.tip.v0.6.3.js"></script>
+<script type="text/javascript" src="../js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../js/resourceAnalysis.js"></script>
+</html>
+

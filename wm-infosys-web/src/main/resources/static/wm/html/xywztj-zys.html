@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/x-index.css"  media="(max-width:1920px) and (min-width:1441px)" rel="stylesheet" type="text/css"/>
+    <link href="../css/xywztj-zys.css"  media="(max-width:1920px) and (min-width:1441px)" rel="stylesheet" type="text/css"/>
+    
+    <link href="../css2/x-index.css"  media="(max-width:1440px)" rel="stylesheet" type="text/css"/>
+    <link href="../css2/xywztj-zys.css"  media="(max-width:1440px)" rel="stylesheet" type="text/css"/>
+    <title>寻医问诊推荐-找医生</title>
+</head>
+<body>
+    <div class="content">
+        <!--内容模块-->
+        <div class="content-box">
+            <!--搜索栏-->
+            <div class="search">
+                <!--内容切换TOP-->
+                <div class="con-tab">
+                    <div class="con-tab-l" onclick="javascript:location.href='xywztj.html'" id="con-tab-l" onmouseover="this.className='con-tab-l1'" onmouseout="this.className='con-tab-l'">找医院</div>
+                    <div class="con-tab-c" onclick="javascript:location.href='xywztj-zks.html'" id="con-tab-c" onmouseover="this.className='con-tab-c1'" onmouseout="this.className='con-tab-c'">找科室</div>
+                    <div class="con-tab-r1" onclick="javascript:location.href='xywztj-zys.html'" id="con-tab-r" onmouseover="this.className='con-tab-r1'" onmouseout="this.className='con-tab-r1'">找医生</div>
+                </div>
+                <!--end 内容切换TOP-->
+                <div class="search-r">
+                    <span><input type="text" class="input-text" value="请输入医生关键字查询" onfocus="this.value=''" onblur="this.value='请输入医生关键字查询'" /></span>
+                    <span>
+                        <input type="button" class="input-button" onmouseover="this.className='input-button1'" onmouseout="this.className='input-button'" />
+                        <div class="input-button-text"><img src="../images/search.png" border="0" />&nbsp;查询</div>
+                    </span>
+                </div>
+            </div>
+            <!--end 搜索栏-->
+            <!--地址栏-->
+            <div class="address">
+                <span><img src="../images/position.png" border="" /></span>
+                <span class="address-text">上海</span>
+                <span class="change-text">[更换]</span>
+                <span></span>
+            </div>
+            <!--end 地址栏-->
+            <!--科室类别TAB栏-->
+            <div class="hospital-tab">
+                <ul>
+                    <li class="tab-text1" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text1'">全部</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">内科</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">外科</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">妇儿</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">其他</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">中医</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">骨科</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">口腔</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">传染</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">肿瘤</li>
+                    <li class="tab-text" onmouseover="this.className='tab-text1'" onmouseout="this.className='tab-text'">精神</li>
+                </ul>
+            </div>
+            <!--end 科室类别TAB栏-->
+            <!--排序TAB-->
+            <div class="reorder-tab">
+                <span>
+                    <div class="comparetitle1" onmouseover="this.className='comparetitle'" onmouseout="this.className='comparetitle1'">职称</div>
+                </span>
+                <span>
+                    <div class="comparetitle" onmouseover="this.className='comparetitle'" onmouseout="this.className='comparetitle'">评分</div>
+                </span>
+            </div>
+            <!--end 排序TAB-->
+            <!--左侧医院列表-->
+            <div class="hospital-l">
+                <div class="content-con1">
+                    <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img"></div>
+                    <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img"></div>
+                    <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img"></div>
+                    <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img"></div>
+                    <div class="con-table">
+                        <ul id="doctorList">
+                        <!--
+                            <li>
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="158" height="176" align="left" valign="middle"><img src="../images/docotor1.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span onclick="javascript:top.window.location='doctordetails.html'" class="hospital-title">何盛华</span><span class="hospital-title-select">[主任医师]]</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">传染科</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">阴暗、慢性肝病及感染性疾病的诊断 疑难、慢性肝病及感染性疾病的诊断</span></div>
+                                        </td>
+                                        <td width="136" align="center" valign="middle">
+                                            <div>
+                                                <span><img src="../images/star.png" border="0"></span>
+                                                <span><img src="../images/star.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                            </div>
+                                            <div><span class="hospital-title">2</span><span class="hospital-content-title">人点评</span></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="158" height="176" align="left" valign="middle"><img src="../images/docotor2.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span class="hospital-title">朱丽新</span><span class="hospital-title-select">[主任医师]]</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">传染科</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">阴暗、慢性肝病及感染性疾病的诊断 疑难、慢性肝病及感染性疾病的诊断</span></div>
+                                        </td>
+                                        <td width="136" align="center" valign="middle">
+                                            <div>
+                                                <span><img src="../images/star.png" border="0"></span>
+                                                <span><img src="../images/star.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                            </div>
+                                            <div><span class="hospital-title">0</span><span class="hospital-content-title">人点评</span></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="158" height="176" align="left" valign="middle"><img src="../images/docotor3.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span class="hospital-title">唐玉珍</span><span class="hospital-title-select">[主任医师]]</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">传染科</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">阴暗、慢性肝病及感染性疾病的诊断 疑难、慢性肝病及感染性疾病的诊断</span></div>
+                                        </td>
+                                        <td width="136" align="center" valign="middle">
+                                            <div>
+                                                <span><img src="../images/star.png" border="0"></span>
+                                                <span><img src="../images/star.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                                <span><img src="../images/star1.png" border="0"></span>
+                                            </div>
+                                            <div><span class="hospital-title">0</span><span class="hospital-content-title">人点评</span></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                             -->
+                        </ul>
+                        <!--翻页-->
+                        <div class="turnpage">
+                        <!-- 
+                            <div class="turnpage-l">
+                                <span class="turnpage-text">共</span>
+                                <span class="turnpage-l-number">10</span>
+                                <span class="turnpage-text">页</span>
+                                <span class="turnpage-text">第</span>
+                                <span>
+                                    <form>
+                                        <select name="s1" class="selectpage">
+                                            <option value="010" selected="selected">1</option>
+                                            <option value="029">2</option>
+                                            <option value="028">3</option>
+                                        </select>
+                                    </form>
+                                </span>
+                                <span class="turnpage-text">页</span>
+                            </div>
+                        -->
+                            <div class="turnpage-r">
+                                <span id="firstpage-button" class="turnpage-button">首页</span>
+                                <span id="backpage-button" class="turnpage-button">上一页</span>
+                                <!-- 
+                                <span class="turnpage-num1">1</span>
+                                <span class="turnpage-num">2</span>
+                                <span class="turnpage-num">3</span>
+                                <span class="turnpage-num">4</span>
+                                -->
+                                <span class="turnpage-button"><input id="current-page" name="page" class="selectpage" style="width:40px;height:10px"/> / <input id="total-page" name="rows" class="selectpage" style="width:40px;height:10px" disabled="disabled"/></span> 
+                                <span id="nextpage-button" class="turnpage-button">下一页</span>
+                                <span id="lastpage-button" class="turnpage-button">尾页</span>
+                            </div>
+                        </div>
+                        <!--end 翻页-->
+                        <!--解决父div高度随内容扩展-->
+                        <div style="font:0px/0px sans-serif;clear:both;display:block"></div>
+                        <!--end 解决父div高度随内容扩展-->
+                    </div>
+                </div>
+                <!--解决父div高度随内容扩展-->
+                <div style="font:0px/0px sans-serif;clear:both;display:block"></div>
+                <!--end 解决父div高度随内容扩展-->
+            </div>
+            <!--end 左侧医院列表-->
+            <!--右侧热门科室-->
+            <div class="hospital-r">
+                <div class="table-compare">
+                    <!--标题-->
+                    <div class="content-title">
+                        <div class="title-left"><img src="../images/title_left.png" border="0" class="img"></div>
+                        <div class="title-center">一周热门医生点评</div>
+                        <div class="title-right"><img src="../images/title_right.png" border="0" class="img"></div>
+                    </div>
+                    <!--end 标题-->
+                    <div class="clear"></div>
+                    <!--一周热门医生点评内容-->
+                    <div class="content-con1">
+                        <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img"></div>
+                        <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img"></div>
+                        <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img"></div>
+                        <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img"></div>
+                        <div class="con-table" id="top4doctors">
+                            <!-- 
+                            <div class="con-table-title">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="110" height="120" align="left" valign="middle"><img src="../images/doctor1.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span class="hospital-title">何盛华</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">传染科、慢性肝病及感染疾病的诊断</span></div>
+                                        </td>
+                                        <td width="70" align="center" valign="middle">
+                                            <div class="hospital-circle">1</div>
+                                            <div class="hospital-content-title">92213</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="con-table-title">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="110" height="120" align="left" valign="middle"><img src="../images/doctor2.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span class="hospital-title">朱丽新</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">病毒性传染科、慢性肝病及感染疾病的诊断</span></div>
+                                        </td>
+                                        <td width="70" align="center" valign="middle">
+                                            <div class="hospital-circle2">2</div>
+                                            <div class="hospital-content-title">56213</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="con-table-title">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="110" height="120" align="left" valign="middle"><img src="../images/doctor3.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span class="hospital-title">唐玉珍</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">各种传染科、慢性肝病及感染疾病的诊断</span></div>
+                                        </td>
+                                        <td width="70" align="center" valign="middle">
+                                            <div class="hospital-circle3">3</div>
+                                            <div class="hospital-content-title">3213</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="con-table-title">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="110" height="120" align="left" valign="middle"><img src="../images/doctor4.png" border="0" /></td>
+                                        <td align="left" valign="middle">
+                                            <div class="con-table-div"><span class="hospital-title">刘平</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-text">复旦大学附属肿瘤医院</span></div>
+                                            <div class="con-table-div"><span class="hospital-content-title">传染科、慢性肝病及感染疾病的诊断</span></div>
+                                        </td>
+                                        <td width="70" align="center" valign="middle">
+                                            <div class="hospital-circle4">4</div>
+                                            <div class="hospital-content-title">2213</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            -->
+                            <!--间隔20px-->
+                            <div class="jg20">&nbsp;</div>
+                            <!--end 间隔20px-->
+                            <!--解决父div高度随内容扩展-->
+                            <div style="font:0px/0px sans-serif;clear:both;display:block"></div>
+                            <!--end 解决父div高度随内容扩展-->
+                        </div>
+                    </div>
+                    <!--end 一周热门医生点评内容-->
+                </div>
+            </div>
+            <!--end 右侧热门科室-->
+        </div>
+        <!--end 内容模块-->
+    </div>
+    <!--end content-->
+</body>
+</html>
+<script src="../js/echarts.js"></script>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/layer.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../js/d3.min.js"></script>
+<script type="text/javascript" src="../js/xywztj-zys.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>

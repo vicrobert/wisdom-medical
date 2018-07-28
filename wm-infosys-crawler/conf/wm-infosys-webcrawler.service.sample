@@ -1,0 +1,14 @@
+[Unit]
+Description=Wisdom Medical Web Crawler Service
+After=mysqld.service zk.service
+
+[Service]
+Type=forking
+ExecStart=/usr/local/wisdom_medical/crawler_service/bin/webcrawler-service start
+ExecStop=/usr/local/wisdom_medical/crawler_service/bin/webcrawler-service stop
+WorkingDirectory=/usr/local/wisdom_medical/crawler_service/bin
+PIDFile=/var/run/wisdom_medical/webcrawler-service.pid
+TimeoutSec=120
+
+[Install]
+WantedBy=multi-user.target

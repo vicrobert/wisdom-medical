@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>科室合理化分析</title>
+    <link rel="stylesheet" href="../css/baseSet.css">
+    <link type="text/css" rel="stylesheet" href="../css/dialog.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" type="text/css" href="../css/tree.css">
+    <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/circle.css">
+    <link rel="stylesheet" type="text/css" href="../css/d3-tip-styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/showLoading.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/HospitalConstructionDecisionSupport.css">
+    <!-- <link rel="stylesheet" href="../css/RationalAnalysis.css"> -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/rewrite.css"> -->
+    <link rel="stylesheet" href="../css/returnContrastPage.css">
+    <link rel="stylesheet" href="../css/x-base.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/DepartmentRationalizationAnalysis.css"> -->
+    <style>
+        .back{
+            width: 10px;
+            height:10px;
+            display: inline-block;
+            /* background-color:red; */
+            cursor: pointer;
+        }
+        body{
+            height: initial;
+            overflow: auto!important;
+        }
+        .ifm-box-content .title{
+            margin-top: 10px;
+        }
+        .keepcenter{
+            height: 200px;
+            text-align: center;
+            overflow: hidden;
+        }
+        #score{
+            line-height: 300px;
+            /* text-shadow: 3px 2px 4px #B5C334; */
+            color: #0f97a8;
+            font-size: 250px;
+            height: 300px;
+            font-family: fantasy;
+            text-align: center;
+            overflow: hidden;
+        }
+        .datagrid-cell-rownumber{
+            width: 47px;
+        }
+        .datagrid-header-rownumber{
+            width: 47px;
+        }
+/* 
+        #shortList{
+            margin-top: 10px;
+        } */
+
+        #shortList span{
+            display: inline-block;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 95%;
+            background-color: rgb(181, 195, 52);
+            padding: 5px 15px;
+            color: #fff;
+            cursor:pointer;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.12);
+        }
+        #secondLevelresultlist .datagrid-view {
+            border: 0
+        }
+    </style>
+</head>
+<body>
+    <!-- <span class="back"></span>
+    <div class="second"> -->
+    <input type="hidden" id="hospitalA" name="hospitalA" value="上海长海医院"/>
+    <input type="hidden" id="hospitalB" name="hospitalB" value="8c96a0e8dcfbe4747af06384aa3d66f3"/>
+    <div class="box">
+        <!--对比弹出层-->
+        <div class="dbtcc">
+            <ul>
+                <li>
+                    <div class="content-con">
+                        <div class="con-table">
+                            <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                            <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                            <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                            <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                            <div class="clear"></div>
+                            <!--对比内容-->
+                            <div class="compare-content">
+                                <div class="ifm-tabs">
+                                    <!-- <ul class="tabs-title" id="tabs">
+                                        <li class="active">
+                                            <a href="#" onclick="changeTabsLoad('yjzb','hospitalContrastController/returnHotContrastPage');">一级指标             </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="changeTabsLoad('ejzb','secLHosController/secondLevelHosManagerPage');">二级指标</a>
+                                        </li>
+                                    </ul> -->
+                                    <div class="compare-content-title">
+                                        <span>&nbsp;</span>
+                                        <span class="compare-top-tab active" id="yjzb">一级指标</span>
+                                        <span class="jgpic">|</span>
+                                        <span class="compare-top-tab"  id="ejzb">二级指标</span>
+                                        <span class="back closepic"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="frame_bottom taba1 x-tab" style="overflow: hidden">
+                                    <div class="col-12 x-clear">
+                                        <div class="compare-l">
+                                            <div class="col-6">
+                                                <div class="ifm-box">
+                                                    <div class="content-title c-title">
+                                                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                            <div class="title-center">一级科室差异</div>
+                                                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                    </div>
+                                                    <!-- <div class="ifm-box-title">
+                                                        <h2>对比结果</h2>
+                                                    </div> -->
+                                                    <div class="content-con1 x-content-con one-content">
+                                                            <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                            <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                            <div class="ifm-box-content"  style="height:840px;width: 848px;">
+                                                                    <div id="firstLevelresultlist"></div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="compare-r">
+                                            <div class="col-6">
+                                                <div class="ifm-box">
+                                                    <div class="content-title c-title">
+                                                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                            <div class="title-center">二级科室差异</div>
+                                                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                    </div>
+                                                    <!-- <div class="ifm-box-title">
+                                                        <h2>对比结果</h2>
+                                                    </div> -->
+                                                    <div class="content-con1 x-content-con">
+                                                            <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                            <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                            <div class="ifm-box-content"  style="height:840px;width: 848px;">
+                                                                    <div id="secondLevelresultlist"></div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="frame_bottom taba2 x-tab">
+                                    <div class="col-12 x-clear">
+                                            <div class="compare-l2">
+                                                <div class="col-6">
+                                                    <div class="ifm-box">
+                                                        <div class="content-title c-title">
+                                                                <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                                <div class="title-center"><span id="hostHospital"></span>
+                                                                    布局图</div>
+                                                                <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                        </div>
+                                                        <div class="content-con1 x-content-con">
+                                                                <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                                <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                                <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                                <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                                <div class="ifm-box-content"  style="height:400px;width: 600px;padding-top:50px;padding-left:50px;box-sizing:border-box">
+                                                                        <div class="ifm-box-content" id="host_hospital_chart"></div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="compare-r2">
+                                                <div class="col-8">
+                                                    <div class="ifm-box">
+                                                        <div class="content-title c-title">
+                                                                <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                                <div class="title-center"><span>行业</span></div>
+                                                                <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                        </div>
+                                                        <div class="content-con1 x-content-con">
+                                                                <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                                <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                                <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                                <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                                <div class="ifm-box-content"  style="height:400px;width: 1100px;padding-top:20px;padding-left:20px;box-sizing:border-box">
+                                                                        <div class="ifm-box-content" id="hy_avenage_charts" style="height:400px;width: 1100px;"></div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        
+                            
+                                    </div>
+                                    
+                                    <div class="col-12 x-clear">
+                                        <div class="compare-l2" style="margin-top:0">
+                                            <div class="col-4">
+                                                <div class="ifm-box">
+                                                    <div class="content-title c-title">
+                                                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                            <div class="title-center">偏离行业均值</div>
+                                                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                    </div>
+                                                    <div class="content-con1 x-content-con">
+                                                            <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                            <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                            <div class="ifm-box-content"  style="width: 550px;">
+                                                                    <div class="ifm-box-content" id="hy_matchanlysis_charts" style="height:340px"></div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="compare-l-l" style="margin-top:0">
+                                            <div class="col-4">
+                                                <div class="ifm-box">
+                                                    <div class="content-title c-title">
+                                                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                            <div class="title-center">以下科室占比与行业均值差异较大</div>
+                                                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                    </div>
+                                                    <div class="content-con1 x-content-con">
+                                                            <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                            <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                            <div class="ifm-box-content"  style="height:340px;width: 500px;">
+                                                                    <div id="shortList"></div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="compare-l-r" style="margin-top:0">
+                                            <div class="col-4">
+                                                <div class="ifm-box">
+                                                    <div class="content-title c-title">
+                                                            <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                                                            <div class="title-center">整体合理化指标得分</div>
+                                                            <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                                                    </div>
+                                                    <div class="content-con1 x-content-con">
+                                                            <div class="con-top-l1"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                                            <div class="con-top-r1"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-l1"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                                            <div class="con-bottom-r1"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                                            <div class="ifm-box-content"  style="height:340px;width: 500px;">
+                                                                    <div class="ifm-box-content" id="score" ></div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                         
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end 对比内容-->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--end 对比弹出层-->
+    </div>
+    
+</div>
+</body>
+</html>
+<script src="../js/echarts.js"></script>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/jQuery.resizeEnd.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../js/d3.min.js"></script>
+<script type="text/javascript" src="../js/d3.tip.v0.6.3.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/hyFirstLevelMatch.js"></script>
+<script type="text/javascript" src="../js/hySecondLevelMatch.js"></script>
+<script type="text/javascript">
+    $(function() {
+        
+        $('.back').bind('click',function () {
+            window.history.back(-1);
+        })
+        //$.jqtab("#tabs","#tab-conbox","click");
+        $('#yjzb').click(function(){
+            $(this).addClass('active').siblings('.compare-top-tab').removeClass('active');
+            changeTab('.taba1')
+        })
+        $('#ejzb').click(function(){
+            $(this).addClass('active').siblings('.compare-top-tab').removeClass('active');
+            changeTab('.taba2')
+        })
+        setTimeout(()=>{
+            $('.taba2').css('display','none')
+        },500)
+    });
+    // function changeTabsLoad(divId,url){
+    //     $("#yjzb").empty();
+    //     $("#ejzb").empty();
+    //     $("#"+divId).load(url+"?hospitalA=上海长海医院&hospitalB=青海省人民医院");
+    // }
+    function changeTab(tab){
+        
+        $(tab).css({"display":"block","opacity":1})
+        .siblings('.x-tab').css({"display":"none","opacity":0})
+
+       
+    }
+    // changeTabsLoad('yjzb','hospitalContrastController/returnHotContrastPage');
+</script>

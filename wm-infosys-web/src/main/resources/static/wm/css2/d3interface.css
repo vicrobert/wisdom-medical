@@ -1,0 +1,68 @@
+.node {
+    stroke-width: 1.5px;
+}
+.node:hover circle {
+    opacity: .7;
+}
+
+text {
+    font: 14px 'Open Sans', sans-serif;
+    text-anchor: middle;
+    pointer-events: none;
+    fill: black;
+}
+circle {
+    fill: #ccc;
+    stroke: white ;
+    stroke-width: 2px;
+}
+
+
+.nodebox {
+    fill: #fff;
+    stroke: #058FCD;
+    stroke-width: 8.5px;
+}
+#node_PHYSICAL .nodebox {
+    stroke: beige;
+}
+#node_PHYSICAL_HARD .nodebox {
+    stroke: tan;
+}
+#node_PHYSICAL_SOFT .nodebox {
+    stroke: yellow;
+}
+#node_BIOTA .nodebox {
+    stroke: darkgreen;
+}
+#node_BIOTA_SPONGES .nodebox {
+    stroke: orange;
+}
+#node_BIOTA_ALGAE .nodebox {
+    stroke: green;
+}
+#node_BIOTA_ALGAE_CANOPY_ECK .nodebox {
+    stroke: lightgreen;
+}
+#node_BIOTA_ALGAE_CRUSTOSE .nodebox {
+    stroke: purple;
+}
+.nodeTitle {
+    font: 12px sans-serif;
+    font-weight: bold;
+}
+.nodeText {
+    font: 12px sans-serif;
+}
+.f1Text {
+    fill: #F6881F;
+    font-weight: bold;
+}
+.link {
+    fill: none;
+    stroke: #DCEBF9;
+    stroke-width: 15px;
+}
+.triangle {
+    fill: #058FCD;
+}

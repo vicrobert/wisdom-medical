@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="icon" href="../../assets/icons/favorite.ico" type="image/x-icon">-->
+    <link rel="stylesheet" href="../plug/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="../../scripts/lib/fontawesome-4.3.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/d3interface.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <style>
+    .con-top-r {
+        top: -3px;
+        right: -1px;
+        overflow: visible
+    }
+    .con-top-l {
+        left: -1px;
+        top: -3px;
+        overflow: visible;
+    }
+    .con-bottom-r {
+        bottom: 1px;
+        right: -1px;
+        overflow: visible
+    }
+    .con-bottom-l {
+        left: -1px;
+        bottom: 1px;
+        overflow: visible;
+    }
+    .pull-right select{
+        background: #09346a;
+        border: 1px solid #0e5283;
+        padding: 4px;
+        color: #00a6fb;
+        font-size: 16px;
+        outline: none;
+       }
+    </style>
+    <title>疾病疗效分析</title>
+</head>
+<body>
+        <div class="main_right">
+                <div class="diseaseeffect_t"> 
+                  <!--医生推荐-->
+                  <div class="doctorrecommends">
+                    <div class="content-title">
+                      <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                      <div class="title-center">医生推荐</div>
+                      <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="doctorrecommends_bj">
+                      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                      <div class="doctorrecommends_con">
+                        <div class="doctorrecommends_content">
+                          <div class="doctorrecommendschart">
+                                <span class="pull-right">
+                                        <select name="year" id="year"></select>
+                                        <select name="month" id="month"></select>
+                                        <select name="community" id="community"></select>
+                                </span>  
+                                <div id="doctor" style="height:300px;width:100%;"></div>
+                          </div>
+                          <div class="bottomexplain">
+                            <p>根据医生看病数量和病人对医生的评价进行医生推荐</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--end 医生推荐--> 
+                  <!--抗菌药物使用强度-->
+                  <div class="antisepticdruguse">
+                    <div class="content-title">
+                      <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                      <div class="title-center">抗菌药物使用强度</div>
+                      <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="antisepticdruguse_bj">
+                      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                      <div class="antisepticdruguse_con">
+                        <div class="doctorrecommends_content">
+                          <div class="doctorrecommendschart">
+                            <div id="useStrength" style="height:350px;width:100%;"></div>
+                          </div>
+                          <div class="bottomexplain">
+                            <p>该种疾病使用抗生素药物强度分析</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <!--end 抗菌药物使用强度-->
+                <div class="diseaseeffect_b"> 
+                  <!--药品来源分布-->
+                  <div class="drugsource">
+                    <div class="content-title">
+                      <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                      <div class="title-center">药品来源分布</div>
+                      <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="drugsource_bj">
+                      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                      <div class="drugsource_con">
+                        <div class="doctorrecommends_content">
+                          <div class="doctorrecommendschart">
+                              <div id="from" style="height:350px;width:100%;"></div>
+                          </div>
+                          <div class="bottomexplain">
+                            <p>该种疾病使用药物的来源分析</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--end 药品来源分布--> 
+                  <!--药品类别分布-->
+                  <div class="drugcategory drugcategorymiddle">
+                    <div class="content-title">
+                      <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                      <div class="title-center">药品类别分布</div>
+                      <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="drugsource_bj">
+                      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                      <div class="drugsource_con">
+                        <div class="doctorrecommends_content">
+                          <div class="doctorrecommendschart">
+                              <div id="type" style="height:350px;width:100%;"></div>
+                          </div>
+                          <div class="bottomexplain">
+                            <p>该种疾病使用药物的类别分析</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--end 药品类别分布--> 
+                  <!-- 抗生素药品使用比例-->
+                  <div class="antibioticdrugs">
+                    <div class="content-title">
+                      <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+                      <div class="title-center">抗生素药品使用比例</div>
+                      <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="antibioticdrugs_bj">
+                      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                      <div class="antibioticdrugs_con">
+                        <div class="doctorrecommends_content">
+                          <div class="doctorrecommendschart">
+                                <div id="use" style="height:350px;width:100%;"></div>
+                          </div>
+                          <div class="bottomexplain">
+                            <p>该种疾病使用抗生素药物分析</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <!--end  抗生素药品使用比例--> 
+              </div>
+<!-- plugins -->
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../plug/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/underscore-min.js"></script>
+
+<script src="../js/echarts.js"></script>
+<script src="../js/d3.min.js"></script>
+
+<script src="../js/jquery.com.toolkit.js"></script>
+<script src="../js/jquery.tmpl.min.js"></script>
+<script src="../js/jquery.pagination.js"></script>
+
+<!-- commons -->
+<script src="../js/errorDic.js"></script>
+<script src="../js/ajaxdatacontroller.js"></script>
+<script src="../js/echartsinterface.js"></script>
+<script src="../js/jquery-ui.js"></script>
+
+<!-- page's -->
+<script src="../js/d3interface.js"></script>
+<script src="../js/illnessdiagnosesmessagedatacontroller.js"></script>
+<script src="../js/illnessdiagnosesmessagechart.js"></script>
+<script src="../js/illnessdiagnosesmessage.js"></script>
+
+</body>
+</html>

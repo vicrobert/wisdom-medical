@@ -1,0 +1,1 @@
+{"status":{"code":"200","message":"数据获取成功"},"data":{"type":null,"xaxis":["国家基药","非基药","省级基药","市级基药"],"date":[{"name":"国家基药","value":10},{"name":"市级基药","value":30},{"name":"省级基药","value":20},{"name":"非基药","value":40}]}}

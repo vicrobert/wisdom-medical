@@ -1,0 +1,306 @@
+.main_frame_top_two{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main_frame_top_two li{
+    float: left;
+    color: #6698ca;
+    width: 118px;
+    cursor:pointer;
+}
+.main_frame_top_two li:nth-child(1){
+    border-right:1px solid  #6698ca;
+    margin-right: 15px;
+}
+.main_frame_top_two li.active{
+    color: #16b8ca;
+}
+.main_frame_analysis_tab  li{
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+/* x style */
+li.x-tab{
+    color:#6698ca;
+    font-size: 16px;
+}
+.x-tab.active{
+    color:#1bedff!important;
+}
+.x-clear:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.main_frame_top_two{
+    margin-top: 15px!important;
+    margin-bottom: 15px!important;
+}
+.ifm-query>div{
+    float: left;
+}
+.ifm-query{
+    overflow: hidden;
+    background: url('../images/search_bg.png')  0 0 repeat;
+    border: 1px solid #0b325f;
+    margin-bottom: 10px;
+    padding: 7px 0 7px;
+    width: 1185px;
+}
+.x-btn>button{
+    outline: none;
+    border: 0;
+    width: 100px;
+    height: 34px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    color:#6698ca;
+    font-size: 16px;
+    text-indent: 16px;
+    background-color: #094483;
+    line-height: 34px;
+}
+.x-btn>button:hover{
+    background-color: #1e64af;
+}
+.x-search{
+    background:url('../images/search.png') no-repeat;
+    background-position: 20% 50% ;
+    margin-left: 10px;
+}
+.x-pick{
+    padding: 0 15px ;
+    box-sizing: content-box;
+    background:url('../images/compare.png') no-repeat;
+    background-position: 20% 50% ;
+    float: left;
+    margin-left: 70px;
+}
+#pklist{
+    float: left;
+}
+#pklist>li{
+    margin-left: 10px;
+    float: left;
+    color:white;
+    height: 34px;
+    padding:0 15px;
+    line-height: 34px;
+    border-radius: 12px;
+    position: relative
+}
+#pklist>li a{
+    position: absolute;
+    right: 4px;
+    top: -8px;
+    display: none;
+}
+#pklist>li a i{
+    font-size: 16px;
+    color:#fff;
+}
+#pklist>li a:hover i{
+    color:red;
+}
+#pklist>li:hover a{
+     display: block;
+}
+#pklist>li:nth-child(1){
+    background-color: #06939f ;
+}
+#pklist>li:nth-child(2){
+    background-color: #e37a12;
+}
+#searchHos{
+    margin-left: 10px;
+    background: none;
+    outline: none;
+    border: 1px solid #0c335f;
+    border-radius: 12px;
+    height: 30px;
+    color: #6698ca;
+    line-height: 30px;
+    padding-left: 8px;
+   
+}
+::-webkit-input-placeholder { 
+    color: #6698ca;    
+}
+::-moz-placeholder {
+    color: #6698ca;}
+    
+::-moz-placeholder {
+    color: #6698ca;}
+::-ms-input-placeholder {
+    color: #6698ca;}
+.datagrid-cell{
+    text-align: center!important;
+}
+.datagrid-view2{
+    overflow: visible;
+}
+.datagrid-header{
+    background-color: #0a2f5d;
+}
+.panel-body{
+    border:0
+}
+.datagrid-header td, .datagrid-body td, .datagrid-footer td {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+.datagrid-header td .datagrid-cell span{
+    font-family: '微软雅黑','arial';
+    font-size: 16px!important;
+    color: #00a6fb;
+    font-weight: bold
+}
+ .datagrid-row{
+  background:transparent !important;
+}
+.datagrid .panel-body{
+    overflow: visible
+}
+.panel{
+    /* overflow: visible; */
+}
+.datagrid-body{
+    background-color: transparent!important;
+}
+.datagrid-body .datagrid-row{
+    height: 38px;
+    line-height: 38px;
+    box-sizing: content-box;
+}
+.datagrid-row-over {
+     background-color: #094483!important;
+}
+.panel-body{
+    background: transparent;
+}
+
+.panel-noscroll{
+    overflow: visible;
+}
+.datagrid-view{
+    border: 1px solid #0d4472;
+    box-sizing: border-box;
+    overflow: visible;
+}
+.datagrid-view1 .datagrid-body{
+    background: url(../images/con-bg.png) 0 0 repeat;}
+.datagrid-header td, .datagrid-body td, .datagrid-footer td {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    background: url(../images/con-bg.png) 0 0 repeat;
+}
+
+.datagrid-header{
+    border: 0
+}
+.datagrid-cell, .datagrid-cell-group, .datagrid-header-rownumber, .datagrid-cell-rownumber{
+    font-family: '微软雅黑','arial';
+    font-size: 16px;
+    color:#1765b1;
+}
+a:link{
+    color:#1765b1;
+}
+a:active{
+    color:#1765b1;
+}
+a:hover{
+    color:#1765b1;
+}
+a:visited{
+    color:#1765b1;
+}
+
+.datagrid .datagrid-pager {
+    margin-top: 10px;
+    border: 0;
+    color:#00a6fb;
+}
+.datagrid-toolbar, .datagrid-pager{
+    background: none
+}
+.datagrid-header-rownumber, .datagrid-cell-rownumber{
+    width: 78px;
+}
+.datagrid-header-row{
+    height: 38px;
+}
+.datagrid-header-over{
+    background: transparent!important;
+}
+.datagrid-view2  .datagrid-body{
+    height: auto!important;
+}
+
+.datagrid-view1  .datagrid-body{
+    height: auto!important;
+}
+.datagrid-view1 .datagrid-body-inner {
+    padding-bottom: 0!important;
+}
+.title-left{
+    float:left;
+    transform: scaleY(.75);
+}
+.title-center{
+    background:url('../images/title_center.png') 0 0 repeat-x;
+    float:left;
+    font-size: 16px;
+    line-height: 38px;
+    text-align: left;
+    color:#00a6fb;
+    font-family: '微软雅黑','arial';
+    min-width:100px;
+    padding-left:10px;
+    transform: scaleY(.75);
+
+}
+.title-right{
+    float:left;
+    transform: scaleY(.75);
+}
+.ifm-box{
+    margin-top: 10px;
+}
+.ifm-box-title{
+    overflow: hidden;
+    transform: scaleY(.75);
+}
+.pagination-btn-separator{
+    border-color: transparent;
+}
+.l-btn-plain:hover{
+    border: 0!important;
+    background-color: #081538;
+}
+.l-btn-plain{
+    padding: 0;
+}
+
+.ifm-box-content{
+    width: 1185px;
+    height: 285px;
+    border: 1px solid #0d4472;
+    background: url(../images/con-bg.png) 0 0 repeat;
+    margin-top: 7.5px;
+    box-sizing: border-box;
+}
+
+.datagrid-view2 .datagrid-header td{
+    background: none!important;
+}

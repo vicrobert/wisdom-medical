@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wisdomMedical</title>
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)" href="css/baseSet.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  href="css/index.css">
+    <link rel="stylesheet" media="(max-width:1440px)" href="css2/baseSet.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  href="css2/index.css">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+</head>
+<body>
+    <div class="main_body">
+        <div class="main_top">
+            <ul class="main_top_l">
+                <li class="active">区域医疗卫生服务</li>
+                <li><a href="html/doctorinformation.html" style="color:#6698ca;">互联网采集服务</a></li>
+            </ul>
+            <div class="log_top"></div>
+            <ul class="main_top_r time">
+                <li>2017年12月31日</li>
+                <li>星期日</li>
+                <li>00:00:00</li>
+            </ul>
+        </div>
+        <div class="main_bottom">
+            <div class="main_left">
+                <dl>
+                    <dt>
+                        <i></i>
+                        <li class="title"><img src="./images/Internetmedicaltreatment.png" border=" " />&nbsp;&nbsp;互联网医疗分析</li>
+                    </dt>
+                    <dd  url="html/HospitalConstructionDecisionSupport.html" data-pid='1'>
+                        <i style="background: url(./images/hospitalconstruction.png);"></i>
+                        <span>医院建设决策支持</span>
+                    </dd>
+                    <dd url="html/xywztj.html" data-pid='2'>
+                        <i style="background: url(./images/searchinquiry.png);"></i>
+                        <span>寻医问诊推荐</span>
+                    </dd>
+                    <dd url="html/DoctorInternetAnalysis.html" data-pid='3'>
+                        <i style="background: url(./images/doctorsInternet.png);"></i>
+                        <span>医生互联网行为分析</span>
+                    </dd>
+                    <dd url="html/TopDiseaseAnalysis.html" data-pid='4'>
+                        <i style="background: url(./images/hotdisease.png);"></i>
+                        <span>热门疾病分析</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <i></i>
+                        <li class="title"><img src="./images/medicaldiseases.png" border="0" />&nbsp;&nbsp;疾病分析与预测</li>
+                    </dt>
+                    <dd url="html/DiseaseAnalysisAndPrediction.html" data-pid='5'>
+                        <i style="background: url(./images/diseaseanalysis.png);"></i>
+                        <span>疾病分析与预测</span>
+                    </dd>
+                    <dd url="html/DiseaseOverTheSamePeriodContrast.html" data-pid='6'>
+                        <i style="background: url(./images/diseasesynchronization.png);"></i>
+                        <span>疾病同期对比分析</span>
+                    </dd>
+                    <dd url="html/PortraitAnalysis.html" data-pid='7'>
+                        <i style="background: url(./images/diseaseassociation.png);"></i>
+                        <span>疾病关联与画像分析</span>
+                    </dd>
+                    <dd url="html/DiseaseEfficacyAnalysis.html" data-pid='8'>
+                        <i style="background: url(./images/diseaseeffect.png);"></i>
+                        <span>疾病疗效分析</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="main_right">
+                <iframe src="html/HospitalConstructionDecisionSupport.html" frameborder="0" style="width: 100%;height:100%!important;" class="iframe_con" id="iframe_con"></iframe>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script>
+        var time = $(".time");
+        var timer = setInterval(()=>{
+            var otime = new Otime();
+            time.children('li').eq(0).html(otime.date)
+                .next().html(otime.day)
+                .next().html(otime.t);  
+        },1000)  
+        
+
+function Otime(){
+    this.odate = new Date();
+    this.date= this.odate.getFullYear()+'年'+(this.odate.getMonth()*1+1)+'月'+this.odate.getDate()+'日';
+    this.t =isTen(this.odate.getHours())+':'+isTen(this.odate.getMinutes())+':'+isTen(this.odate.getSeconds());
+    switch(this.odate.getDay()){
+        case 0:
+        this.day = '星期天'
+        break;
+        case 1:
+        this.day = '星期一'
+        break;
+        case 2:
+        this.day = '星期二'
+        break;
+        case 3:
+        this.day = '星期三'
+        break;
+        case 4:
+        this.day = '星期四'
+        break;
+        case 5:
+        this.day = '星期五'
+        break;
+        case 6:
+        this.day = '星期六'
+        break;
+        default:
+        this.day = '星期天'
+        break;
+    }
+}
+function isTen(num){
+   return num/10>=1?num:'0'+num
+}
+</script>
+</html>

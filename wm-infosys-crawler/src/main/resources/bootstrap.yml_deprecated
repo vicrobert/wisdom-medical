@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: WebCrawlerService
+  cloud:
+    zookeeper:
+      connect-string: 192.168.33.230:2181
+      discovery:
+        instance-host: 192.168.33.50
+        instance-port: 8081
+        root: /wm
+      enabled: true

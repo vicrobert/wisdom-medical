@@ -1,0 +1,27 @@
+.node {
+	cursor: pointer;
+}
+
+.node circle {
+	fill: #0e577a!important;
+
+}
+
+.node text {
+	fill:#196bb9;
+	font-size: 16px;
+	/* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff; */
+}
+
+.link {
+	fill: none;
+	stroke: #1284a1;
+	stroke-width: 1.5px;
+}
+
+.node:hover text {
+	fill: #18c2d9;
+  }
+  .node:hover circle{
+	fill:#18c2d9!important;
+  }

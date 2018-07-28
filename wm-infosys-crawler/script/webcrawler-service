@@ -1,0 +1,50 @@
+#!/bin/bash
+PWD=$(pwd)
+piddir=/var/run/wisdom_medical
+pidfile=$piddir/webcrawler-service.pid
+
+start() {
+    pid=$(ps -ef| grep "$PWD/../lib/wm-infosys-crawler-0.0.1-SNAPSHOT.jar"| grep -v grep| awk '{print $2}')
+    if [ "z$pid" == "z" ]; then
+        if ! [ -e $piddir ]; then
+            mkdir -p $piddir
+        fi
+        nohup java -jar $PWD/../lib/wm-infosys-crawler-0.0.1-SNAPSHOT.jar 2>&1 &
+        echo $!>$pidfile
+        return 0
+    fi
+    echo "ERROR: webcrawler-service has already been run, PID:$pid."
+    return 1
+}
+
+stop() {
+    pid=$(ps -ef| grep "$PWD/../lib/wm-infosys-crawler-0.0.1-SNAPSHOT.jar"| grep -v grep| awk '{print $2}')
+    if ! [ "z$pid" == "z" ]; then
+        kill -9 $pid
+        ##
+        # pid file  managed by systemd
+        # rm -f $pidfile
+        return 0
+    fi
+    echo "ERROR: webcrawler-service process not found yet."
+    return 1 
+}
+
+case $1 in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        sleep 1
+        start
+        ;;
+    *)
+        echo "Usage: $0 <start|stop|restart>"
+esac
+
+exit 0
+

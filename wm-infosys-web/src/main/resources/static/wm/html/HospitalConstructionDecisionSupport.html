@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医院建设决策支持</title>
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  href="../css/baseSet.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  href="../css/public.css">
+    <link type="text/css" media="(max-width:1920px) and (min-width:1441px)"  rel="stylesheet" href="../css/dialog.css"/>
+    <link type="text/css"  media="(max-width:1920px) and (min-width:1441px)" rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/jquery-ui.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/circle.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/d3-tip-styles.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/showLoading.css">
+    <link rel="stylesheet" media="(max-width:1920px) and (min-width:1441px)"  href="../css/x-base.css">
+
+    
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/baseSet.css">
+    <link rel="stylesheet"  media="(max-width:1440px)" href="../css2/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  href="../css2/public.css">
+    <link type="text/css" media="(max-width:1440px)"  rel="stylesheet" href="../css2/dialog.css"/>
+    <link type="text/css"  media="(max-width:1440px)" rel="stylesheet" href="../css2/icon.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  type="text/css" href="../css2/jquery-ui.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  type="text/css" href="../css2/circle.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  type="text/css" href="../css2/d3-tip-styles.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  type="text/css" href="../css2/showLoading.css">
+    <link rel="stylesheet" media="(max-width:1440px)"  href="../css2/x-base.css">
+</head>
+<body>
+    <div class="main_frame">
+        <ul class="main_frame_top">
+            <li class="active" url="html/HospitalConstructionDecisionSupport.html">展示本院建设情况</li>
+            <li url="html/RationalAnalysis.html">合理化分析</li>
+            <li url="html/IndustryOverallAnalysis.html">行业整体分析</li>
+        </ul>
+        <div class="main_frame_body">
+            <input class="selectSelfHospital" id="selectSelfHospital" type="text" value="" placeholder="">
+            <ul class="main_frame_body_t">
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c">科室</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="deptCircle bg_pub" id="deptCircle"></div>
+                    </div>
+                    
+                </li>
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c">介绍</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="detailInfo bg_pub" id="detailInfo"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c">评价</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="hosScoreInfo bg_pub" id="hosScoreInfo"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c">最新舆情</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="hosDetailInfo bg_pub" id="hosDetailInfo"></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="main_frame_body_b">
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c"><span id="current_department1">医院</span>职称比例</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="selfDeptPositionPercentChart bg_pub" id="selfDeptPositionPercentChart"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c"><span id="current_department2">医院</span>人员结构</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="selfDeptPositionPercentDetailChart bg_pub" id="selfDeptPositionPercentDetailChart"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pub_head">
+                        <span class="pub_head_l"></span>
+                        <span class="pub_head_c"><span id="current_department3">医院</span>主任医师分布比例</span>
+                        <span class="pub_head_r"></span>
+                    </div>
+                    <div class="con_bj">
+                        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                        <div class="selfDeptStructureChart bg_pub" id="selfDeptStructureChart"></div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../js/echarts.js"></script>
+<script type="text/javascript" src="../js/jQuery.resizeEnd.min.js"></script>
+<script type="text/javascript" src="../js/d3.min.js"></script>
+<script type="text/javascript" src="../js/d3.tip.v0.6.3.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../js/selfDept.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>

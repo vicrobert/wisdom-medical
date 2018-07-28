@@ -1,0 +1,253 @@
+@charset "utf-8";
+body { margin: 0; font: normal 14px/20px 'Microsoft YaHei'; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, form { margin: 0; }
+div, a, span, em, p, ul, ol, li, form, h1, h2, h3, h4, h5, h6, input, textarea { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+ul, ol { list-style: none; padding-left: 0 }
+a { color: #333 }
+a img { border: none }
+a:hover { color: #07c }
+html, body { height: 100%; }
+table { border-collapse: collapse; border-spacing: 0; }
+i { margin-right: 3px }
+em { font-style: normal }
+
+/*reset end*/
+.clear{
+    clear: both;
+}
+/*.wraper{}*/
+.wraper { width: 1000px; min-height: 100%; background-color: #fff; }
+.large-body .wraper { min-width: 1200px; }
+.header {height: 20px;}
+.logo { float: left; }
+.main { min-height: 400px; }
+.city { float: left; }
+.city-name { margin-right: 5px; }
+.city-list { position: absolute; border: 1px solid #ddd; padding: 10px; width: 400px; display: block; background-color: #fff; z-index: 9999; display: none }
+.city-list .close { position: absolute; right: 5px; top: 5px; display: block; width: 20px; height: 20px; text-decoration: none; font-size: 16px; }
+.city-list  h4 { margin: 10px 10px 0; border-top: 1px dashed #ddd; padding: 8px 0 2px; color: #888; font-weight: 100; }
+.city-list  li { display: inline-block; margin: 3px 8px; }
+.city-list  h4:first-child { margin-top: 0; border-top: none }
+.city-list a { text-decoration: none; display: inline-block; padding: 1px 5px; }
+.city-list  .current a { color: #fff; background-color: #009fe1; }
+.search { float: left; position: relative; margin: 2px 0 0 25px;width: 370px; }
+.search-type { display: none; float: left; border: 1px solid #ddd; border-right: none; height: 36px; width: 80px; color: #666; }
+.search-type h3 { padding: 2px 2px 2px 8px; font: 100 16px/26px "Microsoft YaHei"; cursor: default }
+.search-type h3 i { margin-left: 2px; }
+.search-type ul { position: absolute; left: 0; top: 36px; width: 81px; background-color: #fff; padding: 5px 0; border: 1px solid #ddd; border-top: none; display: none }
+.search-type li { padding: 4px 2px 4px 8px; text-decoration: none; display: block }
+.search-type li.current { color: #009fe1; background-color: #f5f5f5; }
+.search-type li:hover { background-color: #f5f5f5; cursor: pointer }
+.search input { float: left; border: 1px solid #ddd; height: 36px;padding: 0 40px 0 10px;border-radius: 5px;  width: 370px; }
+.search button { position: absolute; height: 34px; width: 36px; right: 1px; top: 1px; background-color: transparent; border: none; color: #666; border-left: 1px solid #fff; }
+.search button:hover { background-color: #ebf7fc; color: #fff; border-left: 1px solid #ddd; }
+.filter-item { border-top: dashed 1px #ddd; padding: 5px 5px 10px 5px; font: 12px/20px "SongTi" }
+.filter-item:first-child { border-top: none }
+.filter-item .city { clear: both }
+.filter-keyword { float: left; text-align: right; line-height: 20px; padding-top: 2px; }
+.filter-value a { display: inline-block; margin: 3px 10px; text-decoration: none }
+.filter-value a.current { color: #009fe1 }
+.filter-value a.filter-select { display: inline-block; border: 1px solid #fb8302; margin: 0 15px 0 0; padding-right: 5px; border-radius: 3px; }
+.filter-value a.filter-select span { display: inline-block; background-color: #fb8302; color: #fff; padding: 0 5px; margin-right: 3px; }
+.filter-value a.filter-select  i { margin-left: 8px; font-style: normal; color: #fb8302 }
+.filter-select-title { margin-left: 80px; }
+.filter { font: 12px "songti"; }
+.filter-select em { margin-left: 8px; }
+.change-city { cursor: pointer; }
+#hos_filter_zone, #dept_filter_zone, #doc_filter_zone { margin-left: 15px; }
+.operbar { height: 40px; border-top: 1px solid #f5f5f5; border-bottom: 1px solid #ddd; background-color: #fafafa; }
+.operbar-sort { float: left; margin: 7px auto auto 10px }
+.operbar-sort a { display: inline-block; height: 25px; padding: 0 8px; border: 1px solid #ddd; text-align: center; text-decoration: none; border-radius: 5px; }
+.operbar-sort a.current { border-color: #e4393c; background-color: #e4393c; color: #fff; }
+.operbar-page { float: left; margin: 7px 10px auto 480px; }
+.operbar-page span { display: inline-block; border: 1px solid #ddd; margin-left: 15px; }
+.operbar-page a { display: inline-block; background-color: #fff; color: #aaa; text-decoration: none; width: 46px; height: 23px; text-align: center; border-radius: 5px; }
+.operbar-page a.disable { background-color: #f1f1f1; color: #ccc; }
+.operbar-page a:first-child { border-right: 1px solid #ddd; }
+.results { clear: both }
+.results:after { display: block; content: ""; height: 0; overflow: hidden; clear: both }
+.hospital-item { padding-bottom: 18px; border-bottom: 1px dashed #ddd; margin-top: 18px; }
+.hospital-item img { float: left; margin-right: 20px }
+.hospital-item h3 { display: inline-block; }
+.hospital-item h3 a { font: 100 18px/24px "Microsoft YaHei"; color: #009fe1; text-decoration: none }
+.hospital-top span { color: #fb8302; margin-left: 10px; }
+.hospital-top  em { float: right; color: #fb8302; margin-right: 60px; }
+.hospital-bottom p { display: inline-block; width: 300px; line-height: 25px; color: #888; font-size: 12px; }
+.hospital-hot { padding-left: 30px; }
+.hospital-hot-item { position: relative; padding: 10px 50px 18px 10px; border-bottom: 1px dashed #ddd; }
+.hospital-hot-item:first-child { margin-top: 10px; }
+.hospital-hot-item:after { display: block; content: ""; height: 0; overflow: hidden; clear: both }
+.hospital-hot-item img { float: left; width: 90px; max-height: 60px; margin-right: 20px; margin-top: 3px; }
+.hospital-hot-item h4 a { font: 100 14px/20px "Microsoft YaHei"; color: #009fe1; text-decoration: none }
+.hospital-hot-item  p { color: #888; overflow: hidden; height: 40px; }
+.hospital-hot-item span { display: block; position: absolute; right: 0; top: 14px; width: 50px; }
+.hospital-hot-item span em { display: block; float: right; width: 24px; height: 24px; border-radius: 12px; background-color: #fb8302; color: #fff; text-align: center; font-size: 16px; padding: 2px 0; margin-bottom: 5px; }
+.hospital-hot-item span a { font-size: 12px; float: right }
+.ks-bottom p, .ks-bottom p a { color: #888; line-height: 25px; color: #888; font-size: 12px }
+.ks-bottom p span { margin-left: 100px; }
+.box { margin: 10px 0; }
+.box-title { border-bottom: 1px solid #ddd; height: 38px; white-space: nowrap; }
+.box-title h2, .box-title h3 { border-bottom: 1px solid #fb8302; display: inline-block; padding: 0 5px; font: 16px/37px "Microsoft YaHei"; color: #333; }
+.box-content { }
+.footer { color: #fff; background-color: #333; text-align: center; line-height: 20px; padding: 20px 0; min-width: 1000px; }
+
+/*----------------------------------------------------------------*/
+
+/*Text and link hover color */
+.fc-orange { color: #fb8302 }
+.fc-green { color: #8bc736; }
+.fc-red { color: #e4393c; }
+.fc-blue { color: #009fe1 }
+
+/*tabs*/
+.tabs-title { padding-left: 20px; height: 40px; border-bottom: 2px solid #e6e6e6; border-top: 1px solid #f5f5f5; background-color: #fafafa;width: 800px;float: left;}
+.tabs-title li { height: 39px; line-height: 39px; float: left; margin-right: 20px; }
+.tabs-title li a { display: block; padding: 0 5px; text-decoration: none; font: 16px/39px "Microsoft YaHei" }
+.tabs-title .current { border-bottom: 2px solid #fb8302; }
+.tabs-title .current a { color: #fb8302 }
+.tabs-conbox { padding: 5px; height: 100%;margin-top: 10px; }
+.tabs-con { display: none }
+.tabs-con:first-child { display: block }
+.main-title { padding-left: 20px; height: 40px; border-bottom: 2px solid #e6e6e6; border-top: 1px solid #f5f5f5; background-color: #fafafa }
+.main-title h2 { display: inline-block; border-bottom: 2px solid #fb8302; padding: 0 5px; text-decoration: none; font: 16px/37px "Microsoft YaHei" }
+i { display: inline-block; }
+.icon-search { width: 24px; height: 24px; background: url(../images/sprite.png) no-repeat -40px -2px; }
+.icon-map { width: 16px; height: 16px; background: url(../images/sprite.png) no-repeat -2px -3px; }
+.icon-arrow-down { width: 16px; height: 16px; background: url(../images/sprite.png) no-repeat -93px 0px }
+
+/*grid*/
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { float: left; }
+.col-12 { width: 100%; }
+.col-11 { width: 91.66666667%; }
+.col-10 { width: 83.33333333%; }
+.col-9 { width: 75%; }
+.col-8 { width: 66.66666667%; }
+.col-7 { width: 58.33333333%; }
+.col-6 { width: 50%; }
+.col-5 { width: 41.66666667%; }
+.col-4 { width: 33.33333333%; }
+.col-3 { width: 25%; }
+.col-2 { width: 16.66666667%; }
+.col-1 { width: 8.33333333%; }
+
+/*Pagination*/
+.pagination { margin: 30px 10px; text-align: center }
+.pagination a { display: inline-block; padding: 2px 4px; margin: 0 2px; min-width: 30px; text-align: center; border: 1px solid #ddd; text-decoration: none; }
+.pagination a.current { border: none; cursor: default }
+
+/*hos-box*/
+.hos-box { margin-top: 18px; font-size: 14px; }
+.hos-box:after { display: block; content: ""; height: 0; overflow: hidden; clear: both }
+.hos-box img { float: left; margin-right: 20px }
+.hos-box h2 { display: inline-block; font: 100 18px/24px "Microsoft YaHei"; color: #009fe1; }
+.hos-box span { color: #fb8302; margin-left: 10px; }
+.hos-box  em { color: #888; }
+.hos-box p { display: inline-block; width: 300px; line-height: 25px; color: #888; }
+.hos-info li { padding: 3px 0; line-height: 22px; font-size: 16px; color: #666; }
+
+/*find doctor*/
+.doctor-box { padding-left: 10px; }
+.doctor-box a { text-decoration: none; }
+.doctor-box .doctor-item { padding: 20px 0; margin-right: 45px; overflow: hidden; border-bottom: dashed 1px #ccc; }
+.doctor-box .doctor-item img { width: 81px; height: 102px; float: left; }
+.doctor-box .doctor-item .doctor-info { float: left; width: 82%; margin-left: 25px; }
+.doctor-box .doctor-item .doctor-info .doctor-info-name { margin-top: 3px; position: relative; }
+.doctor-box .doctor-item .doctor-info .doctor-info-name > a { display: inline; color: #009FE1; font-weight: normal; font-size: 18px; }
+.doctor-box .doctor-item .doctor-info .doctor-info-name span { color: #FB8302; margin-left: 20px; font-size: 12px; }
+.doctor-box .doctor-item .doctor-info { float: right; font-size: 18px; }
+.doctor-info-name  em { float: right; color: #fb8302; font-size: 14px; }
+.doctor-box .doctor-item .doctor-info .doctor-info-name .doctor-comment-num { display: inline; position: absolute; right: 0; bottom: -18px; font-size: 12px; }
+.doctor-box .doctor-item .doctor-info .doctor-info-name .doctor-comment-num a { color: #009FE1; }
+.doctor-box .doctor-item .doctor-info .doctor-info-other p { margin-top: 3px; color: #888; font-size: 12px; }
+.doctor-hot-item { overflow: hidden; margin-left: 10px; padding: 10px 10px 10px 0; border-bottom: dashed 1px #ccc; }
+.doctor-hot-item a { text-decoration: none; }
+.doctor-hot .doctor-hot-item img { width: 48px; height: 58px; float: left }
+.doctor-hot-info { float: left; margin-left: 15px; width: 83%; }
+.doctor-hot-info .doctor-hot-info-name { position: relative; }
+.doctor-hot-info .doctor-hot-info-name .doctor-name { display: inline; color: #009FE1; font-weight: normal; font-size: 16px; }
+.doctor-hot-info .doctor-hot-info-name .comment-ranking { border-radius: 10px; width: 20px; height: 20px; display: block; position: absolute; top: 0; right: 0; background-color: #FF9900; color: #fff; text-align: center; }
+.doctor-hot-info .doctor-hot-info-name span { position: absolute; right: 0; bottom: -20px; color: #ccc; font-size: 13px; }
+.doctor-hot-info .doctor-hot-info-other p { color: #888; font-size: 12px; }
+
+/*医生信息*/
+.doctor-information  a { text-decoration: none; }
+.doctor-information .doctor-box .doctor-item { border-bottom: none; }
+.doctor-information .doctor-box .doctor-item .doctor-info { width: 52%; }
+.doctor-information .doctor-box .doctor-item .doctor-info .doctor-info-name > a { color: #000; }
+.doctor-information .doctor-box .doctor-item .doctor-info .doctor-info-name > span { color: #888; }
+.doctor-information .doctor-box .doctor-item .doctor-info .doctor-info-other { margin-top: 10px; }
+.doctor-information .doctor-box .doctor-item .doctor-info .doctor-info-other a { color: #009FE1; font-size: 16px; }
+.doctor-information .doctor-box .doctor-item .doctor-info .doctor-info-other span { color: #888; font-size: 16px; margin-left: 30px; }
+.doctor-information .doctor-box .doctor-item .doctor-info .doctor-info-other p { font-size: 16px; margin-top: 10px; }
+.doctor-information .doctor-see-time { width: 56%; float: left; margin-bottom: 30px; }
+.doctor-see-time .see-time thead tr { height: 80px; }
+.doctor-see-time .see-time thead tr th { width: 70px; font-weight: normal; }
+.doctor-see-time .see-time .back { width: 22px; height: 22px; background-image: url(../images/sprite.png); background-position: 2% 43%; display: block; margin: auto; }
+.doctor-see-time .see-time .forward { width: 22px; height: 22px; background-image: url(../images/sprite.png); background-position: 26% 86%; display: block; margin: auto; }
+.doctor-see-time .see-time thead { border-bottom: solid 1px #E7E9EC; }
+.doctor-see-time .see-time tbody { border-bottom: solid 2px #E7E9EC; }
+.doctor-see-time .see-time tbody tr { height: 40px; }
+.doctor-see-time .see-time tbody tr:first-child { border-bottom: dashed 1px #E7E9EC; }
+.doctor-see-time .see-time tbody tr td { text-align: center; color: #999; }
+.doctor-see-time .see-time tbody tr td span { width: 22px; height: 22px; display: block; margin: auto; }
+.doctor-see-time .see-time tbody tr td span.can-see-doctor { background-image: url(../images/sprite.png); background-position: 51% 43%; }
+.doctor-simple-info .box-title h2 { border-bottom: none; }
+.doctor-information .doctor-simple-info { float: left; width: 39%; margin-left: 55px; }
+.doctor-information .doctor-simple-message { padding: 10px; color: gray; }
+.doctor-information .comment-info { clear: both; width: 56%; }
+.doctor-information .comment-info .comment-active a { background-color: #0895D3; color: #fff; }
+.comment-info .comment-text { margin-top: 20px; }
+.comment-info .comment-text ul { height: 30px; margin-bottom: 30px; }
+.comment-info .comment-text  li { height: 30px; line-height: 20px; float: left; }
+.comment-info .comment-text  li a { height: 30px; line-height: 30px; font-size: 14px; padding: 3px 6px; }
+.comment-info .comment-text .comment-text-item { overflow: hidden; padding: 10px 5px 30px; border-bottom: dashed 1px #ccc; }
+.comment-info .comment-text .comment-text-item:last-child { border-bottom: none; }
+.comment-info .comment-text .comment-text-item img { width: 50px; height: 50px; float: left; }
+.comment-info .comment-text .comment-text-item .comment-space { margin-left: 20px; float: left; width: 80%; }
+.comment-info .comment-text .comment-text-item .comment-space .comment-info-name label { color: #888; font-size: 12px; }
+.comment-info .comment-text .comment-text-item .comment-space .comment-info-name a { color: #009FE1; margin-right: 10px; }
+.comment-info .comment-text .comment-text-item .comment-space .comment-info-name em { float: right; font-size: 18px; }
+.comment-info .comment-text .comment-text-item .comment-space .comment-info-name p { margin-top: 8px; }
+.comment-info .comment-text .comment-text-item .comment-space .comment-info-name p.text { color: #625E5E; }
+.comment-info .comment-text .comment-text-item .comment-space .comment-info-name p.comment-time { font-size: 12px; color: #888; }
+
+/*科室信息*/
+.departments-information a { text-decoration: none; }
+.departments-information .departments-box { padding-left: 10px; }
+.departments-information .departments-item { padding: 20px 0; }
+.departments-information .departments-item > img { width: 180px; height: 132px; float: left; margin-right: 20px }
+.departments-information .departments-item .departments-info {  /*margin-left:25px;*/ }
+.departments-information .departments-item .departments-info .departments-info-name { margin-top: 5px; }
+.departments-information .departments-item .departments-info .departments-info-name a { display: inline; color: #000; font-weight: normal; font-size: 18px; }
+.departments-information .departments-item .departments-info .departments-info-name span { color: #FB8302; margin-left: 20px; font-size: 12px; }
+.departments-information .departments-item .departments-info .departments-info-other p { margin-top: 10px; position: relative; }
+.departments-information .departments-item .departments-info .departments-info-other p:last-child { height: 60px; line-height: 20px; overflow: hidden }
+.departments-information .departments-item .departments-info .departments-info-other p.open { height: auto; overflow: auto }
+.departments-information .departments-item .departments-info .departments-info-other p label { font-size: 14px; color: #888; }
+.departments-information .departments-item .departments-info .departments-info-other p label.departments-introduction { color: #000 }
+.departments-information .departments-item .departments-info .departments-info-other p a { font-size: 14px; color: #009FE1; }
+.departments-information .departments-item .departments-info .departments-info-other p a.openbtn { font-size: 14px; color: #009FE1; position: absolute; bottom: 0px; background-color: #fff; right: 0; width: 48px; text-align: right }
+.departments-information .doctor-see-time .see-time table { width: 50%; float: right; }
+.scheduling-title { overflow: hidden; border-bottom: solid 1px #E7E9EC; }
+.doctor-scheduling-item .doctor-info { float: left; margin-left: 25px; width: 39%; }
+.doctor-scheduling-item img { float: left; }
+.doctor-scheduling-item { overflow: hidden; padding: 20px 0; border-bottom: dashed 1px #ccc; }
+.doctor-scheduling-item .doctor-info .doctor-info-name > a { display: inline; color: #009FE1; font-weight: normal; font-size: 18px; }
+.doctor-scheduling-item .doctor-info .doctor-info-name > span { color: #FB8302; margin-left: 20px; font-size: 12px; }
+.doctor-scheduling-item .doctor-info .doctor-info-name > em { float: right; font-size: 18px; }
+.doctor-scheduling-item .doctor-info .doctor-info-name .doctor-comment-num { display: inline; position: absolute; right: 0; bottom: -18px; font-size: 12px; }
+.doctor-scheduling-item .doctor-info .doctor-info-name { position: relative; }
+.doctor-scheduling-item .doctor-info .doctor-info-name .doctor-comment-num a { color: #009FE1; }
+.doctor-scheduling-item .doctor-info .doctor-info-other p { margin-top: 3px; color: #888; font-size: 12px; }
+.departments-information .doctor-see-time .see-time tbody, .departments-information .doctor-see-time .see-time thead { border-bottom: none; }
+.departments-information .doctor-see-time .see-time tbody tr td:first-child { width: 48px; }
+.departments-information .doctor-see-time { margin-bottom: 30px; }
+.departments-information  .comment-info .comment-active a { background-color: #0895D3; color: #fff; }
+.departments-information .doctor-see-time .see-time .doctor-scheduling-item:last-child { border-bottom: none; }
+
+/*医院信息*/
+.hospital-information .doctor-info-other p span { color: #FB8302; }
+.hospital-information .doctor-see-time .see-time .doctor-scheduling-item .doctor-info .doctor-info-other p { margin-top: 0; }
+.hospital-information .doctor-scheduling-item .doctor-info { width: 80%; }
+.hospital-information .departments-item { }
+.hospital-information .departments-item .departments-info .departments-info-other p a { right: 7px; }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>科室合理化分析</title>
+    <!-- <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/circle.css"> -->    
+    <!-- <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/RationalAnalysis.css"> -->
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  href="../css/baseSet.css">
+    <link type="text/css"   media="(max-width:1920px) and (min-width:1441px)"rel="stylesheet" href="../css/dialog.css"/>
+    <link type="text/css"   media="(max-width:1920px) and (min-width:1441px)"rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/tree.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/jquery-ui.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/d3-tip-styles.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/showLoading.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/public.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/rewrite.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" type="text/css" href="../css/DepartmentRationalizationAnalysis.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)" href="../css/x-base.css">
+
+
+    <link rel="stylesheet"  media="(max-width:1440px)"   href="../css2/baseSet.css">
+    <link type="text/css"   media="(max-width:1440px)" rel="stylesheet" href="../css2/dialog.css"/>
+    <link type="text/css"   media="(max-width:1440px)" rel="stylesheet" href="../css2/icon.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/tree.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/jquery-ui.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/d3-tip-styles.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/showLoading.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/public.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/rewrite.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/DepartmentRationalizationAnalysis.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/x-base.css">
+    <style>
+    @media (max-width:1440px){
+        .datagrid-view2 {
+            width: 755px!important;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="main_frame">
+    <ul class="main_frame_top">
+        <li  url="html/HospitalConstructionDecisionSupport.html">展示本院建设情况</li>
+        <li class="active" url="html/RationalAnalysis.html">合理化分析</li>
+        <li url="html/IndustryOverallAnalysis.html">行业整体分析</li>
+    </ul>
+    <ul class="main_frame_top_two main_frame_analysis_tab x-clear">
+        <li class="x-tab" url="html/RationalAnalysis.html">行业科室布局</li>
+        <li class="x-tab active" url="html/DepartmentRationalizationAnalysis.html">科室合理化分析</li>
+    </ul>
+    <div>
+        <div class="col-12">
+            <div class="ifm-box">
+
+                <div class="ifm-box-content pd0">
+                    <div class="ifm-sidebar col-2">
+                        <ul class="ifm-sidebar-search">
+                            <li>
+                                <input id="analysis_searchHospital" type="text" value="华西医院" placeholder="请输入医院名称" size="42"></li>
+                            <li>
+                                
+                                <input name="searchFilter" type="checkbox" value="level" id="xck1" />
+                                <label class="x-input" for="xck1"></label>
+                                <span>同等级</span>
+                            </li>
+                            <li>
+                                
+                                <input name="searchFilter" type="checkbox" value="type" id="xck2"/>
+                                <label class="x-input" for="xck2"></label>
+                                <span>同类型</span>
+                            </li>
+                            <li>
+                                
+                                <input name="searchFilter" type="checkbox" value="size" id="xck3"/>
+                                <label class="x-input" for="xck3"></label>
+                                <span>相似规模</span>
+                            </li>
+                            <li>
+                                <input name="searchFilter" type="checkbox" value="area" id="xck4"/>
+                                <label class="x-input" for="xck4"></label>
+                                <span>相同区域</span>
+                            </li>
+                            <li>
+                                <button id="analSearchbtn"> <i class=""></i>
+                                    查询
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="right_ifm" class="ifm-right-box col-10 .x-clear">
+                        <div class="col-12">
+                            <div class="col-10" style="height:30.5%;position:relative">
+                                <div class="con-top-l" style="left:9px;top:42px"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                                <div class="con-top-r" style="right:1px;top:42px"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                                <div class="con-bottom-l" style="left:9px;bottom:4px"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                                <div class="con-bottom-r" style="right:1px;bottom:4px"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                                <div id="hyHospitalList" style="width:800px"></div>
+                            </div>
+                            <div class="col-2 x-pk" id="x-pk"> 
+                                <div class="pklist">
+                                    <ul>
+                                        <li>主对比医院</li>
+                                    </ul>
+                                    <ul id="hostpklist"></ul>
+                                    <ul>
+                                        <li>行业对比医院</li>
+                                    </ul>
+                                    <ul id="hypklist"></ul>
+                                    <button id="hymatchBtn">开始对比</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="turnpage">
+            <div class="turnpage-l">
+                <span class="turnpage-text">共</span>
+                <span class="turnpage-l-number">10</span>
+                <span class="turnpage-text">页</span>
+                <span class="turnpage-text">第</span>
+                <span>
+                    <form>
+                        <select name="s1" class="selectpage">
+                            <option value="010" selected="selected">1</option>
+                            <option value="029">2</option>
+                            <option value="028">3</option>
+                        </select>
+                    </form>
+                </span>
+                <span class="turnpage-text">页</span>
+            </div>
+            <div class="turnpage-r">
+                <span class="turnpage-button">首页</span>
+                <span class="turnpage-button">上一页</span>
+                <span class="turnpage-num1">1</span>
+                <span class="turnpage-num">2</span>
+                <span class="turnpage-num">3</span>
+                <span class="turnpage-num">4</span>
+                <span class="turnpage-button">下一页</span>
+                <span class="turnpage-button">尾页</span>
+            </div>
+        </div>
+        <div class="content-con">
+            <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+            <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+            <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+            <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+            <div class="col-12" id="selectHospitalTree"></div>
+        </div>
+       
+    </div>
+
+</div>
+
+</body>
+
+</html>
+<script src="../js/echarts.js"></script>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/jQuery.resizeEnd.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../js/d3.min.js"></script>
+<script type="text/javascript" src="../js/d3.tip.v0.6.3.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/analysisDept.js"></script>
+
+
+
+<!--
+<script src="resources/scripts/jquery-1.11.2.min.js"></script>
+<script src="resources/scripts/echarts/echarts.js"></script>
+<script type="text/javascript" src="resources/scripts/jQuery.resizeEnd.min.js"></script>
+<script type="text/javascript" src="resources/scripts/d3.min.js"></script>
+<script type="text/javascript" src="resources/scripts/d3.tip.v0.6.3.js"></script>
+<script type="text/javascript" src="resources/scripts/easyui/jquery.easyui.min.js"></script>
+<script src="resources/scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="resources/scripts/showloading/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="resources/scripts/business/hyFirstLevelMatch.js"></script>
+-->

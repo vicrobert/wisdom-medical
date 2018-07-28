@@ -1,0 +1,7 @@
+registry.server.url=${protocol}://${host}:${port}
+dubbo.rpc.protocol.name=dubbo
+dubbo.rpc.protocol.port=20880
+database.driver.classname=com.mysql.jdbc.Driver
+database.url=${driverType}:{dbType}://${host}:${port}/${db}?${parameters}
+database.username=
+database.password=

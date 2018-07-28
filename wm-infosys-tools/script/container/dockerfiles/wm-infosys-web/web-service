@@ -1,0 +1,19 @@
+#!/bin/sh
+invalid_params=0
+[ "z${ZK_HOST}" == "z" ] && invalid_params=1
+[ "z${MYSQL_HOST}" == "z" ] && invalid_params=1
+[ "z${MYSQL_USER}" == "z" ] && invalid_params=1
+[ "z${MYSQL_PASS}" == "z" ] && invalid_params=1
+[ "z${ZK_PORT}" == "z" ] && ZK_PORT=2181 && echo "INFO: Using TCP port 2181 for zookeeper connecting by default."
+[ "z${MYSQL_PORT}" == "z" ] && MYSQL_PORT=3306 && echo "INFO: Using TCP port 3306 for MySQL DB connecting by default."
+if [ ${invalid_params} -eq 1 ];then
+    echo "ERROR: One or more environment variables incomplete!"
+    echo -e "Please set environment variables named as ZK_HOST,ZK_PORT,MYSQL_HOST,MYSQL_PORT,MYSQL_USER,MYSQL_PASS."
+    exit 1
+fi
+sed -i "s/^.*zookeeper.connect-string=.*$/zookeeper.connect-string=${ZK_HOST}:${ZK_PORT}/g" /etc/wisdom_medical/web_service/web.properties
+sed -i "s/^.*dubbo.registry.url=.*$/dubbo.registry.url=zookeeper:\/\/${ZK_HOST}:${ZK_PORT}/g" /etc/wisdom_medical/web_service/web.properties
+sed -i "s/^.*database.url=.*$/database.url=jdbc:mysql:\/\/${MYSQL_HOST}:${MYSQL_PORT}\/wm_web\?useUnicode=true\&characterEncoding=utf-8/g" /etc/wisdom_medical/web_service/web.properties
+sed -i "s/^.*database.username=.*$/database.username=${MYSQL_USER}/g" /etc/wisdom_medical/web_service/web.properties
+sed -i "s/^.*database.password=.*$/database.password=${MYSQL_PASS}/g" /etc/wisdom_medical/web_service/web.properties
+java -jar /lib/wm-infosys-web-0.0.1-SNAPSHOT.jar

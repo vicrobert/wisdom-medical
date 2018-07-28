@@ -1,0 +1,14 @@
+[Unit]
+Description=Wisdom Medical Web Service
+After=mysqld.service zk.service
+
+[Service]
+Type=forking
+ExecStart=/usr/local/wisdom_medical/web_service/bin/web-service start
+ExecStop=/usr/local/wisdom_medical/web_service/bin/web-service stop
+WorkingDirectory=/usr/local/wisdom_medical/web_service/bin
+PIDFile=/var/run/wisdom_medical/web-service.pid
+TimeoutSec=120
+
+[Install]
+WantedBy=multi-user.target

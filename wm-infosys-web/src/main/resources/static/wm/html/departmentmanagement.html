@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>系统设置管理-部门管理</title>
+<link href="../css/stye.css" rel="stylesheet" type="text/css">
+<link href="../css/collection.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+<!--弹窗-->
+<div class="popup_box">
+  <div class="popup">
+    <div class="content-con5">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table5">
+        <div class="configurationmanagement"> 
+          <!--弹窗左侧菜单-->
+          <div class="configurationmanagement_title">
+            <h3>采集配置管理</h3>
+            <span><a href="doctorinformation.html"><img src="../images/close.png"></a></span> </div>
+          <div class="configurationmanagement_content">
+            <div class="configurationmanagement_left">
+              <ul>
+                <li><a href="usermanagement.html">用户管理</a></li>
+                <li class="configurationmanagement_nav"><a href="departmentmanagement.html">部门管理</a></li>
+                <li><a href="rolemanagement.html">角色管理</a></li>
+                <li><a href="menumanagement.html">菜单管理</a></li>
+              </ul>
+            </div>
+            <!--弹窗右侧列表-->
+            <div class="configurationmanagement_right">
+              <div class="departmentmanagement_left">
+                <div class="departmen_left">
+                  <h3><img src="../images/zTreeStandard_03.png">&nbsp;CETC</h3>
+                  <ul>
+                    <li><a href="#">大数据</a></li>
+                    <li><a href="#">云桌面</a></li>
+                    <li><a href="#">防火墙</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="departmentmanagement_right">
+                <div class="tab_role">
+                  <div class="tabList">
+                    <ul>
+                      <li class="cur">角色设置</li>
+                      <li>权限设置</li>
+                      <li>总权限设置</li>
+                    </ul>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="tab_role_div">
+                    <div>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">系统管理员</label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">管理员</label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">普通用户</label>
+                      </p>
+                    </div>
+                    <div>
+                      <h3>
+                        <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                        <img src="../images/zTreeStandard_03.png">采集配置管理</h3>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">信息采集监视</label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">信息综合查询</label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">信息统计分析</label>
+                      </p>
+                      <h3>
+                        <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                        <img src="../images/zTreeStandard_03.png">系统设置管理</h3>
+                    </div>
+                    <div>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">系统管理员</label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">管理员</label>
+                      </p>
+                      <p>
+                        <label>
+                          <input name="Fruit" class="checkbox" type="checkbox" value="" />
+                          <img src="../images/zTreeStandard_06.png">普通用户</label>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="tab_rolebutton">
+                <input class="addcollection_button" value="保存" type="button">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box-top"> 
+  <!--logo-->
+  <div class="logo"><a href="#"><img src="../images/logo.png" border="0" /></a></div>
+  <!--end logo--> 
+  <!--功能按钮区-->
+  <div class="tab">
+    <ul>
+      <li><a href="#">采集配置管理</a></li>
+      <li class="tab_current"><a href="#">信息采集监视</a></li>
+      <li><a href="#">信息综合查询</a></li>
+      <li><a href="#">医疗大数据信息平台</a></li>
+      <li><a href="#">系统设置管理</a></li>
+      <div class="clear"></div>
+    </ul>
+  </div>
+  <!--end 功能按钮区--> 
+  <!--time-->
+  <div class="time"><span>20117年12月10日</span><span>星期五</span><span>12:00:00</span></div>
+  <div class="clear"></div>
+  <!--end time--> 
+</div>
+<!--采集概况-->
+<div class="collectiontop">
+  <div class="collectiontop_left">
+    <div class="collectionsurvey">
+      <div class="content-title">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">采集概况</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-con">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table">
+          <div class="collectionsurvey_content">
+            <ul>
+              <li class="doctorcollection">医生采集数：<span>320222</span></li>
+              <li class="drugcollectionnumber">药品采集数：<span>127008</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--空气质量监控指数-->
+    <div class="monitoringindex">
+      <div class="content-title1">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">空气质量监控指数</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-con1">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table1">
+          <div class="monitoringindex_content">
+            <div class="monitoringindex_top">
+              <div class="monitoringindex_top_left">良</div>
+              <div class="monitoringindex_top_right">
+                <p>星期一</p>
+                <p>2017年12月20日</p>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="monitoringindex_bottom">
+              <ul>
+                <li> <span>良</span>
+                  <p>药监局</p>
+                </li>
+                <li> <span>良</span>
+                  <p>好大夫</p>
+                </li>
+                <li> <span>良</span>
+                  <p>39健康</p>
+                </li>
+                <li> <span>良</span>
+                  <p>就医160</p>
+                </li>
+                <li> <span>良</span>
+                  <p>寻医问药</p>
+                </li>
+                <li> <span>良</span>
+                  <p>一号店</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--系统消息-->
+    <div class="systemmessage">
+      <div class="content-title1">
+        <div class="title-left"><img src="../images/title_left.png" border="0" class="img" /></div>
+        <div class="title-center">系统消息</div>
+        <div class="title-right"><img src="../images/title_right.png" border="0" class="img" /></div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-con1">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table1">
+          <div class="systemmessage_content">
+            <ul>
+              <li>[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li>[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li>[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li>[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+              <li>[错误]2017-12-20 16:13 服务器采集了重复数据</li>
+            </ul>
+            <div class="ntice">警告<span><img src="../images/switch.png"> </span>&nbsp;&nbsp;错误 <span><img src="../images/switch.png"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--信息列表-->
+  <div class="collectiontop_right">
+    <div class="Informationlist">
+      <div class="Informationlist_tab">
+        <ul>
+          <li class="tabnav_current"><a href="doctorinformation.html">医生信息</a></li>
+          <li><a href="druginformation.html">药品信息</a></li>
+          <li><a href="lnteractiveinformation.html">互动信息</a></li>
+        </ul>
+      </div>
+      <div class="content-con4">
+        <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+        <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+        <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+        <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+        <div class="con-table4">
+          <div class="Informationlist_tabbottom">
+            <div class="Informationlisttitle">
+              <h3>医生信息</h3>
+            </div>
+            <div class="Informationlist_list">
+              <ul>
+                <li>华栋, 副主任医师  , 安庆市立医院 手外科,  暂无信息,</li>
+                <li>田琦, 副主任医师  , 柘城县人民医院 心血管内科,  暂无信息</li>
+                <li>汤洁心, , 大连市妇产医院 产科,  暂无信息,null</li>
+                <li>楼林, 副主任医师  , 浙江省人民医院 神经外科,  暂无信息,null</li>
+                <li>龙巨成, 主任药师  , 重庆市第一人民医院 药剂科,  暂无信息,null</li>
+                <li>张晓霞, 主任医师  副教授  , 吉林大学白求恩第一医院 妇产科,  妇科肿瘤和内分泌疾病、不孕症的诊治，腔镜手术及围绝经期激素替代治疗 [详细],null</li>
+                <li>毛云清, 副主任医师  , 孝昌县人民医院 外科,  小儿腹股沟疝、精索睾丸鞘膜积液等手术,null</li>
+                <li>谭晓冬, 主任医师  教授  , 中国医科大学附属盛京医院 外科,  胰腺，肝胆疾病，甲状腺疾病，腹腔肿物，胃肠疾病，乳腺疾病及腹部急重症的诊治 [详细],null</li>
+                <li>丘和明, 主任医师  教授  , 广州中医药大学第一附属医院 血液科,  治疗各种疑难杂症,重点研究血证、血液病。, 52年（1963年起）</li>
+                <li>邱冬梅, 主治医师  , 达州市中心医院 普通外科,  暂无信息,null</li>
+                <li>孟宏, 主任医师  教授  , 惠州市中心人民医院 烧伤整形手足外科,  整形,null</li>
+                <li>卢春来, 主治医师  , 复旦大学附属中山医院 胸外科,  暂无信息,null</li>
+                <li>陈树群, 主任医师  , 普宁市华侨医院 普外科,  普外科、胸腹部肿瘤、电视胸腔镜,null</li>
+                <li>余锦豪, 副主任医师  副教授  , 上海市第十人民医院 口腔科,  三叉神经痛射频治疗。,null</li>
+                <li>邹天骥, 住院医师  , 吉林市中心医院 眼科,  暂无信息,null</li>
+                <li>朱晓飞, 主治医师  , 望江县医院 外科,  前列腺疾病的腔内微创手术治疗，经皮肾镜、输尿管镜下碎石以及腹腔镜、后腹腔镜下手术 [详细],null</li>
+                <li>李震, 主治医师  , 济南军区总医院 肾内科,  暂无信息,null</li>
+                <li>林福瑞, 主任医师  , 厦门大学附属福州第二医院 心胸外科,  食管、贲门、肺癌、严重胸腹伤、先天性与后天性心脏病的手术</li>
+                <li>袁晖, 主任医师  , 广州医科大学附属第三医院 外科门诊,  对普通外科常见疾病如甲状腺、乳腺、肝胆、胃肠等疾病的诊断与治疗。尤其擅长对结直肠肛门疾病如结直肠肿瘤、痔疮、肛瘘、肛裂等疾</li>
+                <li>产难产的手术操作，特别是对剖宫产再孕严重粘连的处理非常熟练。能准确处理手术并发症。在妇科方面，熟练掌握妇科常见病，多发病的诊治，熟练掌握经腹全子宫切除术，经腹次全子宫切除术，异位妊娠的诊断及手术治疗，阴式全子宫切除术，子宫颈锥形切除术。</li>
+                <li>李慧, 副主任医师  副教授  , 武汉市第六医院 耳鼻喉科,  治疗耳部疾病，眩晕，耳鸣，分泌性中耳炎等[详细],null</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--采集实时统计-->
+<div class="collectionbottom">
+  <div class="realtimestatistics">
+    <div class="content-con2">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table2">
+        <h3>采集实时统计(每分钟刷新)</h3>
+        <div class="realtimestatistics_content"><img src="../images/realtimestatistics.png"></div>
+      </div>
+    </div>
+  </div>
+  <!--采集数据统计-->
+  <div class="datastatistics">
+    <div class="content-con2">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table2">
+        <h3>采集数据统计(每天刷新)</h3>
+        <div class="datastatistics_content"><img src="../images/datastatistics.png"></div>
+      </div>
+    </div>
+  </div>
+  <!--采集-->
+  <div class="serverstate">
+    <div class="content-con3">
+      <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+      <div class="con-top-r"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+      <div class="con-bottom-l"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+      <div class="con-bottom-r"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+      <div class="con-table3">
+        <h3>采集 </h3>
+        <div class="serverstate_content"><img src="../images/serverstate.png"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+$('.tab_role ul li').bind('click',function(){
+	$(this).addClass('cur').siblings().removeClass('cur');
+	var index=$(this).index();
+	$('.tab_role_div>div').eq(index).show().siblings().hide();
+})
+
+</script>

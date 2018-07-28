@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医院详情</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../css/Pages.css">
+    <style>
+        .back{
+            width: 20px;
+            height:20px;
+            background-color: red;
+            position: absolute;
+            right: 50px;
+            top:20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="large-body">
+<span class="back"></span>
+<input type="hidden" id="hospital_id" name="hospital_id" value="2079"/>
+<div class="wraper">
+    <div class="main">
+        <div class="main-title">
+            <h2>医院信息</h2>
+        </div>
+        <div class="departments-information hospital-information">
+            <div class="departments-box">
+                <div class="departments-item" id="hospital_detail_info">
+                    Loading
+                </div>
+            </div>
+            <div class="doctor-see-time">
+                <div class="box-title">
+                    <h2>科室</h2>
+                </div>
+                <div id="department_list" class="see-time">
+                    <div class="doctor-scheduling-item"><img src="../images/photo-small.jpg"><div class="doctor-info"><div class="doctor-info-name"><a href="#">内科</a><span>[普通科室]</span><em class="">☆☆☆☆☆</em><div class="doctor-comment-num"><a href="#">2525人</a>点评</div></div><div class="doctor-info-other"><p><label>共有</label><span>20</span><label>名医生</label></p><p><label>电话 : 83366388-2146</label></p></div></div></div>
+                </div>
+                <div id="deptpager" class="pager"></div>
+            </div>
+            <!--
+            <div class="comment-info">
+                <div class="box-title">
+                    <h2>点评</h2>
+                </div>
+                <div class="comment-text">
+                    <ul>
+                        <li class="comment-active"><a href="#">全部(549)</a></li>
+                        <li><a href="#">好评(527)</a></li>
+                        <li><a href="#">中评(20)</a></li>
+                        <li><a href="#">差评(2)</a></li>
+                    </ul>
+                    <div class="comment-text-item">
+                        <img src="../resources/images/visitor/user-photo.jpg">
+                        <div class="comment-space">
+                            <div class="comment-info-name">
+                                <label>就诊医生：</label>
+                                <a href="#">金慧敏</a>
+                                <span>就诊原因：</span>
+                                <span>咳嗽</span>
+                                <em class="">☆☆☆☆☆</em>
+                                <p class="text">医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好医生很好</p>
+                                <p class="comment-time">周**发表于03月25日</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-text-item">
+                        <img src="../resources/images/visitor/user-photo.jpg">
+                        <div class="comment-space">
+                            <div class="comment-info-name">
+                                <label>就诊医生：</label>
+                                <a href="#">金慧敏</a>
+                                <span>就诊原因：</span>
+                                <span>咳嗽</span>
+                                <em class="">☆☆☆☆☆</em>
+                                <p class="text">艺术很高明</p>
+                                <p class="comment-time">周**发表于03月25日</p>
+                            </div>
+                        </div>
+                    </div><div class="comment-text-item">
+                        <img src="../resources/images/visitor/user-photo.jpg">
+                        <div class="comment-space">
+                            <div class="comment-info-name">
+                                <label>就诊医生：</label>
+                                <a href="#">金慧敏</a>
+                                <span>就诊原因：</span>
+                                <span>咳嗽</span>
+                                <em class="">☆☆☆☆☆</em>
+                                <p class="text">擅长儿科呼吸及消化等疾病的诊治</p>
+                                <p class="comment-time">周**发表于03月25日</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/jquery.pager.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/hospital.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.back').bind('click',function () {
+            window.history.back(-1);
+        })
+        //$.jqtab("#tabs","#tab-conbox","click");
+    });
+</script>
+

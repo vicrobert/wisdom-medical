@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../css/Pages.css">
+    <title>科室详情</title>
+    <style>
+        .back{
+            width: 20px;
+            height:20px;
+            background-color: red;
+            position: absolute;
+            right: 50px;
+            top:20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="large-body">
+<span class="back"></span>
+<input type="hidden" id="dept_id" name="dept_id" value="35521"/>
+<div class="wraper">
+    <div class="main">
+        <div class="main-title">
+            <h2>科室信息</h2>
+        </div>
+        <div class="departments-information">
+            <div class="departments-box">
+                <div class="departments-item" id = "dept_detail_info">
+                    Loading
+                </div>
+            </div>
+            <div class="doctor-see-time">
+                <div class="box-title">
+                    <h2>科室排班</h2>
+                </div>
+                <div class="see-time">
+                    <div class="scheduling-title">
+                        <table>
+                            <thead>
+                            <tr id="dept_DTList">
+
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div id="doctor_list"></div>
+                    <div id="deptpager" class="pager"></div>
+                </div>
+            </div>
+            <div class="comment-info">
+                <div class="box-title">
+                    <h2>点评</h2>
+                </div>
+                <div class="comment-text">
+                    <ul id="feedback_count">
+                        <li class="comment-active"><a href="#" id="fb_all">全部(0)</a></li>
+                        <li ><a id="fb_good" href="#">好评(0)</a></li>
+                        <li ><a id="fb_soso" href="#">中评(0)</a></li>
+                        <li ><a id="fb_bad" href="#">差评(0)</a></li>
+                    </ul>
+                    <div id="feedback_list">
+                    </div><div id="fbpager" class="pager"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/jquery.pager.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/department.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.back').bind('click',function () {
+            window.history.back(-1);
+        })
+        //$.jqtab("#tabs","#tab-conbox","click");
+    });
+</script>
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行业整体分析</title>
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  href="../css/baseSet.css">
+    <link type="text/css"   media="(max-width:1920px) and (min-width:1441px)" rel="stylesheet" href="../css/dialog.css"/>
+    <link type="text/css"   media="(max-width:1920px) and (min-width:1441px)" rel="stylesheet" href="../css/icon.css">
+    <link type="text/css"   media="(max-width:1920px) and (min-width:1441px)" rel="stylesheet" href="../css/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  type="text/css" href="../css/showLoading.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  href="../css/IndustryOverallAnalysis.css">
+    <link rel="stylesheet"  media="(max-width:1920px) and (min-width:1441px)"  href="../css/x-base.css">
+
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/baseSet.css">
+    <link type="text/css"   media="(max-width:1440px)" rel="stylesheet" href="../css2/dialog.css"/>
+    <link type="text/css"   media="(max-width:1440px)" rel="stylesheet" href="../css2/icon.css">
+    <link type="text/css"   media="(max-width:1440px)" rel="stylesheet" href="../css2/HospitalConstructionDecisionSupport.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../jquery-easyui-1.4.2/themes/metro/easyui.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  type="text/css" href="../css2/showLoading.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/IndustryOverallAnalysis.css">
+    <link rel="stylesheet"  media="(max-width:1440px)"  href="../css2/x-base.css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <style>
+        @media (max-width:1920px) and (min-width:1441px){
+            #wholeHospitalChart{
+                height:438px            
+            }
+            #wholeHospitalYNChart{
+                height:438px;
+                width:532px;
+            }
+            #listDetail{
+                height: 360px
+            }
+            #province_list{
+                height: 360px
+            }
+        }
+        @media (max-width:1440px){
+            #wholeHospitalChart{
+                width: 753px;
+                height:360px            
+            }
+            #wholeHospitalYNChart{
+                height:360px;
+                width:399px;
+            }
+            #listDetail{
+                height: 295px
+            }
+            #province_list{
+                height: 295px
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main_frame">
+    <ul class="main_frame_top">
+        <li  url="html/HospitalConstructionDecisionSupport.html">展示本院建设情况</li>
+        <li class="" url="html/RationalAnalysis.html">合理化分析</li>
+        <li class="active" url="html/IndustryOverallAnalysis.html">行业整体分析</li>
+    </ul>
+
+<div class="col-12" id="chartDetail">
+    <div class="col-7">
+        <div class="ifm-box">
+            <div class="ifm-box-title">
+                <div class="pub_head">
+                    <span class="pub_head_l"></span>
+                    <span class="pub_head_c">全国医院布局图</span>
+                    <span class="pub_head_r"></span>
+                </div>
+            </div>
+            <div class="con_bj"> 
+                <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                <div class="con-top-r" style="right:0px"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                <div class="con-bottom-l" ><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                <div class="con-bottom-r" style="right:0px"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                <div class="ifm-box-content" id="wholeHospitalChart">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="ifm-box">
+            <div class="ifm-box-title">
+                    <div class="pub_head">
+                            <span class="pub_head_l"></span>
+                            <span class="pub_head_c"><span id = "current_title">上海</span>优劣科室Top5</span>
+                            <span class="pub_head_r"></span>
+                        </div>
+                <!-- <h2><span id = "current_title">上海</span>优劣科室Top5</h2> -->
+            </div>
+            <div class="con_bj"> 
+                <div class="con-top-l"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+                <div class="con-top-r" style="right:-4px"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+                <div class="con-bottom-l" ><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+                <div class="con-bottom-r" style="right:-4px"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+                <div class="ifm-box-content" id="wholeHospitalYNChart">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12" id="listDetail" >
+        <div class="con_bj"> 
+            <div class="con-top-l" style="left:-2px;top:-2px"><img src="../images/con-top-l.png" border="0" class="img" /></div>
+            <div class="con-top-r" style="right:-2px;top:-2px"><img src="../images/con-top-r.png" border="0" class="img" /></div>
+            <div class="con-bottom-l" style="left:-2px;bottom:-2px"><img src="../images/con-bottom-l.png" border="0" class="img" /></div>
+            <div class="con-bottom-r" style="right:-2px;bottom:-2px"><img src="../images/con-bottom-r.png" border="0" class="img" /></div>
+            <div id="province_list"></div>
+        </div>
+</div>
+</div>
+</body>
+</html>
+
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/echarts.js"></script>
+<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../js/whole.js"></script>
+
+
+
+
+

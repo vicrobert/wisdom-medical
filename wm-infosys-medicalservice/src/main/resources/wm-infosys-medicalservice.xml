@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       		http://www.springframework.org/schema/beans/spring-beans.xsd
+        	http://www.springframework.org/schema/context
+        	http://www.springframework.org/schema/context/spring-context.xsd
+        	http://www.springframework.org/schema/data/jpa
+        	http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+       		http://code.alibabatech.com/schema/dubbo 
+       		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+   
+    <context:annotation-config/>
+	<context:property-placeholder location="file:../conf/internet_medical_service.properties,
+		file:./conf/internet_medical_service.properties,
+		file:/etc/wisdom_medical/internet_medical_service/internet_medical_service.properties"
+		ignore-resource-not-found="true" ignore-unresolvable="true"/> 
+    <context:component-scan base-package="com.isoft.wm.infosys" />
+    
+    <dubbo:application name="internet-medical-service"/>
+    <dubbo:registry address="${registry.server.url}"/>
+    <dubbo:protocol name="${dubbo.rpc.protocol.name}" port="${dubbo.rpc.protocol.port}"/>
+    <dubbo:service interface="com.isoft.wm.infosys.api.InternetMedicalService" ref="internetMedicalService"/>
+    
+    <jpa:repositories base-package="com.isoft.wm.infosys.dao" entity-manager-factory-ref="emf"/>
+    
+	<bean id="internetMedicalService" class="com.isoft.wm.infosys.api.InternetMedicalServiceImpl"/>
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="${database.driver.classname}" />
+	    <property name="url" value="${database.url}" />
+	    <property name="username" value="${database.username}" />
+	    <property name="password" value="${database.password}" />
+	</bean>
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="packagesToScan" value="com.isoft.wm.infosys.entity" />
+		<property name="dataSource" ref="dataSource" />
+	
+	    <property name="jpaProperties">
+	        <props>
+	            <prop key="hibernate.show_sql">false</prop>
+	            <prop key="hibernate.hbm2ddl.auto">none</prop>
+	            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+	        </props>
+	    </property>
+	
+	    <property name="persistenceProvider">
+	        <bean class="org.hibernate.jpa.HibernatePersistenceProvider"></bean>
+	    </property>
+	
+	</bean>
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
+	    <property name="dataSource" ref="dataSource" />
+	</bean>
+
+</beans>
