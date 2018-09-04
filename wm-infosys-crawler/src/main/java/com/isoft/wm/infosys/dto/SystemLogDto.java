@@ -6,17 +6,17 @@ import java.util.List;
 import com.isoft.wm.infosys.entity.SystemLogVo;
 
 public class SystemLogDto {
-	private List<SystemLogVo> logs = new ArrayList<SystemLogVo>();
+    private List<SystemLogVo> logs = new ArrayList<SystemLogVo>();
 
-	public SystemLogDto() {
-	}
+    public SystemLogDto() {
+    }
 
-	public List<SystemLogVo> getLogs() {
-		return logs;
-	}
+    public List<SystemLogVo> getLogs() {
+        return logs;
+    }
 
-	public void setLogs(List<SystemLogVo> logs) {
-		this.logs = logs;
-	}
-	
+    public void setLogs(List<SystemLogVo> logs) {
+        this.logs = logs;
+    }
+
 }

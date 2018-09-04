@@ -13,47 +13,47 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SystemConfig {
-	private static String CONFIG_FILE_ETC = "/etc/wisdom_medical/crawler_service/web.properties";
-	private static String CONFIG_FILE_CONF = System.getProperty("user.dir") + "/../conf/web.properties";
-	private static String CONFIG_FILE_DEFAULT = System.getProperty("user.dir") + "/conf/web.properties";
-	private static String IOEXCEPTION_ERROR_MSG = "配置文件 " + CONFIG_FILE_ETC + "," + CONFIG_FILE_CONF + "," + CONFIG_FILE_DEFAULT + " 或读取错误，请检查确认！";
-	private static Properties props = new Properties();
-	private static Logger logger = Logger.getLogger("com.isoft.wm.infosys.config");
+    private static String CONFIG_FILE_ETC = "/etc/wisdom_medical/crawler_service/web.properties";
+    private static String CONFIG_FILE_CONF = System.getProperty("user.dir") + "/../conf/web.properties";
+    private static String CONFIG_FILE_DEFAULT = System.getProperty("user.dir") + "/conf/web.properties";
+    private static String IOEXCEPTION_ERROR_MSG = "配置文件 " + CONFIG_FILE_ETC + "," + CONFIG_FILE_CONF + "," + CONFIG_FILE_DEFAULT + " 或读取错误，请检查确认！";
+    private static Properties props = new Properties();
+    private static Logger logger = Logger.getLogger("com.isoft.wm.infosys.config");
 
-	public static boolean loadPropertiesFromFile() {
-		try {
-			File file = new File(CONFIG_FILE_ETC);
-			if (file.exists()) {
-				InputStream in = new FileInputStream(CONFIG_FILE_ETC);
-				props.load(in);
-				return true;
-			}
-			file = new File(CONFIG_FILE_CONF);
-			if (file.exists()) {
-				InputStream in = new FileInputStream(CONFIG_FILE_CONF);
-				props.load(in);
-				return true;
-			}
-			file = new File(CONFIG_FILE_DEFAULT);
-			if (file.exists()) {
-				InputStream in = new FileInputStream(CONFIG_FILE_DEFAULT);
-				props.load(in);
-				return true;
-			}
-		} catch (IOException ex) {
-			ex.printStackTrace();
-			logger.log(Level.WARNING, IOEXCEPTION_ERROR_MSG);
-		}
-		return false;
-	}
-	
-	public static void setProperties(SpringApplication app) {
-		if (app != null) {
-			Map<String, Object> realprops = new HashMap<>();
-			for (SystemProperties sp : SystemProperties.values()) {
-				realprops.put(sp.getInnerKey(), props.get(sp.getOuterKey()));
-			}
-			app.setDefaultProperties(realprops);
-		}
-	}
+    public static boolean loadPropertiesFromFile() {
+        try {
+            File file = new File(CONFIG_FILE_ETC);
+            if (file.exists()) {
+                InputStream in = new FileInputStream(CONFIG_FILE_ETC);
+                props.load(in);
+                return true;
+            }
+            file = new File(CONFIG_FILE_CONF);
+            if (file.exists()) {
+                InputStream in = new FileInputStream(CONFIG_FILE_CONF);
+                props.load(in);
+                return true;
+            }
+            file = new File(CONFIG_FILE_DEFAULT);
+            if (file.exists()) {
+                InputStream in = new FileInputStream(CONFIG_FILE_DEFAULT);
+                props.load(in);
+                return true;
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            logger.log(Level.WARNING, IOEXCEPTION_ERROR_MSG);
+        }
+        return false;
+    }
+
+    public static void setProperties(SpringApplication app) {
+        if (app != null) {
+            Map<String, Object> realprops = new HashMap<>();
+            for (SystemProperties sp : SystemProperties.values()) {
+                realprops.put(sp.getInnerKey(), props.get(sp.getOuterKey()));
+            }
+            app.setDefaultProperties(realprops);
+        }
+    }
 }
