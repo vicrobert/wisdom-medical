@@ -22,9 +22,11 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
 	@Override
 	public HospitalInfoResp listHospitalByName(String hospitalName, Pageable pageable) {
 		if (hospitalName != null && ! "".equals(hospitalName)) {
-			return new HospitalInfoResp(hospitalService.getHospitalNumberByNameLike(hospitalName), pageable.getPageNumber(), pageable.getPageSize(), hospitalService.findHospitalByNameLike(hospitalName, pageable));
+			return new HospitalInfoResp(hospitalService.getHospitalNumberByNameLike(hospitalName), pageable.getPageNumber(),
+					pageable.getPageSize(), hospitalService.findHospitalByNameLike(hospitalName, pageable));
 		} else {
-			return new HospitalInfoResp(hospitalService.getHospitalNumber(), pageable.getPageNumber(), pageable.getPageSize(), hospitalService.listAllHospitals(pageable)); 
+			return new HospitalInfoResp(hospitalService.getHospitalNumber(), pageable.getPageNumber(), pageable.getPageSize(),
+					hospitalService.listAllHospitals(pageable));
 		}
 	}
 	
