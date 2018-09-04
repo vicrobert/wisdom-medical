@@ -86,18 +86,6 @@ public class DiseaseTendencyViewModel implements Serializable{
 		this.data = data;
 	}
 
-
-	public static void main(String [] args) throws JsonProcessingException {
-		DiseaseTendencyViewModel a = new DiseaseTendencyViewModel();
-		List<Long> grp = new ArrayList<Long>();
-		grp.add(10L);
-		grp.add(11L);
-		grp.add(12L);
-		a.data.addDate(grp);
-		ObjectMapper om = new ObjectMapper();
-		System.out.println(om.writeValueAsString(a));
-	}
-	
 }
 
 

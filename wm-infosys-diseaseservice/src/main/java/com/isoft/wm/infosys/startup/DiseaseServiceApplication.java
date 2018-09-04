@@ -7,9 +7,12 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class DiseaseServiceApplication {
+	private static Logger logger = Logger.getLogger("com.isoft.wm.infosys.startup");
 	public static void main(String [] args) throws IOException {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"wm-infosys-diseaseservice.xml"});
         context.start();
@@ -22,10 +25,10 @@ public class DiseaseServiceApplication {
 			@Override
 			public void run() {
 				super.run();
-				System.out.println("Disease analysis & prediction service is ready to exit.");
+				logger.log(Level.INFO, "Disease analysis & prediction service is ready to exit.");
 			}
 		});
-		System.out.println("Disease analysis & prediction service is now running...!");
+		logger.log(Level.INFO,"Disease analysis & prediction service is now running...!");
 
 	}
 }
