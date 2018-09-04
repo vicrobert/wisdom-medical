@@ -10,12 +10,12 @@ import com.isoft.wm.infosys.config.SystemConfig;
 @EnableDiscoveryClient
 public class WMInfoSysApplication {
 
-	public static void main(String[] args) {
-		//SpringApplication.run(WMInfoSysApplication.class, args);
-		if (SystemConfig.loadPropertiesFromFile()) {
-			SpringApplication app = new SpringApplication(WMInfoSysApplication.class);
-			SystemConfig.setProperties(app);
-			app.run(args);
-		}
-	}
+    public static void main(String[] args) {
+        //SpringApplication.run(WMInfoSysApplication.class, args);
+        if (SystemConfig.loadPropertiesFromFile()) {
+            SpringApplication app = new SpringApplication(WMInfoSysApplication.class);
+            SystemConfig.setProperties(app);
+            app.run(args);
+        }
+    }
 }

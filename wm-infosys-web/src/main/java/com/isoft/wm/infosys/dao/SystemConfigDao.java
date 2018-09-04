@@ -8,6 +8,6 @@ import com.isoft.wm.infosys.entity.SystemConfigVo;
 import org.springframework.data.repository.query.Param;
 
 public interface SystemConfigDao extends JpaRepository<SystemConfigVo, Long> {
-	@Query(value = "from SystemConfigVo s where s.name = :name")
-	Optional<SystemConfigVo> findByName(@Param("name") String name);
+    @Query(value = "from SystemConfigVo s where s.name = :name")
+    Optional<SystemConfigVo> findByName(@Param("name") String name);
 }

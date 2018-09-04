@@ -8,12 +8,14 @@ import com.isoft.wm.infosys.entity.SystemConfigVo;
 
 @Service
 public class SystemServiceImpl implements SystemService {
-	@Autowired
-	SystemConfigDao systemConfigDao;
+    @Autowired
+    SystemConfigDao systemConfigDao;
 
-	@Override
-	public SystemConfigVo getSystemProperty(String key) {
-		return systemConfigDao.findByName(key).orElseGet(()->{return null;});
-	}
+    @Override
+    public SystemConfigVo getSystemProperty(String key) {
+        return systemConfigDao.findByName(key).orElseGet(() -> {
+            return null;
+        });
+    }
 
 }
