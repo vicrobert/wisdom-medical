@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.isoft.wm.infosys.entity.ProvinceVo;
 
-public interface ProvinceDao extends JpaRepository<ProvinceVo, Long>{
+public interface ProvinceDao extends JpaRepository<ProvinceVo, Long> {
 
 }

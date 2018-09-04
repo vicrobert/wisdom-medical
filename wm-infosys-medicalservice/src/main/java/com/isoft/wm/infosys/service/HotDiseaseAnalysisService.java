@@ -11,16 +11,16 @@ import com.isoft.wm.infosys.resp.DiseaseFaqResp;
 
 public interface HotDiseaseAnalysisService {
 
-	List<DiseaseFaqVo> getDiseaseFaqNumByDateAndCity(Date from, Date to, String city);
+    List<DiseaseFaqVo> getDiseaseFaqNumByDateAndCity(Date from, Date to, String city);
 
-	List<DiseaseFaqVo> getDiseaseTopNRankByDateAndCity(Date from, Date to, String city, Pageable pageable);
+    List<DiseaseFaqVo> getDiseaseTopNRankByDateAndCity(Date from, Date to, String city, Pageable pageable);
 
-	DiseaseFaqOverCityResp getDiseaseFaqNumOverAllCities(Date from, Date to);
+    DiseaseFaqOverCityResp getDiseaseFaqNumOverAllCities(Date from, Date to);
 
-	DiseaseFaqResp descSortDiseaseFaqByDeptPopularity(Date from, Date to, String city, Pageable pageable);
-	
-	DiseaseFaqResp descSortDiseaseFaqByHospPopularity(Date from, Date to, String city, Pageable pageable);
-	
-	DiseaseFaqResp descSortDiseaseFaqByDocPopularity(Date from, Date to, String city, Pageable pageable);
+    DiseaseFaqResp descSortDiseaseFaqByDeptPopularity(Date from, Date to, String city, Pageable pageable);
+
+    DiseaseFaqResp descSortDiseaseFaqByHospPopularity(Date from, Date to, String city, Pageable pageable);
+
+    DiseaseFaqResp descSortDiseaseFaqByDocPopularity(Date from, Date to, String city, Pageable pageable);
 
 }

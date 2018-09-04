@@ -6,22 +6,22 @@ import java.util.List;
 import com.isoft.wm.infosys.entity.DeptProNumVo;
 
 public class DeptProNumOfHospResp {
-	private List<DeptProNumVo> dimPosnList;
+    private List<DeptProNumVo> dimPosnList;
 
-	public DeptProNumOfHospResp() {
+    public DeptProNumOfHospResp() {
 
-	}
+    }
 
-	public DeptProNumOfHospResp(List<DeptProNumVo> dimPosnList) {
-		setDimPosnList(dimPosnList);
-	}
+    public DeptProNumOfHospResp(List<DeptProNumVo> dimPosnList) {
+        setDimPosnList(dimPosnList);
+    }
 
-	public List<DeptProNumVo> getDimPosnList() {
-		return dimPosnList;
-	}
+    public List<DeptProNumVo> getDimPosnList() {
+        return dimPosnList;
+    }
 
-	public void setDimPosnList(List<DeptProNumVo> dimPosnList) {
-		this.dimPosnList = dimPosnList;
-	}
-	
+    public void setDimPosnList(List<DeptProNumVo> dimPosnList) {
+        this.dimPosnList = dimPosnList;
+    }
+
 }

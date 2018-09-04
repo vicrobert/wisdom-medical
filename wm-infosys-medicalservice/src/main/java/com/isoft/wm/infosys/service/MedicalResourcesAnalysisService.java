@@ -6,10 +6,10 @@ import com.isoft.wm.infosys.viewmodel.HospitalViewModel;
 
 public interface MedicalResourcesAnalysisService {
 
-	HospitalViewModel drawResourcesAnalysisGrid(String hospitalName);
+    HospitalViewModel drawResourcesAnalysisGrid(String hospitalName);
 
-	DocResAnalysisResp drawDoctorResourcesAnalysisGrid(String doctorName);
+    DocResAnalysisResp drawDoctorResourcesAnalysisGrid(String doctorName);
 
-	DoctorViewModel getDoctorDetails(Long doctorId);
+    DoctorViewModel getDoctorDetails(Long doctorId);
 
 }

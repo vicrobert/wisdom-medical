@@ -10,166 +10,169 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "department") 
+@Table(name = "department")
 public class DepartmentVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	@Column(name = "hosp_id")
-	private Long hospitalId;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "doc_num")
-	private Long doctorNum;
-	
-	@Column(name = "created_at")
-	private Date createdAt;
-	
-	@Column(name = "updated_at")
-	private Date updatedAt;
-	
-	@Column(name = "status")
-	private Integer status;
-	
-	@Column(name = "parent_dept_id")
-	private Long parentDepartmentId;
-	
-	//在部门树形层级结构中的层数,0代表根部门
-	@Column(name = "tree_level")
-	private Integer treeLevel;
-	
-	@Transient
-	private Object children;
+    @Column(name = "hosp_id")
+    private Long hospitalId;
 
-	@Transient
-	private Object _children;
-	
-	public DepartmentVo() {}
-	public DepartmentVo(String name) {
-		this.name = name;
-	}
-	public DepartmentVo(String name, Long doctorNum) {
-		this.name = name;
-		this.doctorNum = doctorNum;
-	}
+    @Column(name = "name")
+    private String name;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "doc_num")
+    private Long doctorNum;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "created_at")
+    private Date createdAt;
 
-	public Long getHospitalId() {
-		return hospitalId;
-	}
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
-	public void setHospitalId(Long hospitalId) {
-		this.hospitalId = hospitalId;
-	}
+    @Column(name = "status")
+    private Integer status;
 
-	public String getName() {
-		return name;
-	}
+    @Column(name = "parent_dept_id")
+    private Long parentDepartmentId;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    //在部门树形层级结构中的层数,0代表根部门
+    @Column(name = "tree_level")
+    private Integer treeLevel;
 
-	public Long getDoctorNum() {
-		return doctorNum;
-	}
+    @Transient
+    private Object children;
 
-	public void setDoctorNum(Long doctorNum) {
-		this.doctorNum = doctorNum;
-	}
+    @Transient
+    private Object _children;
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public DepartmentVo() {
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public DepartmentVo(String name) {
+        this.name = name;
+    }
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
+    public DepartmentVo(String name, Long doctorNum) {
+        this.name = name;
+        this.doctorNum = doctorNum;
+    }
 
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    public Long getHospitalId() {
+        return hospitalId;
+    }
 
-	public Long getParentDepartmentId() {
-		return parentDepartmentId;
-	}
+    public void setHospitalId(Long hospitalId) {
+        this.hospitalId = hospitalId;
+    }
 
-	public void setParentDepartmentId(Long parentDepartmentId) {
-		this.parentDepartmentId = parentDepartmentId;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Integer getTreeLevel() {
-		return treeLevel;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setTreeLevel(Integer treeLevel) {
-		this.treeLevel = treeLevel;
-	}
+    public Long getDoctorNum() {
+        return doctorNum;
+    }
 
-	public Object getChildren() {
-		return children;
-	}
+    public void setDoctorNum(Long doctorNum) {
+        this.doctorNum = doctorNum;
+    }
 
-	public void setChildren(Object children) {
-		this.children = children;
-	}
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
-	public Object get_children() {
-		return _children;
-	}
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public void set_children(Object _children) {
-		this._children = _children;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof DepartmentVo && this.name != null) {
-			return this.name.equals(((DepartmentVo)obj).getName());
-		}
-		return super.equals(obj);
-	}
-	
-	@Override
-	public int hashCode() {
-		if (this.name != null) {
-			return this.name.hashCode();
-		}
-		return super.hashCode();
-	}
-	
-	@Override
-	public String toString() {
-		if (this.name != null) {
-			StringBuilder sb = new StringBuilder();
-			sb.append(this.name).append("(").append(this.doctorNum).append(")");
-			return sb.toString();
-		}
-		return super.toString();
-	}
-	
-	
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Long getParentDepartmentId() {
+        return parentDepartmentId;
+    }
+
+    public void setParentDepartmentId(Long parentDepartmentId) {
+        this.parentDepartmentId = parentDepartmentId;
+    }
+
+    public Integer getTreeLevel() {
+        return treeLevel;
+    }
+
+    public void setTreeLevel(Integer treeLevel) {
+        this.treeLevel = treeLevel;
+    }
+
+    public Object getChildren() {
+        return children;
+    }
+
+    public void setChildren(Object children) {
+        this.children = children;
+    }
+
+    public Object get_children() {
+        return _children;
+    }
+
+    public void set_children(Object _children) {
+        this._children = _children;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof DepartmentVo && this.name != null) {
+            return this.name.equals(((DepartmentVo) obj).getName());
+        }
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        if (this.name != null) {
+            return this.name.hashCode();
+        }
+        return super.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        if (this.name != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(this.name).append("(").append(this.doctorNum).append(")");
+            return sb.toString();
+        }
+        return super.toString();
+    }
+
+
 }

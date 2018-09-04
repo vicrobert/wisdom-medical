@@ -6,6 +6,6 @@ import com.isoft.wm.infosys.resp.PatientFindDeptInfoResp;
 
 public interface PatientFindDepartmentService {
 
-	PatientFindDeptInfoResp pullDepartmentByName(String name, Pageable pageable);
+    PatientFindDeptInfoResp pullDepartmentByName(String name, Pageable pageable);
 
 }

@@ -12,18 +12,18 @@ import com.isoft.wm.infosys.viewmodel.HospitalViewModel;
 
 public interface HospitalDetailsService {
 
-	DocNumOfDeptCircleResp getDoctorNumOfDepartment(String hospitalName);
+    DocNumOfDeptCircleResp getDoctorNumOfDepartment(String hospitalName);
 
-	DocLevelNumOfHospResp getHospDocLevelNumber(String hospitalName);
+    DocLevelNumOfHospResp getHospDocLevelNumber(String hospitalName);
 
-	DeptProNumOfHospResp getHospDeptProNumber(String hospitalName);
+    DeptProNumOfHospResp getHospDeptProNumber(String hospitalName);
 
-	DocLevelNumOfDeptOfHospResp foo(String hospitalName);
+    DocLevelNumOfDeptOfHospResp foo(String hospitalName);
 
-	HospitalViewModel getHospIntroduction(String hospitalName);
+    HospitalViewModel getHospIntroduction(String hospitalName);
 
-	HospitalEvalResp getHospitalEvaluation(String hospitalName);
+    HospitalEvalResp getHospitalEvaluation(String hospitalName);
 
-	HospitalSentimentResp getHospitalSentimentTopN(String hospitalName, Pageable pageable);
+    HospitalSentimentResp getHospitalSentimentTopN(String hospitalName, Pageable pageable);
 
 }

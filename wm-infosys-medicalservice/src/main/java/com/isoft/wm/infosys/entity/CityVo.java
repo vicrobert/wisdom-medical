@@ -10,51 +10,51 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "city")
 public class CityVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "name")
-	private String city;
-	
-	@Column(name = "lng")
-	private Double lng;
-	
-	@Column(name = "lat")
-	private Double lat;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "name")
+    private String city;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "lng")
+    private Double lng;
 
-	public String getCity() {
-		return city;
-	}
+    @Column(name = "lat")
+    private Double lat;
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Double getLng() {
-		return lng;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setLng(Double lng) {
-		this.lng = lng;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public Double getLat() {
-		return lat;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public void setLat(Double lat) {
-		this.lat = lat;
-	}
-	
-	
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+
 }

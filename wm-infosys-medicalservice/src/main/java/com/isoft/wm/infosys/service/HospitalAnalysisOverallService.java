@@ -6,8 +6,10 @@ import com.isoft.wm.infosys.resp.Top5AndLast5DeptOfProvinceResp;
 
 public interface HospitalAnalysisOverallService {
 
-	DomesticHospDistributionResp getDomesticHospDistribution(String province);
-	HospStatisticsPerProvinceResp getHospitalStatisticsOfEachProvince();
-	Top5AndLast5DeptOfProvinceResp getTop5AndLast5DeptOfEachProvince(String province);
+    DomesticHospDistributionResp getDomesticHospDistribution(String province);
+
+    HospStatisticsPerProvinceResp getHospitalStatisticsOfEachProvince();
+
+    Top5AndLast5DeptOfProvinceResp getTop5AndLast5DeptOfEachProvince(String province);
 
 }

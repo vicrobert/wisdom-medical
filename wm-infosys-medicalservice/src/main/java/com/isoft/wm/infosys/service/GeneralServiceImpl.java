@@ -11,20 +11,20 @@ import com.isoft.wm.infosys.entity.CityVo;
 import com.isoft.wm.infosys.entity.ProvinceVo;
 
 @Service
-public class GeneralServiceImpl implements GeneralService{
-	@Autowired
-	ProvinceDao provinceDao;
-	
-	@Autowired
-	CityDao cityDao;
-	
-	@Override
-	public List<ProvinceVo> listProvince() {
-		return provinceDao.findAll();
-	}
+public class GeneralServiceImpl implements GeneralService {
+    @Autowired
+    ProvinceDao provinceDao;
 
-	@Override
-	public List<CityVo> findCityByName(String city) {
-		return cityDao.findByNameLike(city);
-	}
+    @Autowired
+    CityDao cityDao;
+
+    @Override
+    public List<ProvinceVo> listProvince() {
+        return provinceDao.findAll();
+    }
+
+    @Override
+    public List<CityVo> findCityByName(String city) {
+        return cityDao.findByNameLike(city);
+    }
 }

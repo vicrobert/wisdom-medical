@@ -15,22 +15,22 @@ import com.isoft.wm.infosys.viewmodel.HospitalViewModel;
 
 public interface HospitalRationalAnalysisService {
 
-	HospitalInfoResp listHospitalByName(String hospitalName, Pageable pageable);
+    HospitalInfoResp listHospitalByName(String hospitalName, Pageable pageable);
 
-	HospitalViewModel hospitalStructureTree(Long hospitalId);
+    HospitalViewModel hospitalStructureTree(Long hospitalId);
 
-	HospitalViewModel hospitalStructureTree(String hospitalName);
+    HospitalViewModel hospitalStructureTree(String hospitalName);
 
-	HospitalContrastTableViewModel getHospitalContrastTable(Long hospitalId1, Long hospitalId2);
+    HospitalContrastTableViewModel getHospitalContrastTable(Long hospitalId1, Long hospitalId2);
 
-	HospitalContrastListViewModel getHospitalContrastList(Long hospitalId1, Long hospitalId2);
+    HospitalContrastListViewModel getHospitalContrastList(Long hospitalId1, Long hospitalId2);
 
-	DeptLinkMapChartViewModel getDepartmentDifferenceChart(Long hospitalId1, Long hospitalId2);
+    DeptLinkMapChartViewModel getDepartmentDifferenceChart(Long hospitalId1, Long hospitalId2);
 
-	List<DeptL2ContrastTableViewModel> getHospitalDeptL2ContrastTable(Long hospitalId1, Long hospitalId2);
+    List<DeptL2ContrastTableViewModel> getHospitalDeptL2ContrastTable(Long hospitalId1, Long hospitalId2);
 
-	DeptL2ContrastBarViewModel getHospitalDeptL2ContrastBar(Long hospitalId1, Long hospitalId2);
+    DeptL2ContrastBarViewModel getHospitalDeptL2ContrastBar(Long hospitalId1, Long hospitalId2);
 
-	DeptL2ContrastPercentViewModel getHospitalDeptL2ContrastPercent(Long hospitalId1, Long hospitalId2);
+    DeptL2ContrastPercentViewModel getHospitalDeptL2ContrastPercent(Long hospitalId1, Long hospitalId2);
 
 }
