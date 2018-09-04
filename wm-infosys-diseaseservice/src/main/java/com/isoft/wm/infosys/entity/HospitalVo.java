@@ -10,283 +10,283 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "hospital") 
+@Table(name = "hospital")
 public class HospitalVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "community_name")
-	private String communityName;
-	
-	@Column(name = "prov_name")
-	private String province;
-	
-	@Column(name = "city_name")
-	private String city;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "doc_num")
-	private Long doctorNum;
-	
-	@Column(name = "dept_num")
-	private Long departmentNum;
-	
-	@Column(name = "praise")
-	private String praise;
-	
-	@Column(name = "stars")
-	private String stars;
-	
-	@Column(name = "hosp_class")
-	private String hospitalClass;
-	
-	@Column(name = "address")
-	private String address;
-	
-	@Column(name = "level")
-	private String level;
-	
-	@Column(name = "pic")
-	private String pic;
-	
-	@Column(name = "profiles")
-	private String profiles;
-	
-	@Column(name = "tel")
-	private String tel;
-	
-	@Column(name = "created_at")
-	private Date createdAt;
-	
-	@Column(name = "updated_at")
-	private Date updatedAt;
-	
-	@Column(name = "status")
-	private Integer status;
-	
-	@Column(name = "website")
-	private String website;
-	
-	@Column(name = "feature_dept")
-	private String featureDepartment;
-	
-	@Column(name = "score")
-	private Integer score;
-	
-	@Column(name = "lng")
-	private Double lng;
-	
-	@Column(name = "lat")
-	private Double lat;
-	
-	@Transient
-	private Object children;
-	
-	@Transient
-	private Object _children;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "community_name")
+    private String communityName;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "prov_name")
+    private String province;
 
-	public String getCommunityName() {
-		return communityName;
-	}
+    @Column(name = "city_name")
+    private String city;
 
-	public void setCommunityName(String communityName) {
-		this.communityName = communityName;
-	}
+    @Column(name = "name")
+    private String name;
 
-	public String getProvince() {
-		return province;
-	}
+    @Column(name = "doc_num")
+    private Long doctorNum;
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
+    @Column(name = "dept_num")
+    private Long departmentNum;
 
-	public String getCity() {
-		return city;
-	}
+    @Column(name = "praise")
+    private String praise;
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    @Column(name = "stars")
+    private String stars;
 
-	public String getName() {
-		return name;
-	}
+    @Column(name = "hosp_class")
+    private String hospitalClass;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Column(name = "address")
+    private String address;
 
-	public Long getDoctorNum() {
-		return doctorNum;
-	}
+    @Column(name = "level")
+    private String level;
 
-	public void setDoctorNum(Long doctorNum) {
-		this.doctorNum = doctorNum;
-	}
+    @Column(name = "pic")
+    private String pic;
 
-	public Long getDepartmentNum() {
-		return departmentNum;
-	}
+    @Column(name = "profiles")
+    private String profiles;
 
-	public void setDepartmentNum(Long departmentNum) {
-		this.departmentNum = departmentNum;
-	}
+    @Column(name = "tel")
+    private String tel;
 
-	public String getPraise() {
-		return praise;
-	}
+    @Column(name = "created_at")
+    private Date createdAt;
 
-	public void setPraise(String praise) {
-		this.praise = praise;
-	}
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
-	public String getStars() {
-		return stars;
-	}
+    @Column(name = "status")
+    private Integer status;
 
-	public void setStars(String stars) {
-		this.stars = stars;
-	}
+    @Column(name = "website")
+    private String website;
 
-	public String getHospitalClass() {
-		return hospitalClass;
-	}
+    @Column(name = "feature_dept")
+    private String featureDepartment;
 
-	public void setHospitalClass(String hospitalClass) {
-		this.hospitalClass = hospitalClass;
-	}
+    @Column(name = "score")
+    private Integer score;
 
-	public String getAddress() {
-		return address;
-	}
+    @Column(name = "lng")
+    private Double lng;
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    @Column(name = "lat")
+    private Double lat;
 
-	public String getLevel() {
-		return level;
-	}
+    @Transient
+    private Object children;
 
-	public void setLevel(String level) {
-		this.level = level;
-	}
+    @Transient
+    private Object _children;
 
-	public String getPic() {
-		return pic;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setPic(String pic) {
-		this.pic = pic;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getProfiles() {
-		return profiles;
-	}
+    public String getCommunityName() {
+        return communityName;
+    }
 
-	public void setProfiles(String profiles) {
-		this.profiles = profiles;
-	}
+    public void setCommunityName(String communityName) {
+        this.communityName = communityName;
+    }
 
-	public String getTel() {
-		return tel;
-	}
+    public String getProvince() {
+        return province;
+    }
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public Long getDoctorNum() {
+        return doctorNum;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    public void setDoctorNum(Long doctorNum) {
+        this.doctorNum = doctorNum;
+    }
 
-	public String getWebsite() {
-		return website;
-	}
+    public Long getDepartmentNum() {
+        return departmentNum;
+    }
 
-	public void setWebsite(String website) {
-		this.website = website;
-	}
+    public void setDepartmentNum(Long departmentNum) {
+        this.departmentNum = departmentNum;
+    }
 
-	public String getFeatureDepartment() {
-		return featureDepartment;
-	}
+    public String getPraise() {
+        return praise;
+    }
 
-	public void setFeatureDepartment(String featureDepartment) {
-		this.featureDepartment = featureDepartment;
-	}
+    public void setPraise(String praise) {
+        this.praise = praise;
+    }
 
-	public Integer getScore() {
-		return score;
-	}
+    public String getStars() {
+        return stars;
+    }
 
-	public void setScore(Integer score) {
-		this.score = score;
-	}
+    public void setStars(String stars) {
+        this.stars = stars;
+    }
 
-	
-	public Double getLng() {
-		return lng;
-	}
+    public String getHospitalClass() {
+        return hospitalClass;
+    }
 
-	public void setLng(Double lng) {
-		this.lng = lng;
-	}
+    public void setHospitalClass(String hospitalClass) {
+        this.hospitalClass = hospitalClass;
+    }
 
-	public Double getLat() {
-		return lat;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setLat(Double lat) {
-		this.lat = lat;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public Object getChildren() {
-		return children;
-	}
+    public String getLevel() {
+        return level;
+    }
 
-	public void setChildren(Object children) {
-		this.children = children;
-	}
+    public void setLevel(String level) {
+        this.level = level;
+    }
 
-	public Object get_children() {
-		return _children;
-	}
+    public String getPic() {
+        return pic;
+    }
 
-	public void set_children(Object _children) {
-		this._children = _children;
-	}
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public String getProfiles() {
+        return profiles;
+    }
+
+    public void setProfiles(String profiles) {
+        this.profiles = profiles;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getFeatureDepartment() {
+        return featureDepartment;
+    }
+
+    public void setFeatureDepartment(String featureDepartment) {
+        this.featureDepartment = featureDepartment;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Object getChildren() {
+        return children;
+    }
+
+    public void setChildren(Object children) {
+        this.children = children;
+    }
+
+    public Object get_children() {
+        return _children;
+    }
+
+    public void set_children(Object _children) {
+        this._children = _children;
+    }
 }

@@ -10,41 +10,40 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "disease")
 public class DiseaseVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "icd10")
-	private String icd10;
-	
-	@Column(name = "name")
-	private String name;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "icd10")
+    private String icd10;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "name")
+    private String name;
 
-	public String getIcd10() {
-		return icd10;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setIcd10(String icd10) {
-		this.icd10 = icd10;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getIcd10() {
+        return icd10;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
-	
+    public void setIcd10(String icd10) {
+        this.icd10 = icd10;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 }

@@ -12,62 +12,62 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "disease_prediction")
 public class DiseasePredictionVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "disease_id")
-	private Long diseaseId;
-	
-	@Column(name = "cnt_male")
-	private Long cntMale;
-	
-	@Column(name = "cnt_female")
-	private Long cntFemale;
-	
-	@Column(name = "occur_at")
-	private Date occurAt;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "disease_id")
+    private Long diseaseId;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "cnt_male")
+    private Long cntMale;
 
-	public Long getDiseaseId() {
-		return diseaseId;
-	}
+    @Column(name = "cnt_female")
+    private Long cntFemale;
 
-	public void setDiseaseId(Long diseaseId) {
-		this.diseaseId = diseaseId;
-	}
+    @Column(name = "occur_at")
+    private Date occurAt;
 
-	public Long getCntMale() {
-		return cntMale;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setCntMale(Long cntMale) {
-		this.cntMale = cntMale;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getCntFemale() {
-		return cntFemale;
-	}
+    public Long getDiseaseId() {
+        return diseaseId;
+    }
 
-	public void setCntFemale(Long cntFemale) {
-		this.cntFemale = cntFemale;
-	}
+    public void setDiseaseId(Long diseaseId) {
+        this.diseaseId = diseaseId;
+    }
 
-	public Date getOccurAt() {
-		return occurAt;
-	}
+    public Long getCntMale() {
+        return cntMale;
+    }
 
-	public void setOccurAt(Date occurAt) {
-		this.occurAt = occurAt;
-	}
-	
-	
+    public void setCntMale(Long cntMale) {
+        this.cntMale = cntMale;
+    }
+
+    public Long getCntFemale() {
+        return cntFemale;
+    }
+
+    public void setCntFemale(Long cntFemale) {
+        this.cntFemale = cntFemale;
+    }
+
+    public Date getOccurAt() {
+        return occurAt;
+    }
+
+    public void setOccurAt(Date occurAt) {
+        this.occurAt = occurAt;
+    }
+
+
 }

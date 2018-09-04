@@ -8,83 +8,84 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SuppressWarnings("serial")
-public class DiseaseTendencyViewModel implements Serializable{
-	private Status status;
-	
-	public class Data implements Serializable {
-		private List<List<Long>> date = new ArrayList<List<Long>>();
-		private List<String> xaxis = new ArrayList<String>();
-		private List<String> type = new ArrayList<String>();
-		private Long small = 0L;
-		private Long big = 0L;
-		
-		public List<List<Long>> getDate() {
-			return date;
-		}
+public class DiseaseTendencyViewModel implements Serializable {
+    private Status status;
 
-		public void setDate(List<List<Long>> date) {
-			this.date = date;
-		}
-		
-		public void addDate(List<Long> dateGrp) {
-			date.add(dateGrp);
-		}
+    public class Data implements Serializable {
+        private List<List<Long>> date = new ArrayList<List<Long>>();
+        private List<String> xaxis = new ArrayList<String>();
+        private List<String> type = new ArrayList<String>();
+        private Long small = 0L;
+        private Long big = 0L;
 
-		public List<String> getXaxis() {
-			return xaxis;
-		}
+        public List<List<Long>> getDate() {
+            return date;
+        }
 
-		public void setXaxis(List<String> xaxis) {
-			this.xaxis = xaxis;
-		}
+        public void setDate(List<List<Long>> date) {
+            this.date = date;
+        }
 
-		public List<String> getType() {
-			return type;
-		}
+        public void addDate(List<Long> dateGrp) {
+            date.add(dateGrp);
+        }
 
-		public void setType(List<String> type) {
-			this.type = type;
-		}
-		
-		public void addType(String typeName) {
-			this.type.add(typeName);
-		}
+        public List<String> getXaxis() {
+            return xaxis;
+        }
 
-		public Long getSmall() {
-			return small;
-		}
+        public void setXaxis(List<String> xaxis) {
+            this.xaxis = xaxis;
+        }
 
-		public void setSmall(Long small) {
-			this.small = small;
-		}
+        public List<String> getType() {
+            return type;
+        }
 
-		public Long getBig() {
-			return big;
-		}
+        public void setType(List<String> type) {
+            this.type = type;
+        }
 
-		public void setBig(Long big) {
-			this.big = big;
-		}
-	
-		
-	}
-	private Data data = new Data();
-	
-	public Status getStatus() {
-		return status;
-	}
+        public void addType(String typeName) {
+            this.type.add(typeName);
+        }
 
-	public void setStatus(Status status) {
-		this.status = status;
-	}
+        public Long getSmall() {
+            return small;
+        }
 
-	public Data getData() {
-		return data;
-	}
+        public void setSmall(Long small) {
+            this.small = small;
+        }
 
-	public void setData(Data data) {
-		this.data = data;
-	}
+        public Long getBig() {
+            return big;
+        }
+
+        public void setBig(Long big) {
+            this.big = big;
+        }
+
+
+    }
+
+    private Data data = new Data();
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
 
 }
 

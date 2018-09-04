@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.isoft.wm.infosys.entity.DiseaseVo;
 
-public interface DiseaseDao extends JpaRepository<DiseaseVo, Long>{
-	@Query(value = "from DiseaseVo d where d.name = :name")
-	List<DiseaseVo> findByName(@Param("name") String name);
+public interface DiseaseDao extends JpaRepository<DiseaseVo, Long> {
+    @Query(value = "from DiseaseVo d where d.name = :name")
+    List<DiseaseVo> findByName(@Param("name") String name);
 }

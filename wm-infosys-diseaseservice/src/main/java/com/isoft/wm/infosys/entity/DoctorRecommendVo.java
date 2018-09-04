@@ -10,92 +10,92 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "doctor_recommend")
 public class DoctorRecommendVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "doctor_id")
-	private Long doctorId;
-	
-	@Column(name = "treat_num")
-	private Long treatNum;
-	
-	@Column(name = "comment_num")
-	private Long commentNum;
-	
-	@Column(name = "treat_year")
-	private Integer treatYear;
-	
-	@Column(name = "treat_month")
-	private Integer treatMonth;
-	
-	private String doctorName;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	
-	public DoctorRecommendVo(Long treatNum, Long commentNum, Integer treatYear, Integer treatMonth, String doctorName) {
-		this.treatNum = treatNum;
-		this.commentNum = commentNum;
-		this.treatYear = treatYear;
-		this.treatMonth = treatMonth;
-		this.doctorName = doctorName;
-	}
+    @Column(name = "doctor_id")
+    private Long doctorId;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "treat_num")
+    private Long treatNum;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "comment_num")
+    private Long commentNum;
 
-	public Long getDoctorId() {
-		return doctorId;
-	}
+    @Column(name = "treat_year")
+    private Integer treatYear;
 
-	public void setDoctorId(Long doctorId) {
-		this.doctorId = doctorId;
-	}
+    @Column(name = "treat_month")
+    private Integer treatMonth;
 
-	public Long getTreatNum() {
-		return treatNum;
-	}
+    private String doctorName;
 
-	public void setTreatNum(Long treatNum) {
-		this.treatNum = treatNum;
-	}
 
-	public Long getCommentNum() {
-		return commentNum;
-	}
+    public DoctorRecommendVo(Long treatNum, Long commentNum, Integer treatYear, Integer treatMonth, String doctorName) {
+        this.treatNum = treatNum;
+        this.commentNum = commentNum;
+        this.treatYear = treatYear;
+        this.treatMonth = treatMonth;
+        this.doctorName = doctorName;
+    }
 
-	public void setCommentNum(Long commentNum) {
-		this.commentNum = commentNum;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Integer getTreatYear() {
-		return treatYear;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setTreatYear(Integer treatYear) {
-		this.treatYear = treatYear;
-	}
+    public Long getDoctorId() {
+        return doctorId;
+    }
 
-	public Integer getTreatMonth() {
-		return treatMonth;
-	}
+    public void setDoctorId(Long doctorId) {
+        this.doctorId = doctorId;
+    }
 
-	public void setTreatMonth(Integer treatMonth) {
-		this.treatMonth = treatMonth;
-	}
+    public Long getTreatNum() {
+        return treatNum;
+    }
 
-	public String getDoctorName() {
-		return doctorName;
-	}
+    public void setTreatNum(Long treatNum) {
+        this.treatNum = treatNum;
+    }
 
-	public void setDoctorName(String doctorName) {
-		this.doctorName = doctorName;
-	}
-	
-	
+    public Long getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(Long commentNum) {
+        this.commentNum = commentNum;
+    }
+
+    public Integer getTreatYear() {
+        return treatYear;
+    }
+
+    public void setTreatYear(Integer treatYear) {
+        this.treatYear = treatYear;
+    }
+
+    public Integer getTreatMonth() {
+        return treatMonth;
+    }
+
+    public void setTreatMonth(Integer treatMonth) {
+        this.treatMonth = treatMonth;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+
 }

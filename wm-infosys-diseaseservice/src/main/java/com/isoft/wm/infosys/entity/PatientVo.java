@@ -13,199 +13,198 @@ import javax.persistence.Table;
 @Table(name = "patient")
 public class PatientVo {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "sex")
-	private String sex;
-	
-	@Column(name = "age")
-	private Integer age;
-	
-	@Column(name = "marital_status")
-	private String maritalStatus;
-	
-	@Column(name = "occupation")
-	private String occupation;
-	
-	@Column(name = "nation")
-	private String nation;
-	
-	@Column(name = "nationality")
-	private String nationality;
-	
-	@Column(name = "certificate_type")
-	private String certificateType;
-	
-	@Column(name = "certificate_no")
-	private String certificateNo;
-	
-	@Column(name = "tel")
-	private String tel;
-	
-	@Column(name = "area")
-	private String area;
-	
-	@Column(name = "community")
-	private String community;
-	
-	@Column(name = "hobby")
-	private String hobby;
-	
-	//non persisted
-	private Long count;
-	
-	public PatientVo(Integer age, Long count) {
-		this.age = age;
-		this.count = count;
-	}
-	
-	public PatientVo(String str, Long count, String strPropertyName) {
-		try {
-			Field field = PatientVo.class.getDeclaredField(strPropertyName);
-			field.setAccessible(true);
-			field.set(this, str);
-		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "name")
+    private String name;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "sex")
+    private String sex;
 
-	public String getName() {
-		return name;
-	}
+    @Column(name = "age")
+    private Integer age;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Column(name = "marital_status")
+    private String maritalStatus;
 
-	public String getSex() {
-		return sex;
-	}
+    @Column(name = "occupation")
+    private String occupation;
 
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    @Column(name = "nation")
+    private String nation;
 
-	public Integer getAge() {
-		return age;
-	}
+    @Column(name = "nationality")
+    private String nationality;
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    @Column(name = "certificate_type")
+    private String certificateType;
 
-	public String getMaritalStatus() {
-		return maritalStatus;
-	}
+    @Column(name = "certificate_no")
+    private String certificateNo;
 
-	public void setMaritalStatus(String maritalStatus) {
-		this.maritalStatus = maritalStatus;
-	}
+    @Column(name = "tel")
+    private String tel;
 
-	public String getOccupation() {
-		return occupation;
-	}
+    @Column(name = "area")
+    private String area;
 
-	public void setOccupation(String occupation) {
-		this.occupation = occupation;
-	}
+    @Column(name = "community")
+    private String community;
 
-	public String getNation() {
-		return nation;
-	}
+    @Column(name = "hobby")
+    private String hobby;
 
-	public void setNation(String nation) {
-		this.nation = nation;
-	}
+    //non persisted
+    private Long count;
 
-	public String getNationality() {
-		return nationality;
-	}
+    public PatientVo(Integer age, Long count) {
+        this.age = age;
+        this.count = count;
+    }
 
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
+    public PatientVo(String str, Long count, String strPropertyName) {
+        try {
+            Field field = PatientVo.class.getDeclaredField(strPropertyName);
+            field.setAccessible(true);
+            field.set(this, str);
+        } catch (NoSuchFieldException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SecurityException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-	public String getCertificateType() {
-		return certificateType;
-	}
+    }
 
-	public void setCertificateType(String certificateType) {
-		this.certificateType = certificateType;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getCertificateNo() {
-		return certificateNo;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setCertificateNo(String certificateNo) {
-		this.certificateNo = certificateNo;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getTel() {
-		return tel;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public String getArea() {
-		return area;
-	}
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	public void setArea(String area) {
-		this.area = area;
-	}
-	
-	public String getCommunity() {
-		return this.community;
-	}
-	
-	public void setCommunity(String community) {
-		this.community = community;
-	}
+    public Integer getAge() {
+        return age;
+    }
 
-	public String getHobby() {
-		return hobby;
-	}
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	public void setHobby(String hobby) {
-		this.hobby = hobby;
-	}
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
 
-	public Long getCount() {
-		return count;
-	}
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
 
-	public void setCount(Long count) {
-		this.count = count;
-	}
-	
-	
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getCertificateType() {
+        return certificateType;
+    }
+
+    public void setCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+    }
+
+    public String getCertificateNo() {
+        return certificateNo;
+    }
+
+    public void setCertificateNo(String certificateNo) {
+        this.certificateNo = certificateNo;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getCommunity() {
+        return this.community;
+    }
+
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
+
 
 }
