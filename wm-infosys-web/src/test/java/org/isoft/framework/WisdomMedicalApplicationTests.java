@@ -8,9 +8,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.isoft.wm.infosys.api.InternetMedicalService;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class WisdomMedicalApplicationTests {
+	private static Logger logger = Logger.getLogger("org.isoft.framework");
 
 	@Test
 	public void contextLoads() {
@@ -23,10 +27,10 @@ public class WisdomMedicalApplicationTests {
 	        //context.start();
 	        InternetMedicalService service = (InternetMedicalService)context.getBean("internetMedicalService"); // 获取远程服务代理
 	        if (service != null) {
-	        	System.out.println("SERVICE IS NOT NULL");
-	        	System.out.println(service.findHospitalByNameLike("MarriaK").toString()); // 显示调用结果
+				logger.log(Level.WARNING, "SERVICE IS NOT NULL");
+				logger.log(Level.WARNING, service.findHospitalByNameLike("MarriaK")); // 显示调用结果
 	        } else {
-	        	System.out.println("SERVICE IS  NULL!!!!!!!!!!!!!!!!!!");
+				logger.log(Level.WARNING, "SERVICE IS  NULL!!!!!!!!!!!!!!!!!!");
 	        }
 	        
 	   

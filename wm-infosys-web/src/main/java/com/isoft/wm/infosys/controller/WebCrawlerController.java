@@ -70,8 +70,5 @@ public class WebCrawlerController {
 	public String getSystemLogRecent(@RequestParam(required = false) Integer level, @RequestParam(required = false) Integer page, @RequestParam(required = false) Integer rows) {
 		return webCrawlerServiceProxy.getSystemLogRecent(level, page, rows);
 	}
-	
-	public static void main(String [] args) {
-		System.out.println(System.currentTimeMillis());
-	}
+
 }

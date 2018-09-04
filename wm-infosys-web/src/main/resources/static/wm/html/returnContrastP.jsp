@@ -67,9 +67,6 @@
     }
 </style>
 <body>
-<%
-System.out.print("hello");
-%>
     <div class="box">
         <!--对比弹出层-->
         <div class="dbtcc">

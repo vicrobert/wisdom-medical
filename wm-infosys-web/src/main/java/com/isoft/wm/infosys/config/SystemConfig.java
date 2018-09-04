@@ -9,13 +9,16 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SystemConfig {
-	private static final String CONFIG_FILE_ETC = "/etc/wisdom_medical/web_service/web.properties";;
+	private static final String CONFIG_FILE_ETC = "/etc/wisdom_medical/web_service/web.properties";
 	private static final String CONFIG_FILE_CONF = System.getProperty("user.dir") + "/../conf/web.properties";
 	private static final String CONFIG_FILE_DEFAULT = System.getProperty("user.dir") + "/conf/web.properties";
 	private static final String IOEXCEPTION_ERROR_MSG = "配置文件 " + CONFIG_FILE_ETC + "," + CONFIG_FILE_CONF + "," + CONFIG_FILE_DEFAULT + " 或读取错误，请检查确认！";
 	private static Properties props = new Properties();
+	private static Logger logger = Logger.getLogger("com.isoft.wm.infosys.config");
 
 	public static boolean loadPropertiesFromFile() {
 		try {
@@ -39,14 +42,14 @@ public class SystemConfig {
 			}
 		} catch (IOException ex) {
 			ex.printStackTrace();
-			System.out.println(IOEXCEPTION_ERROR_MSG);
+			logger.log(Level.WARNING, IOEXCEPTION_ERROR_MSG);
 		}
 		return false;
 	}
 	
 	public static void setProperties(SpringApplication app) {
 		if (app != null) {
-			Map<String, Object> realprops = new HashMap<String, Object>();
+			Map<String, Object> realprops = new HashMap<>();
 			for (SystemProperties sp : SystemProperties.values()) {
 				realprops.put(sp.getInnerKey(), props.get(sp.getOuterKey()));
 			}

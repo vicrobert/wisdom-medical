@@ -5,6 +5,7 @@ import com.isoft.wm.infosys.api.InternetMedicalService;
 import com.isoft.wm.infosys.entity.SystemConfigVo;
 import com.isoft.wm.infosys.service.SystemService;
 import com.isoft.wm.infosys.type.Pagination;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +23,9 @@ public class HotDiseaseAnalysisController {
 	private SystemService systemService;
 	
 	@RequestMapping("/medical/HotIllnessLine") 
-	public String getDiseaseFaqNumByDateAndCity(@RequestParam(required=false) Integer year, @RequestParam(required=false) Integer month, @RequestParam(required=false) Boolean monthShowOrHide, @RequestParam(required=false) String yearMonth, @RequestParam(required=false) String city) {
+	public String getDiseaseFaqNumByDateAndCity(@RequestParam(required=false) Integer year, @RequestParam(required=false) Integer month,
+						@RequestParam(required=false) Boolean monthShowOrHide, @RequestParam(required=false) String yearMonth,
+						@RequestParam(required=false) String city) {
 		Calendar from = Calendar.getInstance();
 		Date now = new Date();
 		
@@ -61,7 +64,9 @@ public class HotDiseaseAnalysisController {
 	
 	
 	@RequestMapping("/medical/HotDiseaseRankByDate") 
-	public String getDiseaseRankByDateAndCity(@RequestParam(required=false) Integer year, @RequestParam(required=false) Integer month, @RequestParam(required=false) Boolean monthShowOrHide, @RequestParam(required=false) String yearMonth, @RequestParam(required=false) String city) {
+	public String getDiseaseRankByDateAndCity(@RequestParam(required=false) Integer year, @RequestParam(required=false) Integer month,
+					  @RequestParam(required=false) Boolean monthShowOrHide, @RequestParam(required=false) String yearMonth,
+					  @RequestParam(required=false) String city) {
 		Pagination page = new Pagination(0, 15);
 		Calendar from = Calendar.getInstance();
 		Date now = new Date();
@@ -99,7 +104,8 @@ public class HotDiseaseAnalysisController {
 	}
 	
 	@RequestMapping("/medical/HotDiseaseOnMap") 
-	public String getDiseaseFaqNumOverAllCities(@RequestParam(required=false) Integer year, @RequestParam(required=false) Integer month, @RequestParam(required=false) Boolean monthShowOrHide, @RequestParam(required=false) String yearMonth) {
+	public String getDiseaseFaqNumOverAllCities(@RequestParam(required=false) Integer year, @RequestParam(required=false) Integer month,
+						@RequestParam(required=false) Boolean monthShowOrHide, @RequestParam(required=false) String yearMonth) {
 		Calendar from = Calendar.getInstance();
 		Date now = new Date();
 		if (monthShowOrHide == null) {
@@ -190,7 +196,7 @@ public class HotDiseaseAnalysisController {
 	}
 
 	private String retrieveDefaultCityNameIfNeeded(String city) {
-		if (city == null || "".equals(city)) {
+		if (StringUtils.isEmpty(city)) {
 			SystemConfigVo sc = systemService.getSystemProperty("DEFAULT_CITY");
 			if (sc != null) {
 				city = sc.getValue();

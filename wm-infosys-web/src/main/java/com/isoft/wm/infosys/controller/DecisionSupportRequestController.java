@@ -3,6 +3,7 @@ package com.isoft.wm.infosys.controller;
 import com.isoft.wm.infosys.entity.SystemConfigVo;
 import com.isoft.wm.infosys.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -113,7 +114,7 @@ public class DecisionSupportRequestController {
 	}
 
 	private String retrieveDefaultHospitalNameIfNeeded(String hospitalName) {
-		if (hospitalName == null || "".equals(hospitalName)) {
+		if (StringUtils.isEmpty(hospitalName)) {
 			SystemConfigVo sc = systemService.getSystemProperty("DEFAULT_HOSPITAL");
 			if (sc != null) {
 				hospitalName = sc.getValue();
@@ -123,7 +124,7 @@ public class DecisionSupportRequestController {
 	}
 
 	private String retrieveDefaultProvinceIfNeeded(String province) {
-		if (province == null || "".equals(province)) {
+		if (StringUtils.isEmpty(province)) {
 			SystemConfigVo sc = systemService.getSystemProperty("DEFAULT_PROVINCE");
 			if (sc != null) {
 				province = sc.getValue();
