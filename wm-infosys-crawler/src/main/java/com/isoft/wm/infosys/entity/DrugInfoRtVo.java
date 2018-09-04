@@ -12,61 +12,61 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "druginfo")
 public class DrugInfoRtVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "url")
-	private String url;
-	
-	@Column(name = "content")
-	private String content;
-	
-	@Column(name = "created_at")
-	private Date createdAt;
-	
-	@Column(name = "updated_at")
-	private Date updatedAt;
-	
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "url")
+    private String url;
 
-	public String getUrl() {
-		return url;
-	}
+    @Column(name = "content")
+    private String content;
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    @Column(name = "created_at")
+    private Date createdAt;
 
-	public String getContent() {
-		return content;
-	}
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
 }

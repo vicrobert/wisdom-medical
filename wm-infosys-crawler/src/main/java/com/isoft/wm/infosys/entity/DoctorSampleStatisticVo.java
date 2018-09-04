@@ -10,55 +10,55 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "doctor_statistic")
 public class DoctorSampleStatisticVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "template_id")
-	private Long templateId;
-	
-	@Column(name = "sample_num")
-	private Long sampleNum;
-	
-	@Column(name = "time_stamp")
-	private Long timeStamp;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	
-	public DoctorSampleStatisticVo() {
-	}
+    @Column(name = "template_id")
+    private Long templateId;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "sample_num")
+    private Long sampleNum;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "time_stamp")
+    private Long timeStamp;
 
-	public Long getTemplateId() {
-		return templateId;
-	}
 
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-	}
+    public DoctorSampleStatisticVo() {
+    }
 
-	public Long getSampleNum() {
-		return sampleNum;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setSampleNum(Long sampleNum) {
-		this.sampleNum = sampleNum;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getTimeStamp() {
-		return timeStamp;
-	}
+    public Long getTemplateId() {
+        return templateId;
+    }
 
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-	
-	
+    public void setTemplateId(Long templateId) {
+        this.templateId = templateId;
+    }
+
+    public Long getSampleNum() {
+        return sampleNum;
+    }
+
+    public void setSampleNum(Long sampleNum) {
+        this.sampleNum = sampleNum;
+    }
+
+    public Long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(Long timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+
 }

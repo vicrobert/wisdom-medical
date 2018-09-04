@@ -10,40 +10,40 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sample_strength")
 public class SampleStrengthVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "strength")
-	private Double strength;
-	
-	@Column(name = "timeStamp")
-	private Long timeStamp;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "strength")
+    private Double strength;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "timeStamp")
+    private Long timeStamp;
 
-	public Double getStrength() {
-		return strength;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setStrength(Double strength) {
-		this.strength = strength;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getTimeStamp() {
-		return timeStamp;
-	}
+    public Double getStrength() {
+        return strength;
+    }
 
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-	
-	
+    public void setStrength(Double strength) {
+        this.strength = strength;
+    }
+
+    public Long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(Long timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+
 }

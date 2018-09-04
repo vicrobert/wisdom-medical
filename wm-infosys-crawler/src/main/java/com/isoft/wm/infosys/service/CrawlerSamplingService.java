@@ -10,11 +10,17 @@ import com.isoft.wm.infosys.dto.SampleNumDto;
 import com.isoft.wm.infosys.dto.SampleStrengthDto;
 
 public interface CrawlerSamplingService {
-	DoctorRtDto listDoctorsRt(Pageable page);
-	DrugInfoRtDto listDrugInfoRt(Pageable page);
-	InteractInfoRtDto listInteractRt(Pageable page);
-	CrawlerSampleNumTendencyDto getSampleTendencyGroupByMin();
-	CrawlerSampleNumTendencyDto getSampleTendencyGroupByDay();
-	SampleStrengthDto getSampleStrength();
-	SampleNumDto getSampleTotalNum();
+    DoctorRtDto listDoctorsRt(Pageable page);
+
+    DrugInfoRtDto listDrugInfoRt(Pageable page);
+
+    InteractInfoRtDto listInteractRt(Pageable page);
+
+    CrawlerSampleNumTendencyDto getSampleTendencyGroupByMin();
+
+    CrawlerSampleNumTendencyDto getSampleTendencyGroupByDay();
+
+    SampleStrengthDto getSampleStrength();
+
+    SampleNumDto getSampleTotalNum();
 }

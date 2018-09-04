@@ -11,62 +11,62 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "system_log")
 public class SystemLogVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "level")
-	private Integer level;
-	
-	@Column(name = "content")
-	private String content;
-	
-	@Column(name = "created_at")
-	private Date createdAt;
-	
-	@Column(name = "updated_at")
-	private Date updatedAt;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "level")
+    private Integer level;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "content")
+    private String content;
 
-	public Integer getLevel() {
-		return level;
-	}
+    @Column(name = "created_at")
+    private Date createdAt;
 
-	public void setLevel(Integer level) {
-		this.level = level;
-	}
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
-	public String getContent() {
-		return content;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public Integer getLevel() {
+        return level;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	
-	
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+
 }

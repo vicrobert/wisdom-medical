@@ -12,127 +12,127 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "template_config")
 public class TemplateConfigVo {
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable=false)
-	private Long id;
-	
-	@Column(name = "app_id", nullable=false)
-	private Long appId;
-	
-	@Column(name = "task_name")
-	private String taskName;
-	
-	@Column(name = "web_name")
-	private String webName;
-	
-	@Column(name = "url")
-	private String url;
-	
-	@Column(name = "sample_freq")
-	private Integer sampleFreq;
-	
-	@Column(name = "charset")
-	private String charset;
-	
-	@Column(name = "type")
-	private String type;
-	
-	@Column(name = "temp_location")
-	private String tempLocation;
-	
-	@Column(name = "created_at")
-	private Date createdAt;
-	
-	@Column(name = "updated_at")
-	private Date updatedAt;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "app_id", nullable = false)
+    private Long appId;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "task_name")
+    private String taskName;
 
-	public Long getAppId() {
-		return appId;
-	}
+    @Column(name = "web_name")
+    private String webName;
 
-	public void setAppId(Long appId) {
-		this.appId = appId;
-	}
+    @Column(name = "url")
+    private String url;
 
-	public String getTaskName() {
-		return taskName;
-	}
+    @Column(name = "sample_freq")
+    private Integer sampleFreq;
 
-	public void setTaskName(String taskName) {
-		this.taskName = taskName;
-	}
+    @Column(name = "charset")
+    private String charset;
 
-	public String getWebName() {
-		return webName;
-	}
+    @Column(name = "type")
+    private String type;
 
-	public void setWebName(String webName) {
-		this.webName = webName;
-	}
+    @Column(name = "temp_location")
+    private String tempLocation;
 
-	public String getUrl() {
-		return url;
-	}
+    @Column(name = "created_at")
+    private Date createdAt;
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
-	public Integer getSampleFreq() {
-		return sampleFreq;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setSampleFreq(Integer sampleFreq) {
-		this.sampleFreq = sampleFreq;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getCharset() {
-		return charset;
-	}
+    public Long getAppId() {
+        return appId;
+    }
 
-	public void setCharset(String charset) {
-		this.charset = charset;
-	}
+    public void setAppId(Long appId) {
+        this.appId = appId;
+    }
 
-	public String getTempLocation() {
-		return tempLocation;
-	}
+    public String getTaskName() {
+        return taskName;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public String getWebName() {
+        return webName;
+    }
 
-	public void setTempLocation(String tempLocation) {
-		this.tempLocation = tempLocation;
-	}
+    public void setWebName(String webName) {
+        this.webName = webName;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
+    public Integer getSampleFreq() {
+        return sampleFreq;
+    }
 
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	
+    public void setSampleFreq(Integer sampleFreq) {
+        this.sampleFreq = sampleFreq;
+    }
+
+    public String getCharset() {
+        return charset;
+    }
+
+    public void setCharset(String charset) {
+        this.charset = charset;
+    }
+
+    public String getTempLocation() {
+        return tempLocation;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setTempLocation(String tempLocation) {
+        this.tempLocation = tempLocation;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 }
