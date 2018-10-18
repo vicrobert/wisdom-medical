@@ -6,7 +6,6 @@ import java.net.URLDecoder;
 public class CommonUtils {
 	/**
 	 * Decode Url
-	 * @param cryptograph
 	 * @return plaintext
 	 * @author 杨钧博
 	 */
