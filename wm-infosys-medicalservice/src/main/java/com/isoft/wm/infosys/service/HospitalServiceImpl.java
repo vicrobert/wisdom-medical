@@ -104,7 +104,8 @@ public class HospitalServiceImpl implements HospitalService {
     @Override
     public List<DepartmentVo> pullDepartmentsByHospitalNameLike(String hospitalName, int treeLevel) {
         if (hospitalName != null) {
-            return treeLevel > -1 ? departmentDao.pullByHospitalNameLike(hospitalName, treeLevel, null) : departmentDao.pullByHospitalNameLike(hospitalName, null);
+            return treeLevel > -1 ? departmentDao.pullByHospitalNameLike(hospitalName, treeLevel, null) :
+                    departmentDao.pullByHospitalNameLike(hospitalName, null);
         }
         return null;
     }
@@ -136,7 +137,8 @@ public class HospitalServiceImpl implements HospitalService {
      */
     @Override
     public List<DepartmentVo> pullDepartmentsByHospitalId(Long hospitalId, int treeLevel) {
-        return treeLevel > -1 ? departmentDao.pullByHospitalId(hospitalId, treeLevel, null) : departmentDao.pullByHospitalId(hospitalId, null);
+        return treeLevel > -1 ? departmentDao.pullByHospitalId(hospitalId, treeLevel, null) :
+                departmentDao.pullByHospitalId(hospitalId, null);
     }
 
     @Override

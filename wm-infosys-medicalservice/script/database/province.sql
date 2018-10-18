@@ -2,7 +2,8 @@
 SQLyog Enterprise - MySQL GUI v6.15
 MySQL - 5.6.40 : Database - devbase
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 

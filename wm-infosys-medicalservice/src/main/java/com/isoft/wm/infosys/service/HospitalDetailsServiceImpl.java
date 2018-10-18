@@ -109,13 +109,11 @@ public class HospitalDetailsServiceImpl implements HospitalDetailsService {
             List<DepartmentVo> deptList = hospitalService.pullDepartmentsByHospitalId(hosp.getId(), -1);
             if (deptList != null && deptList.size() > 0) {
                 List<String> deptNameList = new ArrayList<String>();
-
                 Map<String, List<Long>> profCntList = new HashMap<String, List<Long>>();
                 int iterIndex = 0;
                 for (DepartmentVo _dept : deptList) {
                     List<DocLevelNumVo> docLevelNumList = hospitalService.getDocNumOfDiffLevelsByDeptId(_dept.getId());
                     for (DocLevelNumVo cntPerLevel : docLevelNumList) {
-
                         String levelName = cntPerLevel.getDoctor_position();
                         if (!profCntList.containsKey(levelName)) {
                             List<Long> numList = new ArrayList<Long>();

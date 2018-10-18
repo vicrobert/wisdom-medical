@@ -132,34 +132,29 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
         HospitalContrastTableViewModel result = new HospitalContrastTableViewModel();
         List<DepartmentVo> interDeptsL1 = hospitalService.pullIntersectDeptOfTwoHospitals(hospitalId1, hospitalId2, 0);
         if (interDeptsL1 != null) {
-
             result.setTotal(interDeptsL1.size());
-
             for (DepartmentVo deptItr : interDeptsL1) {
                 Map<String, String> row = new HashMap<String, String>();
                 row.put("department", deptItr.getName());
-
                 Set<DepartmentVo> deptL2H1Set = new HashSet<DepartmentVo>();
                 Set<DepartmentVo> deptL2H1Clone = new HashSet<DepartmentVo>();
                 List<DepartmentVo> hosp1DeptsL2 = hospitalService.pullSubDepartmentsByParentName(hospitalId1, deptItr.getName(), null);
                 deptL2H1Set.addAll(hosp1DeptsL2);
                 deptL2H1Clone.addAll(hosp1DeptsL2);
                 row.put("hospitala", deptL2H1Set.toString().replace("[", "").replace("]", ""));
-
                 Set<DepartmentVo> deptL2H2Set = new HashSet<DepartmentVo>();
                 Set<DepartmentVo> diffSet = new HashSet<DepartmentVo>();
                 List<DepartmentVo> hosp2DeptsL2 = hospitalService.pullSubDepartmentsByParentName(hospitalId2, deptItr.getName(), null);
                 deptL2H2Set.addAll(hosp2DeptsL2);
                 row.put("hospitalb", deptL2H2Set.toString().replace("[", "").replace("]", ""));
-
                 deptL2H1Set.removeAll(deptL2H2Set);
                 deptL2H2Set.removeAll(deptL2H1Clone);
                 diffSet.addAll(deptL2H1Set);
                 diffSet.addAll(deptL2H2Set);
-
                 if (diffSet.size() > 0) {
                     StringBuilder sb = new StringBuilder();
-                    sb.append("差异科室数量").append(diffSet.size()).append(",分别是：").append(diffSet.toString().replace("[", "").replace("]", ""));
+                    sb.append("差异科室数量").append(diffSet.size()).append(",分别是：").append(
+                            diffSet.toString().replace("[", "").replace("]", ""));
                     row.put("verdict", sb.toString());
                 }
                 result.addRow(row);
@@ -178,10 +173,8 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
         h1DeptsSetClone.addAll(hosp1Depts);
         List<DepartmentVo> hosp2Depts = hospitalService.pullDepartmentsByHospitalId(hospitalId2, -1);
         h2DeptsSet.addAll(hosp2Depts);
-
         h1DeptsSet.removeAll(h2DeptsSet);
         h2DeptsSet.removeAll(h1DeptsSetClone);
-
         return new HospitalContrastListViewModel(h1DeptsSet.toString(), h2DeptsSet.toString());
     }
 
@@ -190,13 +183,11 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
         DeptLinkMapChartViewModel deptLinkMapVM = new DeptLinkMapChartViewModel();
         Set<DepartmentVo> dL1InterSet = new HashSet<DepartmentVo>();
         Set<DepartmentVo> h2DL1Set = new HashSet<DepartmentVo>();
-
         List<DepartmentVo> h1DL1 = hospitalService.pullDepartmentsByHospitalId(hospitalId1, 0);
         List<DepartmentVo> h2DL1 = hospitalService.pullDepartmentsByHospitalId(hospitalId2, 0);
         dL1InterSet.addAll(h1DL1);
         h2DL1Set.addAll(h2DL1);
         dL1InterSet.retainAll(h2DL1Set);
-
         for (DepartmentVo dept : dL1InterSet) {
             List<DepartmentVo> h1DL2 = hospitalService.pullSubDepartmentsByParentName(hospitalId1, dept.getName(), null);
             if (h1DL2 != null) {
@@ -205,7 +196,6 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
                     deptLinkMapVM.addNode(subDept.getName());
                 }
             }
-
             List<DepartmentVo> h2DL2 = hospitalService.pullSubDepartmentsByParentName(hospitalId2, dept.getName(), null);
             if (h2DL2 != null) {
                 for (DepartmentVo subDept : h2DL2) {
@@ -213,11 +203,9 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
                     deptLinkMapVM.addNode(subDept.getName());
                 }
             }
-
             deptLinkMapVM.addNode(dept.getName());
             deptLinkMapVM.addLegend(dept.getName());
         }
-
         return deptLinkMapVM;
     }
 
@@ -229,6 +217,7 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
         if (hDL2 != null) {
             for (DepartmentVo dept : hDL2) {
                 DeptL2ContrastTableViewModel l2ContrastVM = new DeptL2ContrastTableViewModel();
+                //for the first hospital
                 long h1DocTotal = hospitalService.getDocNumOfDepartment(hospitalId1, dept.getName());
                 l2ContrastVM.setName(dept.getName());
                 if (h1DocTotal > 0) {
@@ -236,7 +225,8 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
                     if (h1D2NumList != null) {
                         sb.delete(0, sb.length());
                         for (DocLevelNumVo h1D2Num : h1D2NumList) {
-                            sb.append(String.format("%s:%.2f%%,", h1D2Num.getDoctor_position(), (h1D2Num.getCnt_person().doubleValue() / h1DocTotal) * 100));
+                            sb.append(String.format("%s:%.2f%%,", h1D2Num.getDoctor_position(),
+                                    (h1D2Num.getCnt_person().doubleValue() / h1DocTotal) * 100));
                         }
                         if (sb.length() > 0) {
                             sb.delete(sb.length() - 1, sb.length()); //delete last comma
@@ -244,14 +234,15 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
                         l2ContrastVM.setLeft(sb.toString());
                     }
                 }
-
+                //for the second hospital
                 long h2DocTotal = hospitalService.getDocNumOfDepartment(hospitalId2, dept.getName());
                 if (h2DocTotal > 0) {
                     List<DocLevelNumVo> h2D2NumList = hospitalService.getDocNumOfDiffLevels(hospitalId2, dept.getName());
                     if (h2D2NumList != null) {
                         sb.delete(0, sb.length());
                         for (DocLevelNumVo h2D2Num : h2D2NumList) {
-                            sb.append(String.format("%s:%.2f%%,", h2D2Num.getDoctor_position(), (h2D2Num.getCnt_person().doubleValue() / h2DocTotal) * 100));
+                            sb.append(String.format("%s:%.2f%%,", h2D2Num.getDoctor_position(),
+                                    (h2D2Num.getCnt_person().doubleValue() / h2DocTotal) * 100));
                         }
                         if (sb.length() > 0) {
                             sb.delete(sb.length() - 1, sb.length());//delete last comma
@@ -283,7 +274,6 @@ public class HospitalRationalAnalysisServiceImpl implements HospitalRationalAnal
             return null;
         }
         result.putMapList(hosp2.getName(), null);
-
         List<DepartmentVo> hDL2 = hospitalService.pullIntersectDeptOfTwoHospitals(hospitalId1, hospitalId2, 1);
         if (hDL2 != null) {
             for (DepartmentVo dept : hDL2) {
